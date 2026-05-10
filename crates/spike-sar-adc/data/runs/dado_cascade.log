@@ -1,0 +1,54 @@
+=== T.11.G — DADO 3-stage cascade for comparator sizing ===
+  loss = (σ_offset - 4 mV)²
+
+== Stage 1: cheap surrogate (N_DRAWS=8)
+    surrogate-1: W₀=2000 nm, target σ=4.000 mV, N_DRAWS=8, lr=8.00e10, ±FD=2000 nm
+      iter  0: W =   2000 nm  σ = 6.856 mV  loss = 8.155e-6  ∂loss/∂W = -8.252e-9
+      iter  1: W =   2660 nm  σ = 6.633 mV  loss = 6.934e-6  ∂loss/∂W = -8.253e-9
+      iter  2: W =   3320 nm  σ = 6.630 mV  loss = 6.919e-6  ∂loss/∂W = -8.256e-9
+      iter  3: W =   3981 nm  σ = 4.796 mV  loss = 6.333e-7  ∂loss/∂W = -2.039e-9
+      iter  4: W =   4144 nm  σ = 4.796 mV  loss = 6.333e-7  ∂loss/∂W = -2.011e-9
+      iter  5: W =   4305 nm  σ = 4.796 mV  loss = 6.333e-7  ∂loss/∂W = -1.733e-9
+      iter  6: W =   4444 nm  σ = 4.796 mV  loss = 6.333e-7  ∂loss/∂W = -1.734e-9
+      iter  7: W =   4583 nm  σ = 4.796 mV  loss = 6.333e-7  ∂loss/∂W = -1.734e-9
+      iter  8: W =   4722 nm  σ = 4.785 mV  loss = 6.163e-7  ∂loss/∂W = -1.734e-9
+      iter  9: W =   4861 nm  σ = 4.000 mV  loss = 1.831e-13  ∂loss/∂W = -1.734e-9
+
+== Stage 2: verify @ W = 4861 nm (N_DRAWS=64)
+    σ_v1 = 7.720 mV  (gap from target = +3.720 mV)
+
+== Stage 3: re-targeted surrogate (N_DRAWS=32, internal target = 0.500 mV)
+    surrogate-2: W₀=4861 nm, target σ=0.500 mV, N_DRAWS=32, lr=8.00e10, ±FD=2000 nm
+      iter  0: W =   4861 nm  σ = 8.207 mV  loss = 5.940e-5  ∂loss/∂W = -1.384e-8
+      iter  1: W =   5968 nm  σ = 6.598 mV  loss = 3.719e-5  ∂loss/∂W = -1.114e-8
+      iter  2: W =   6859 nm  σ = 5.991 mV  loss = 3.015e-5  ∂loss/∂W = -1.022e-8
+      iter  3: W =   7677 nm  σ = 5.286 mV  loss = 2.290e-5  ∂loss/∂W = -6.340e-9
+      iter  4: W =   8184 nm  σ = 5.286 mV  loss = 2.290e-5  ∂loss/∂W = -4.663e-9
+      iter  5: W =   8557 nm  σ = 5.223 mV  loss = 2.231e-5  ∂loss/∂W = -4.625e-9
+      iter  6: W =   8927 nm  σ = 4.818 mV  loss = 1.865e-5  ∂loss/∂W = -2.873e-9
+      iter  7: W =   9157 nm  σ = 4.805 mV  loss = 1.853e-5  ∂loss/∂W = -2.031e-9
+
+== Stage 4: final verify @ W = 9319 nm (N_DRAWS=64)
+    σ_v2 = 6.097 mV  (gap from target = +2.097 mV)
+
+=== cascade summary ===
+  W_s1 = 4861 nm → σ_v1 = 7.720 mV
+  W_s3 = 9319 nm → σ_v2 = 6.097 mV (target 4 mV)
+  surrogate wall (stages 1+3): 34.0s
+  verify wall (stages 2+4):    4.1s
+
+=== sigma-vs-W sweep for chart ===
+  W =   2000 nm → σ = 11.740 mV
+  W =   4000 nm → σ = 9.374 mV
+  W =   8000 nm → σ = 6.305 mV
+  W =  16000 nm → σ = 4.807 mV
+  W =  32000 nm → σ = 3.855 mV
+  W =  64000 nm → σ = 1.691 mV
+
+=== Sky130 layouts of M1 at 3 design points ===
+  layout initial    W =   2000 nm →   5.00 ×  6.75 µm  → m1_layout_initial.svg
+  layout surrogate  W =   9319 nm →   5.00 × 14.07 µm  → m1_layout_surrogate.svg
+  layout verify_target W =  25000 nm →   5.00 × 29.75 µm  → m1_layout_verify_target.svg
+
+Charts:  /Users/Shared/rlx-eda/crates/spike-divider-block/docs/assets/comparator_sizing_opt_ad
+Report:  /Users/Shared/rlx-eda/crates/spike-divider-block/docs/comparator_sizing_opt_ad.md

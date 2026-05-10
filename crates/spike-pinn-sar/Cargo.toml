@@ -1,0 +1,26 @@
+[package]
+name         = "spike-pinn-sar"
+version      = "0.0.1"
+edition.workspace      = true
+license.workspace      = true
+rust-version.workspace = true
+
+# Methodologically rigorous PINN/surrogate experiment on the 8-bit
+# SAR ADC. Mirrors `spike-pinn-diode`'s pre-registered protocol shape
+# but with SAR-specific configuration: 1-D input (vin/vref), discrete
+# 256-step staircase output, polynomial + lookup baselines, no
+# physics term (SAR is a discrete iterative algorithm, not an ODE).
+
+[dependencies]
+eda-nn        = { workspace = true }
+rlx-ir        = { workspace = true }
+rlx-opt       = { workspace = true }
+rlx-runtime   = { workspace = true }
+spike-sar-adc = { workspace = true }
+
+[target.'cfg(target_os = "macos")'.dependencies]
+rlx-mlx       = { workspace = true }
+
+[[bin]]
+name = "protocol"
+path = "src/bin/protocol.rs"

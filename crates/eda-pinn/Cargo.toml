@@ -1,0 +1,18 @@
+[package]
+name         = "eda-pinn"
+version      = "0.0.1"
+edition.workspace      = true
+license.workspace      = true
+rust-version.workspace = true
+
+[dependencies]
+eda-nn      = { workspace = true }
+rlx-ir      = { workspace = true }
+rlx-opt     = { workspace = true }
+rlx-runtime = { workspace = true }
+
+# eda-mna is needed for KCL-residual losses that wrap the same residual
+# graph builder used by `solve_dc`. Not yet wired through (kcl_residual
+# is a scaffold) — kept as a workspace dep so the trainer can be filled
+# in without touching this manifest.
+eda-mna     = { workspace = true }

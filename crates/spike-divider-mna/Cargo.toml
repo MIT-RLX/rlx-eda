@@ -1,0 +1,25 @@
+[package]
+name         = "spike-divider-mna"
+version      = "0.0.1"
+edition.workspace      = true
+license.workspace      = true
+rust-version.workspace = true
+
+[features]
+ngspice = ["dep:eda-extern-ngspice"]
+
+[dependencies]
+rlx-ir              = { workspace = true }
+rlx-opt             = { workspace = true }
+rlx-runtime         = { workspace = true }
+eda-validate        = { workspace = true }
+eda-extern-ngspice  = { workspace = true, optional = true }
+
+# Apple-GPU batched MNA path (mc.rs). MLX-CPU-stream solve today; will
+# transparently switch to the Metal LU kernel when that lands.
+[target.'cfg(target_os = "macos")'.dependencies]
+rlx-mlx             = { workspace = true }
+
+[[bin]]
+name = "spike-divider-mna"
+path = "src/main.rs"

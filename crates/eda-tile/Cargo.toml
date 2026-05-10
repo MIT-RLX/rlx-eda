@@ -1,0 +1,19 @@
+[package]
+name         = "eda-tile"
+version      = "0.0.1"
+edition.workspace      = true
+license.workspace      = true
+rust-version.workspace = true
+
+# Pitch-matched abutment + power-rail helpers. Sits on top of
+# `klayout_route::ManhattanPlanner` for inter-tile bus routing, and
+# adds a coarse current-density check on power straps so single-tile
+# sim doesn't miss array-scope brownouts (PLAN.md cross-cutting #4).
+#
+# See `eda-bench-tinyconv/PLAN.md` build-order step 2.
+
+[dependencies]
+eda-hir          = { workspace = true }
+klayout-core     = { workspace = true }
+klayout-route    = { workspace = true }
+thiserror        = { workspace = true }

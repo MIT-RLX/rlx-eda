@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="920" height="480" viewBox="0 0 920 480" font-family="-apple-system, system-ui, sans-serif" font-size="13">
+<rect width="100%" height="100%" fill="white"/>
+<text text-anchor="middle" x="460" y="20" font-size="15" font-weight="600">Best-of-B converged loss vs batch size</text>
+<rect x="80" y="30" width="810" height="390" fill="#fafafa" stroke="#888" stroke-width="0.5"/>
+<line x1="235.65" y1="30" x2="235.65" y2="420" stroke="#e0e0e0" stroke-width="0.5"/>
+<text x="235.65" y="436" text-anchor="middle" fill="#444">50.000</text>
+<line x1="394.47" y1="30" x2="394.47" y2="420" stroke="#e0e0e0" stroke-width="0.5"/>
+<text x="394.47" y="436" text-anchor="middle" fill="#444">100</text>
+<line x1="553.29" y1="30" x2="553.29" y2="420" stroke="#e0e0e0" stroke-width="0.5"/>
+<text x="553.29" y="436" text-anchor="middle" fill="#444">150</text>
+<line x1="712.12" y1="30" x2="712.12" y2="420" stroke="#e0e0e0" stroke-width="0.5"/>
+<text x="712.12" y="436" text-anchor="middle" fill="#444">200</text>
+<line x1="870.94" y1="30" x2="870.94" y2="420" stroke="#e0e0e0" stroke-width="0.5"/>
+<text x="870.94" y="436" text-anchor="middle" fill="#444">250</text>
+<text x="485" y="460" text-anchor="middle" fill="#222">B</text>
+<text x="20" y="225" text-anchor="middle" fill="#222" transform="rotate(-90 20 225)">best loss across batch</text>
+<path d="M127.65,161.28 L280.12,46.86 L483.41,356.52 L890.00,401.35" fill="none" stroke="#9467bd" stroke-width="2"/>
+</svg>

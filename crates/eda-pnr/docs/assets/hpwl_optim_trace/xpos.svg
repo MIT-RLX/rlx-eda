@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="920" height="480" viewBox="0 0 920 480" font-family="-apple-system, system-ui, sans-serif" font-size="13">
+<rect width="100%" height="100%" fill="white"/>
+<text text-anchor="middle" x="460" y="20" font-size="15" font-weight="600">Per-instance x trajectory</text>
+<rect x="80" y="30" width="810" height="390" fill="#fafafa" stroke="#888" stroke-width="0.5"/>
+<line x1="80.00" y1="30" x2="80.00" y2="420" stroke="#e0e0e0" stroke-width="0.5"/>
+<text x="80.00" y="436" text-anchor="middle" fill="#444">0</text>
+<line x1="215.00" y1="30" x2="215.00" y2="420" stroke="#e0e0e0" stroke-width="0.5"/>
+<text x="215.00" y="436" text-anchor="middle" fill="#444">100</text>
+<line x1="350.00" y1="30" x2="350.00" y2="420" stroke="#e0e0e0" stroke-width="0.5"/>
+<text x="350.00" y="436" text-anchor="middle" fill="#444">200</text>
+<line x1="485.00" y1="30" x2="485.00" y2="420" stroke="#e0e0e0" stroke-width="0.5"/>
+<text x="485.00" y="436" text-anchor="middle" fill="#444">300</text>
+<line x1="620.00" y1="30" x2="620.00" y2="420" stroke="#e0e0e0" stroke-width="0.5"/>
+<text x="620.00" y="436" text-anchor="middle" fill="#444">400</text>
+<line x1="755.00" y1="30" x2="755.00" y2="420" stroke="#e0e0e0" stroke-width="0.5"/>
+<text x="755.00" y="436" text-anchor="middle" fill="#444">500</text>
+<line x1="890.00" y1="30" x2="890.00" y2="420" stroke="#e0e0e0" stroke-width="0.5"/>
+<text x="890.00" y="436" text-anchor="middle" fill="#444">600</text>
+<line x1="80" y1="405.00" x2="890" y2="405.00" stroke="#e0e0e0" stroke-width="0.5"/>
+<text x="74" y="405.00" text-anchor="end" alignment-baseline="middle" fill="#444">-2.00e4</text>
+<line x1="80" y1="315.68" x2="890" y2="315.68" stroke="#e0e0e0" stroke-width="0.5"/>
+<text x="74" y="315.68" text-anchor="end" alignment-baseline="middle" fill="#444">-1.00e4</text>
+<line x1="80" y1="226.37" x2="890" y2="226.37" stroke="#e0e0e0" stroke-width="0.5"/>
+<text x="74" y="226.37" text-anchor="end" alignment-baseline="middle" fill="#444">0</text>
+<line x1="80" y1="137.05" x2="890" y2="137.05" stroke="#e0e0e0" stroke-width="0.5"/>
+<text x="74" y="137.05" text-anchor="end" alignment-baseline="middle" fill="#444">1.00e4</text>
+<line x1="80" y1="47.73" x2="890" y2="47.73" stroke="#e0e0e0" stroke-width="0.5"/>
+<text x="74" y="47.73" text-anchor="end" alignment-baseline="middle" fill="#444">2.00e4</text>
+<text x="485" y="460" text-anchor="middle" fill="#222">step</text>
+<text x="20" y="225" text-anchor="middle" fill="#222" transform="rotate(-90 20 225)">x [DBU]</text>
+<path d="M80.00,47.73 L81.35,56.66 L82.70,65.04 L85.40,79.87 L90.80,90.41 L101.60,72.04 L123.20,98.80 L166.40,102.75 L252.80,115.35 L425.60,122.91 L771.20,124.62 L890.00,125.13" fill="none" stroke="#1f77b4" stroke-width="2"/>
+<path d="M80.00,358.09 L81.35,349.16 L82.70,340.23 L85.40,322.48 L90.80,298.78 L101.60,295.28 L123.20,286.17 L166.40,288.62 L252.80,272.09 L425.60,261.44 L771.20,261.85 L890.00,261.03" fill="none" stroke="#d62728" stroke-width="2"/>
+<path d="M80.00,210.75 L81.35,201.82 L82.70,193.05 L85.40,176.98 L90.80,163.27 L101.60,135.63 L123.20,137.28 L166.40,147.31 L252.80,161.41 L425.60,170.65 L771.20,170.46 L890.00,170.80" fill="none" stroke="#2ca02c" stroke-width="2"/>
+<path d="M80.00,117.67 L81.35,126.61 L82.70,135.51 L85.40,153.10 L90.80,186.57 L101.60,252.14 L123.20,253.21 L166.40,239.31 L252.80,223.82 L425.60,216.73 L771.20,216.02 L890.00,215.85" fill="none" stroke="#9467bd" stroke-width="2"/>
+<path d="M80.00,402.27 L81.35,393.34 L82.70,384.43 L85.40,366.65 L90.80,330.71 L101.60,300.52 L123.20,298.62 L166.40,286.12 L252.80,271.80 L425.60,263.01 L771.20,261.53 L890.00,261.31" fill="none" stroke="#ff7f0e" stroke-width="2"/>
+<path d="M80.00,75.64 L81.35,84.57 L82.70,81.72 L85.40,68.87 L90.80,62.76 L101.60,93.90 L123.20,91.37 L166.40,99.75 L252.80,114.69 L425.60,124.09 L771.20,124.49 L890.00,124.89" fill="none" stroke="#8c564b" stroke-width="2"/>
+<rect x="710" y="30" width="170" height="108" fill="white" stroke="#bbb" stroke-width="0.5" opacity="0.92"/>
+<line x1="718" y1="42" x2="738" y2="42" stroke="#1f77b4" stroke-width="3"/>
+<text x="746" y="46" fill="#222">U0</text>
+<line x1="718" y1="58" x2="738" y2="58" stroke="#d62728" stroke-width="3"/>
+<text x="746" y="62" fill="#222">U1</text>
+<line x1="718" y1="74" x2="738" y2="74" stroke="#2ca02c" stroke-width="3"/>
+<text x="746" y="78" fill="#222">U2</text>
+<line x1="718" y1="90" x2="738" y2="90" stroke="#9467bd" stroke-width="3"/>
+<text x="746" y="94" fill="#222">U3</text>
+<line x1="718" y1="106" x2="738" y2="106" stroke="#ff7f0e" stroke-width="3"/>
+<text x="746" y="110" fill="#222">U4</text>
+<line x1="718" y1="122" x2="738" y2="122" stroke="#8c564b" stroke-width="3"/>
+<text x="746" y="126" fill="#222">U5</text>
+</svg>

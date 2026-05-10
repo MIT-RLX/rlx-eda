@@ -1,0 +1,24 @@
+[package]
+name         = "rlx-eda-cli"
+version      = "0.0.1"
+edition.workspace      = true
+license.workspace      = true
+rust-version.workspace = true
+
+[lib]
+name = "rlx_eda_cli"
+path = "src/lib.rs"
+
+[[bin]]
+name = "rlx-eda"
+path = "src/main.rs"
+
+[dependencies]
+clap            = { workspace = true }
+serde           = { workspace = true }
+toml            = { workspace = true }
+thiserror       = { workspace = true }
+eda-sim-harness = { workspace = true }
+
+[dev-dependencies]
+tempfile = { workspace = true }

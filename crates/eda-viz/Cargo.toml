@@ -1,0 +1,67 @@
+[package]
+name         = "eda-viz"
+version      = "0.0.1"
+edition.workspace      = true
+license.workspace      = true
+rust-version.workspace = true
+
+[features]
+default = []
+png     = ["dep:resvg", "dep:tiny-skia", "dep:usvg"]
+# Surface `klayout-io` GDS/OASIS read/write through `eda_viz::layout`
+# so users don't have to know about the sibling crate. Same dep as
+# `cli` — both turn it on.
+gds     = ["dep:klayout-io"]
+# CLI binary: pulls klayout-io for GDS/OASIS reading.
+cli     = ["png", "gds"]
+# Adapter from `klayout_drc::Violation` → `eda_viz::Highlight`.
+drc     = ["dep:klayout-drc"]
+# Gzip-compressed `.svgz` output via flate2.
+svgz    = ["dep:flate2"]
+
+[dependencies]
+klayout-core = { workspace = true }
+# Used to consume `SchematicIr` produced by `Schematic<P>` impls in
+# downstream block crates. eda-viz has no opinion on what goes into the
+# IR — it just renders.
+eda-hir      = { workspace = true }
+# Used by `LayerPalette::from_lyp` to lift `<fill-color>` /
+# `<frame-color>` out of foundry layer-property files. eda-pdk-ingest
+# parses the XML; eda-viz selects which colour kind drives the SVG.
+eda-pdk-ingest = { workspace = true }
+
+resvg       = { version = "0.42", optional = true, default-features = false }
+tiny-skia   = { version = "0.11", optional = true }
+# `text` enables fontdb-backed text rasterization. We deliberately skip
+# `system-fonts` / `memmap-fonts` and ship our own font (assets/) so PNG
+# output is byte-stable across machines.
+usvg        = { version = "0.42", optional = true, default-features = false, features = ["text"] }
+klayout-io  = { workspace = true, optional = true }
+klayout-drc = { workspace = true, optional = true }
+flate2      = { version = "1", optional = true }
+
+[dev-dependencies]
+# Used in tests + examples to drive the renderer with a real,
+# LVS-verified layout (make_divider_layout) and re-assert connectivity
+# invariants alongside rendering — so the demo / test path can't
+# silently regress to hand-built broken geometry.
+spike-divider-block = { workspace = true }
+klayout-connect     = { workspace = true }
+tempfile            = { workspace = true }
+
+[[example]]
+name              = "demo"
+required-features = ["png"]
+
+[[example]]
+name              = "full_demo"
+required-features = ["png", "svgz"]
+
+[[example]]
+name              = "dashboard"
+required-features = ["png"]
+
+[[bin]]
+name              = "eda-viz"
+path              = "src/bin/eda-viz.rs"
+required-features = ["cli"]

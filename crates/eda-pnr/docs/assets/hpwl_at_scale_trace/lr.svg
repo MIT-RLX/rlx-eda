@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="920" height="480" viewBox="0 0 920 480" font-family="-apple-system, system-ui, sans-serif" font-size="13">
+<rect width="100%" height="100%" fill="white"/>
+<text text-anchor="middle" x="460" y="20" font-size="15" font-weight="600">Learning-rate schedule (cosine)</text>
+<rect x="80" y="30" width="810" height="390" fill="#fafafa" stroke="#888" stroke-width="0.5"/>
+<line x1="80.00" y1="30" x2="80.00" y2="420" stroke="#e0e0e0" stroke-width="0.5"/>
+<text x="80.00" y="436" text-anchor="middle" fill="#444">0</text>
+<line x1="215.00" y1="30" x2="215.00" y2="420" stroke="#e0e0e0" stroke-width="0.5"/>
+<text x="215.00" y="436" text-anchor="middle" fill="#444">50.000</text>
+<line x1="350.00" y1="30" x2="350.00" y2="420" stroke="#e0e0e0" stroke-width="0.5"/>
+<text x="350.00" y="436" text-anchor="middle" fill="#444">100</text>
+<line x1="485.00" y1="30" x2="485.00" y2="420" stroke="#e0e0e0" stroke-width="0.5"/>
+<text x="485.00" y="436" text-anchor="middle" fill="#444">150</text>
+<line x1="620.00" y1="30" x2="620.00" y2="420" stroke="#e0e0e0" stroke-width="0.5"/>
+<text x="620.00" y="436" text-anchor="middle" fill="#444">200</text>
+<line x1="755.00" y1="30" x2="755.00" y2="420" stroke="#e0e0e0" stroke-width="0.5"/>
+<text x="755.00" y="436" text-anchor="middle" fill="#444">250</text>
+<line x1="890.00" y1="30" x2="890.00" y2="420" stroke="#e0e0e0" stroke-width="0.5"/>
+<text x="890.00" y="436" text-anchor="middle" fill="#444">300</text>
+<line x1="80" y1="346.29" x2="890" y2="346.29" stroke="#e0e0e0" stroke-width="0.5"/>
+<text x="74" y="346.29" text-anchor="end" alignment-baseline="middle" fill="#444">200</text>
+<line x1="80" y1="271.65" x2="890" y2="271.65" stroke="#e0e0e0" stroke-width="0.5"/>
+<text x="74" y="271.65" text-anchor="end" alignment-baseline="middle" fill="#444">400</text>
+<line x1="80" y1="197.01" x2="890" y2="197.01" stroke="#e0e0e0" stroke-width="0.5"/>
+<text x="74" y="197.01" text-anchor="end" alignment-baseline="middle" fill="#444">600</text>
+<line x1="80" y1="122.37" x2="890" y2="122.37" stroke="#e0e0e0" stroke-width="0.5"/>
+<text x="74" y="122.37" text-anchor="end" alignment-baseline="middle" fill="#444">800</text>
+<line x1="80" y1="47.73" x2="890" y2="47.73" stroke="#e0e0e0" stroke-width="0.5"/>
+<text x="74" y="47.73" text-anchor="end" alignment-baseline="middle" fill="#444">1000</text>
+<text x="485" y="460" text-anchor="middle" fill="#222">step</text>
+<text x="20" y="225" text-anchor="middle" fill="#222" transform="rotate(-90 20 225)">lr [DBU/step]</text>
+<path d="M80.00,47.73 L82.70,47.74 L85.40,47.77 L90.80,47.88 L101.60,48.35 L123.20,50.21 L166.40,57.59 L252.80,86.07 L425.60,184.52 L771.20,383.79 L890.00,402.27" fill="none" stroke="#1f77b4" stroke-width="2"/>
+</svg>

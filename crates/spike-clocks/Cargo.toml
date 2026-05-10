@@ -1,0 +1,34 @@
+[package]
+name         = "spike-clocks"
+version      = "0.0.1"
+edition.workspace      = true
+license.workspace      = true
+rust-version.workspace = true
+
+# Full Clocks block from LTspice paper Fig 12.1-12.4: the
+# `RippleCounter<4>` from spike-ripple-counter, plus state decoders
+# that produce clk_sh / clk_door / clk_reset at the right counter
+# positions. clk_reset feeds back to the counter, giving a
+# self-clearing 10-cycle conversion window.
+
+[dependencies]
+spike-cmos-gates    = { workspace = true }
+spike-ripple-counter = { workspace = true }
+spike-clock-decoder = { workspace = true }
+eda-spice-emit      = { workspace = true }
+eda-validate        = { workspace = true }
+
+[features]
+ngspice = ["dep:eda-extern-ngspice"]
+ltspice = ["dep:eda-extern-ltspice"]
+
+[dependencies.eda-extern-ngspice]
+workspace = true
+optional  = true
+
+[dependencies.eda-extern-ltspice]
+workspace = true
+optional  = true
+
+[dev-dependencies]
+eda-waveform = { workspace = true }

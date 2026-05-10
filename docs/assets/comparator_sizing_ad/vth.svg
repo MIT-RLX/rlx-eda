@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="920" height="480" viewBox="0 0 920 480">
+<rect width="100%" height="100%" fill="#ffffff"/>
+<line x1="78.00" y1="418.00" x2="894.00" y2="418.00" stroke="#e5e7eb" stroke-width="1"/>
+<text x="70.00" y="422.00" text-anchor="end" font-size="12" fill="#374151">4.961e-1</text>
+<line x1="78.00" y1="357.67" x2="894.00" y2="357.67" stroke="#e5e7eb" stroke-width="1"/>
+<text x="70.00" y="361.67" text-anchor="end" font-size="12" fill="#374151">5.057e-1</text>
+<line x1="78.00" y1="297.33" x2="894.00" y2="297.33" stroke="#e5e7eb" stroke-width="1"/>
+<text x="70.00" y="301.33" text-anchor="end" font-size="12" fill="#374151">5.154e-1</text>
+<line x1="78.00" y1="237.00" x2="894.00" y2="237.00" stroke="#e5e7eb" stroke-width="1"/>
+<text x="70.00" y="241.00" text-anchor="end" font-size="12" fill="#374151">5.250e-1</text>
+<line x1="78.00" y1="176.67" x2="894.00" y2="176.67" stroke="#e5e7eb" stroke-width="1"/>
+<text x="70.00" y="180.67" text-anchor="end" font-size="12" fill="#374151">5.347e-1</text>
+<line x1="78.00" y1="116.33" x2="894.00" y2="116.33" stroke="#e5e7eb" stroke-width="1"/>
+<text x="70.00" y="120.33" text-anchor="end" font-size="12" fill="#374151">5.443e-1</text>
+<line x1="78.00" y1="56.00" x2="894.00" y2="56.00" stroke="#e5e7eb" stroke-width="1"/>
+<text x="70.00" y="60.00" text-anchor="end" font-size="12" fill="#374151">5.540e-1</text>
+<line x1="78.00" y1="56.00" x2="78.00" y2="418.00" stroke="#e5e7eb" stroke-width="1"/>
+<text x="78.00" y="438.00" text-anchor="middle" font-size="12" fill="#374151">0</text>
+<line x1="214.00" y1="56.00" x2="214.00" y2="418.00" stroke="#e5e7eb" stroke-width="1"/>
+<text x="214.00" y="438.00" text-anchor="middle" font-size="12" fill="#374151">6</text>
+<line x1="350.00" y1="56.00" x2="350.00" y2="418.00" stroke="#e5e7eb" stroke-width="1"/>
+<text x="350.00" y="438.00" text-anchor="middle" font-size="12" fill="#374151">13</text>
+<line x1="486.00" y1="56.00" x2="486.00" y2="418.00" stroke="#e5e7eb" stroke-width="1"/>
+<text x="486.00" y="438.00" text-anchor="middle" font-size="12" fill="#374151">20</text>
+<line x1="622.00" y1="56.00" x2="622.00" y2="418.00" stroke="#e5e7eb" stroke-width="1"/>
+<text x="622.00" y="438.00" text-anchor="middle" font-size="12" fill="#374151">26</text>
+<line x1="758.00" y1="56.00" x2="758.00" y2="418.00" stroke="#e5e7eb" stroke-width="1"/>
+<text x="758.00" y="438.00" text-anchor="middle" font-size="12" fill="#374151">32</text>
+<line x1="894.00" y1="56.00" x2="894.00" y2="418.00" stroke="#e5e7eb" stroke-width="1"/>
+<text x="894.00" y="438.00" text-anchor="middle" font-size="12" fill="#374151">39</text>
+<line x1="78.00" y1="418.00" x2="894.00" y2="418.00" stroke="#111827" stroke-width="1.5"/>
+<line x1="78.00" y1="56.00" x2="78.00" y2="418.00" stroke="#111827" stroke-width="1.5"/>
+<text x="460.00" y="24" text-anchor="middle" font-size="18" font-weight="700" fill="#111827">Comparator Vth_M1 (Adam on AD gradients)</text>
+<text x="486.00" y="464.00" text-anchor="middle" font-size="13" fill="#111827">iter</text>
+<text x="22" y="237.00" transform="rotate(-90 22 237.00)" text-anchor="middle" font-size="13" fill="#111827">Vth_M1 [V]</text>
+<polyline points="78.00,80.97 98.92,93.47 119.85,105.97 140.77,118.48 161.69,131.00 182.62,143.52 203.54,156.06 224.46,168.61 245.38,181.19 266.31,193.78 287.23,206.40 308.15,219.06 329.08,231.76 350.00,244.51 370.92,257.32 391.85,270.20 412.77,283.16 433.69,296.24 454.62,309.44 475.54,322.80 496.46,336.37 517.38,350.19 538.31,358.10 559.23,367.75 580.15,377.99 601.08,387.10 622.00,391.82 642.92,393.03 663.85,391.46 684.77,387.69 705.69,382.18 726.62,375.29 747.54,369.24 768.46,364.87 789.38,362.66 810.31,362.66 831.23,364.55 852.15,367.87 873.08,372.04 894.00,376.47" fill="none" stroke="#1d4ed8" stroke-width="2.2"/>
+</svg>

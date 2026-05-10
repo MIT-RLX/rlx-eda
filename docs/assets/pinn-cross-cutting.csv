@@ -1,0 +1,22 @@
+experiment,crate,input_dim,method_class,method,n_params,n_bytes,max_abs_units,max_abs_pct_FS,n_seeds,verdict_summary
+RC-parametric,spike-pinn-rc,4,closed_form,Analytic,0,0,0.0,0.0,1,reference
+RC-parametric,spike-pinn-rc,4,MNA,M-default-bcached,0,0,2.5e-5,5e-3,1,baseline
+RC-parametric,spike-pinn-rc,4,PINN,Hybrid,8769,35076,0.155,3.10,1,pre-methodology
+Diode-RC,spike-pinn-diode,5,baseline,Poly-d4,126,504,5e-7,5e-5,1,best baseline
+Diode-RC,spike-pinn-diode,5,baseline,M-fine,0,0,0.00016,0.016,1,fine MNA
+Diode-RC,spike-pinn-diode,5,baseline,M-default,0,0,0.0005,0.049,1,calibrated MNA
+Diode-RC,spike-pinn-diode,5,baseline,M-coarse,0,0,0.0037,0.371,1,coarse MNA
+Diode-RC,spike-pinn-diode,5,PINN,Row-A-pure-PINN,8769,35076,0.0874,8.74,10,physics-only
+Diode-RC,spike-pinn-diode,5,PINN,Row-B-surrogate,8769,35076,0.0158,1.58,10,data-only
+Diode-RC,spike-pinn-diode,5,PINN,Row-H-hybrid,8769,35076,0.0649,6.49,10,physics+data
+SAR-1D,spike-pinn-sar,1,baseline,Poly-d4,5,20,0.00200,0.20,1,best baseline
+SAR-1D,spike-pinn-sar,1,baseline,Poly-d8,9,36,0.00207,0.207,1,
+SAR-1D,spike-pinn-sar,1,baseline,Poly-d16,17,68,0.00213,0.213,1,
+SAR-1D,spike-pinn-sar,1,baseline,Lookup-16,16,64,0.00387,0.387,1,
+SAR-1D,spike-pinn-sar,1,baseline,Lookup-64,64,256,0.00383,0.383,1,
+SAR-1D,spike-pinn-sar,1,baseline,Lookup-256,256,1024,0.00387,0.387,1,
+SAR-1D,spike-pinn-sar,1,PINN,Row-B-prime,1153,4612,0.07063,7.063,10,surrogate
+SAR-mc,spike-pinn-sar-mc,10,baseline,Poly-d1,11,44,0.0842,8.42,1,linear
+SAR-mc,spike-pinn-sar-mc,10,baseline,Poly-d2,66,264,0.0762,7.62,1,
+SAR-mc,spike-pinn-sar-mc,10,baseline,Poly-d4,1001,4004,0.0662,6.62,1,best baseline
+SAR-mc,spike-pinn-sar-mc,10,PINN,Row-B-prime,4929,19716,0.04203,4.203,10,beats Poly-d4

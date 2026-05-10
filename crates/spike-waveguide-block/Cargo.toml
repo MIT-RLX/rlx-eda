@@ -1,0 +1,46 @@
+[package]
+name         = "spike-waveguide-block"
+version      = "0.0.1"
+edition.workspace      = true
+license.workspace      = true
+rust-version.workspace = true
+
+# Photonic counterpart to `spike-divider-block`. Defines the
+# `OpticalPdk` trait and impls it for each foundry PDK shipped by
+# `eda-pdks`, then layers a parametric `Waveguide` block on top —
+# proves the Block + Layout flow works for photonics, on the same
+# multi-PDK genericity story as the CMOS spike.
+#
+# Each photonic PDK is opt-in via a feature that forwards to the
+# matching `eda-pdks` feature. Default is the open `gdsfactory-generic`
+# tech, which is bundled inside the gdsfactory Python package.
+
+[features]
+default = ["gdsfactory-generic"]
+gdsfactory-generic = ["eda-pdks/gdsfactory-generic"]
+cornerstone-si220  = ["eda-pdks/cornerstone-si220"]
+siepic-ebeam       = ["eda-pdks/siepic-ebeam"]
+
+[dependencies]
+eda-hir      = { workspace = true }
+eda-pdks     = { workspace = true }
+klayout-core = { workspace = true }
+klayout-pdk  = { workspace = true }
+# Behavioral / S-parameter pieces use the rlx graph + autodiff stack.
+rlx-ir       = { workspace = true }
+rlx-opt      = { workspace = true }
+rlx-runtime  = { workspace = true }
+# Used by the `mzi_ml_trace` report binary: SVG layout render +
+# PNG rasterization.
+eda-viz      = { workspace = true, features = ["png"] }
+# Used by the `mzi_match_trace` binary: domain-agnostic optimization
+# trace + report harness shared across spike crates.
+eda-trace    = { workspace = true, features = ["png"] }
+# DRC summary embedded in the report.
+klayout-drc  = { workspace = true }
+klayout-geom = { workspace = true }
+
+[dev-dependencies]
+eda-validate = { workspace = true }
+klayout-drc  = { workspace = true }
+klayout-geom = { workspace = true }

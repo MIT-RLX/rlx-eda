@@ -1,0 +1,57 @@
+[package]
+name         = "eda-pdks"
+version      = "0.0.1"
+edition.workspace      = true
+license.workspace      = true
+rust-version.workspace = true
+build        = "build.rs"
+
+# One feature per foundry. Disabled by default — downstream crates opt in
+# to the PDKs they need so we don't pay parse + codegen for unused ones.
+#
+# When a feature is on but the foundry's `.lyp` isn't present at the
+# expected workspace-relative path, the build emits an empty stub PDK
+# and sets `HAS_<FOUNDRY> = false`, preserving the soft-skip pattern
+# downstream tests rely on.
+[features]
+default = []
+
+# CMOS PDKs. Sky130 and gf180mcu have multiple device-offering
+# variants that share the same `.lyp` layer map but differ in cell
+# library / available devices. We expose one feature per variant so
+# downstream crates can name what they need; the typed PDK struct
+# changes name (`Sky130`, `Sky130B`, `Gf180mcu`, `Gf180mcuB`, …)
+# but layer numbers are identical to the foundry root.
+sky130     = []
+sky130b    = []
+gf180mcu   = []   # alias for the A variant; matches `rlx-eda-cli` default
+gf180mcu_a = []
+gf180mcu_b = []
+gf180mcu_c = []
+gf180mcu_d = []
+# IHP-SG13G2 — open BiCMOS 130 nm. First non-CMOS-only PDK in the
+# typed-layer surface. Uses sky130-shape `<name>poly.drawing</name>`
+# naming so short-name lookup is candidate-list-tolerant.
+ihp_sg13g2 = []
+
+# Photonic PDKs.
+gdsfactory-generic = []
+cornerstone-si220  = []
+siepic-ebeam       = []
+
+[build-dependencies]
+eda-pdk-ingest = { workspace = true }
+
+[dependencies]
+klayout-core   = { workspace = true }
+klayout-pdk    = { workspace = true }
+# Conformance tests re-parse the foundry `.lyp` at test time to detect
+# drift between the build-time-baked GDS pairs and what the foundry now
+# declares. That requires `eda-pdk-ingest` as a runtime dep, not just a
+# build dep.
+eda-pdk-ingest = { workspace = true }
+
+[dev-dependencies]
+klayout-geom = { workspace = true }
+klayout-drc  = { workspace = true }
+klayout-io   = { workspace = true }

@@ -1,0 +1,43 @@
+[package]
+name         = "spike-lna"
+version      = "0.0.1"
+edition.workspace      = true
+license.workspace      = true
+rust-version.workspace = true
+
+# RF counterpart to `spike-divider-block` (CMOS) and `spike-waveguide-block`
+# (photonics). Defines the `RfPdk` trait and impls it for each CMOS PDK
+# shipped by `eda-pdks`, then layers a parametric inductively-degenerated
+# cascode `Lna` block on top — proves the Block + Layout flow handles
+# RF design at ~2.4 GHz on the same multi-PDK genericity story as the
+# CMOS / photonic spikes.
+#
+# Behavioral side: closed-form 2-port S-parameter model (Razavi §5.3.3)
+# on the rlx graph, so input-match `|S11(ω₀)|²` is differentiable wrt
+# Lg/Ls/Cgs/gm and Adam-on-Lg drives the canonical LNA inverse-design
+# problem.
+
+[features]
+default     = []
+sky130      = ["eda-pdks/sky130"]
+gf180mcu    = ["eda-pdks/gf180mcu"]
+
+[dependencies]
+eda-hir      = { workspace = true }
+eda-pdks     = { workspace = true }
+klayout-core = { workspace = true }
+klayout-pdk  = { workspace = true }
+rlx-ir       = { workspace = true }
+rlx-opt      = { workspace = true }
+rlx-runtime  = { workspace = true }
+# Place-and-route: instance positions + Manhattan-routed wires
+# between the cascode FETs, the gate / source / drain inductors,
+# and the I/O pads. Lifts every routing decision out of `Lna::layout`.
+eda-pnr      = { workspace = true }
+# Used by the `lna_match_trace` report binary: SVG floorplan render +
+# the `eda-trace` harness for charts and markdown.
+eda-viz      = { workspace = true, features = ["png"] }
+eda-trace    = { workspace = true, features = ["png"] }
+
+[dev-dependencies]
+eda-validate = { workspace = true }

@@ -1,0 +1,89 @@
+[package]
+name         = "eda-bench-tinyconv"
+version      = "0.0.1"
+edition.workspace      = true
+license.workspace      = true
+rust-version.workspace = true
+
+# Umbrella crate for the TinyConv-MNIST silicon initiative. Owns the
+# three-backend bench harness (in-house code-defined sky130 flow,
+# Yosys/OpenROAD-in-docker as physical ground truth, FPGA as
+# functional-at-scale ground truth) and the two metric arms (physical +
+# functional).
+#
+# See PLAN.md in this crate for scope, validation pyramid, co-design
+# loop, build order, and v1 / v1.5 / deferred split.
+#
+# Heavyweight backends gated by features so default CI is unaffected:
+#   --features bench-orfs   pulls ORFS docker integration
+#   --features bench-fpga   pulls rlx-fpga + nextpnr backend
+
+[dependencies]
+serde         = { workspace = true }
+serde_json    = { workspace = true }
+toml          = { workspace = true }
+sha2          = { workspace = true }
+thiserror     = { workspace = true }
+eda-container = { workspace = true }
+eda-config    = { workspace = true }
+
+# Inner co-design loop: build a forward graph from the tile's
+# DcBehavioral residual, autodiff via rlx-opt, evaluate via
+# rlx-runtime, step Adam (reused from spike-divider-block).
+spike-tinyconv-tile = { workspace = true, default-features = false }
+spike-tinyconv-array = { workspace = true }
+eda-hir             = { workspace = true }
+eda-stdcells        = { workspace = true }
+eda-pdks            = { workspace = true, features = ["sky130"] }
+klayout-core        = { workspace = true }
+rlx-ir              = { workspace = true }
+rlx-opt             = { workspace = true }
+rlx-runtime         = { workspace = true }
+spike-divider-block = { workspace = true }
+eda-pnr             = { workspace = true }
+klayout-pdk         = { workspace = true }
+
+# Cross-workspace path-dep on rlx-fpga: the FPGA backend's
+# functional measurement uses `rlx_fpga::reference` (bit-exact pure
+# Rust, no toolchain) for L1; physical measurement gates on the
+# `bench-fpga` feature for nextpnr/yosys.
+rlx-fpga    = { path = "../../../rlx/rlx-fpga" }
+# Optional cortexm dep for the demo binary (TEST_IMAGE / TEST_LABEL).
+rlx-cortexm = { path = "../../../rlx/rlx-cortexm", optional = true }
+
+# Other path-deps to sibling crates that don't exist yet —
+# uncomment as they land.
+# eda-stdcells          = { path = "../eda-stdcells" }
+# eda-tile              = { path = "../eda-tile" }
+
+[dev-dependencies]
+# Mock sc_hd cells let inhouse-backend tests run without the
+# foundry GDS checkout. Same shape as `spike-tinyconv-tile` does.
+eda-stdcells = { workspace = true, features = ["mock-stdcells"] }
+# `fpga_backend` test reads cortexm's TEST_IMAGE / TEST_LABEL.
+rlx-cortexm  = { path = "../../../rlx/rlx-cortexm" }
+
+[features]
+default    = []
+bench-orfs = []
+bench-fpga = []
+# RTL simulation via Verilator (in docker). Heavy dep — ~30-60s per
+# inference for compile + run. Off by default; opt-in with
+# `cargo test -p eda-bench-tinyconv --features bench-rtl-sim`.
+bench-rtl-sim = []
+# Pulls `eda-stdcells/mock-stdcells` so the demo binary runs without
+# the foundry checkout. `cargo run -p eda-bench-tinyconv --bin demo_report
+# --features demo-bin`.
+demo-bin   = ["eda-stdcells/mock-stdcells", "dep:rlx-cortexm"]
+
+[[bin]]
+name = "demo_report"
+path = "src/bin/demo_report.rs"
+required-features = ["demo-bin"]
+
+# `probe_pdk` is feature-free — runs unconditionally so contributors
+# can diagnose missing PDK / toolchain pieces before enabling
+# heavyweight features.
+[[bin]]
+name = "probe_pdk"
+path = "src/bin/probe_pdk.rs"

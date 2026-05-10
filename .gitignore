@@ -1,0 +1,6 @@
+/target
+**/*.rs.bk
+Cargo.lock.bak
+.DS_Store
+# Keep nested upstream repository out of outer index.
+external/carsten-lelo-ex/aicex/

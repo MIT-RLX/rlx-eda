@@ -1,0 +1,98 @@
+#!/usr/bin/env bash
+# dado — DADO experiment runner.
+#
+# Single-entry-point wrapper around the spike-dado-* crates so users
+# don't have to remember the full `cargo run --release -p ...` invocations
+# or the NGSPICE_BACKEND env var. Mirrors the `just dado-*` recipes.
+#
+# Usage:
+#   ./scripts/dado r2r              Run spike-dado-r2r          (~30 s)
+#   ./scripts/dado sar              Run spike-dado-sar          (~25 min, host ngspice)
+#   ./scripts/dado sar --docker     Same as 'sar' with Docker ngspice backend
+#   ./scripts/dado all              Run both, in sequence
+#   ./scripts/dado all --docker     Both, with Docker backend for sar
+#   ./scripts/dado help             This message
+#
+# Output:
+#   crates/spike-dado-{r2r,sar}/docs/STORY.md (and friends)
+
+set -euo pipefail
+
+ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+cd "$ROOT"
+
+DOCKER=""
+COMMAND=""
+for arg in "$@"; do
+    case "$arg" in
+        --docker) DOCKER=1 ;;
+        -h|--help|help) COMMAND="help" ;;
+        r2r|sar|all) COMMAND="$arg" ;;
+        *) echo "Unknown argument: $arg" >&2; exit 2 ;;
+    esac
+done
+COMMAND="${COMMAND:-help}"
+
+bold() { printf "\033[1m%s\033[0m\n" "$*"; }
+
+run_r2r() {
+    bold "▶ Running spike-dado-r2r"
+    cargo run --release -p spike-dado-r2r
+    echo
+    bold "✓ Output → crates/spike-dado-r2r/docs/STORY.md"
+}
+
+run_sar() {
+    if [[ -n "$DOCKER" ]]; then
+        bold "▶ Running spike-dado-sar (Docker ngspice)"
+        # Image tag + Dockerfile path live in `eda_container::images::NGSPICE`
+        # / `Justfile::deps-docker-ngspice`. Honor RLX_NGSPICE_IMAGE on the
+        # existence check so a custom tag still skips the rebuild.
+        local image="${RLX_NGSPICE_IMAGE:-rlx-ngspice:local}"
+        if ! docker image inspect "$image" >/dev/null 2>&1; then
+            echo "  $image not found — building it now (one-time, ~30s)"
+            if command -v just >/dev/null 2>&1 && [[ "$image" == "rlx-ngspice:local" ]]; then
+                just deps-docker-ngspice
+            else
+                docker build -t "$image" docker/ngspice
+            fi
+        fi
+        NGSPICE_BACKEND=docker cargo run --release -p spike-dado-sar
+    else
+        bold "▶ Running spike-dado-sar (host ngspice)"
+        if ! command -v ngspice >/dev/null 2>&1 && [[ -z "${NGSPICE_BIN:-}" ]]; then
+            echo "  ngspice not found on PATH. Try './scripts/dado sar --docker' instead," >&2
+            echo "  or 'just deps' to install it." >&2
+            exit 1
+        fi
+        cargo run --release -p spike-dado-sar
+    fi
+    echo
+    bold "✓ Output → crates/spike-dado-sar/docs/STORY.md"
+}
+
+case "$COMMAND" in
+    r2r) run_r2r ;;
+    sar) run_sar ;;
+    all) run_r2r ; echo ; run_sar ;;
+    help)
+        cat <<'EOF'
+dado — DADO experiment runner
+
+Usage:
+  ./scripts/dado r2r              Run spike-dado-r2r          (~30 s)
+  ./scripts/dado sar              Run spike-dado-sar          (~25 min, host ngspice)
+  ./scripts/dado sar --docker     Same as 'sar' with Docker ngspice backend
+  ./scripts/dado all              Run both, in sequence
+  ./scripts/dado all --docker     Both, with Docker backend for sar
+  ./scripts/dado help             This message
+
+Output:
+  crates/spike-dado-{r2r,sar}/docs/STORY.md (and friends)
+
+Or via just:
+  just dado r2r
+  just dado sar --docker
+EOF
+        ;;
+esac

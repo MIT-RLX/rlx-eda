@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="920" height="480" viewBox="0 0 920 480">
+<rect width="100%" height="100%" fill="#ffffff"/>
+<line x1="78.00" y1="418.00" x2="894.00" y2="418.00" stroke="#e5e7eb" stroke-width="1"/>
+<text x="70.00" y="422.00" text-anchor="end" font-size="12" fill="#374151">-1.227e-1</text>
+<line x1="78.00" y1="357.67" x2="894.00" y2="357.67" stroke="#e5e7eb" stroke-width="1"/>
+<text x="70.00" y="361.67" text-anchor="end" font-size="12" fill="#374151">3.348e-2</text>
+<line x1="78.00" y1="297.33" x2="894.00" y2="297.33" stroke="#e5e7eb" stroke-width="1"/>
+<text x="70.00" y="301.33" text-anchor="end" font-size="12" fill="#374151">1.897e-1</text>
+<line x1="78.00" y1="237.00" x2="894.00" y2="237.00" stroke="#e5e7eb" stroke-width="1"/>
+<text x="70.00" y="241.00" text-anchor="end" font-size="12" fill="#374151">3.459e-1</text>
+<line x1="78.00" y1="176.67" x2="894.00" y2="176.67" stroke="#e5e7eb" stroke-width="1"/>
+<text x="70.00" y="180.67" text-anchor="end" font-size="12" fill="#374151">5.022e-1</text>
+<line x1="78.00" y1="116.33" x2="894.00" y2="116.33" stroke="#e5e7eb" stroke-width="1"/>
+<text x="70.00" y="120.33" text-anchor="end" font-size="12" fill="#374151">6.584e-1</text>
+<line x1="78.00" y1="56.00" x2="894.00" y2="56.00" stroke="#e5e7eb" stroke-width="1"/>
+<text x="70.00" y="60.00" text-anchor="end" font-size="12" fill="#374151">8.146e-1</text>
+<line x1="78.00" y1="56.00" x2="78.00" y2="418.00" stroke="#e5e7eb" stroke-width="1"/>
+<text x="78.00" y="438.00" text-anchor="middle" font-size="12" fill="#374151">0</text>
+<line x1="214.00" y1="56.00" x2="214.00" y2="418.00" stroke="#e5e7eb" stroke-width="1"/>
+<text x="214.00" y="438.00" text-anchor="middle" font-size="12" fill="#374151">7</text>
+<line x1="350.00" y1="56.00" x2="350.00" y2="418.00" stroke="#e5e7eb" stroke-width="1"/>
+<text x="350.00" y="438.00" text-anchor="middle" font-size="12" fill="#374151">15</text>
+<line x1="486.00" y1="56.00" x2="486.00" y2="418.00" stroke="#e5e7eb" stroke-width="1"/>
+<text x="486.00" y="438.00" text-anchor="middle" font-size="12" fill="#374151">22</text>
+<line x1="622.00" y1="56.00" x2="622.00" y2="418.00" stroke="#e5e7eb" stroke-width="1"/>
+<text x="622.00" y="438.00" text-anchor="middle" font-size="12" fill="#374151">29</text>
+<line x1="758.00" y1="56.00" x2="758.00" y2="418.00" stroke="#e5e7eb" stroke-width="1"/>
+<text x="758.00" y="438.00" text-anchor="middle" font-size="12" fill="#374151">37</text>
+<line x1="894.00" y1="56.00" x2="894.00" y2="418.00" stroke="#e5e7eb" stroke-width="1"/>
+<text x="894.00" y="438.00" text-anchor="middle" font-size="12" fill="#374151">44</text>
+<line x1="78.00" y1="418.00" x2="894.00" y2="418.00" stroke="#111827" stroke-width="1.5"/>
+<line x1="78.00" y1="56.00" x2="78.00" y2="418.00" stroke="#111827" stroke-width="1.5"/>
+<text x="460.00" y="24" text-anchor="middle" font-size="18" font-weight="700" fill="#111827">Vout and signed error</text>
+<text x="486.00" y="464.00" text-anchor="middle" font-size="13" fill="#111827">step</text>
+<text x="22" y="237.00" transform="rotate(-90 22 237.00)" text-anchor="middle" font-size="13" fill="#111827">voltage</text>
+<polyline points="78.00,80.97 96.55,88.69 115.09,96.39 133.64,104.07 152.18,111.71 170.73,119.31 189.27,126.84 207.82,134.30 226.36,141.68 244.91,148.97 263.45,156.15 282.00,163.21 300.55,170.13 319.09,176.89 337.64,183.49 356.18,189.88 374.73,196.04 393.27,201.94 411.82,207.54 430.36,212.80 448.91,217.68 467.45,222.12 486.00,226.09 504.55,229.54 523.09,232.44 541.64,234.78 560.18,236.54 578.73,237.74 597.27,238.40 615.82,238.56 634.36,238.27 652.91,237.59 671.45,236.56 690.00,235.24 708.55,233.71 727.09,232.00 745.64,230.18 764.18,228.29 782.73,226.38 801.27,224.47 819.82,222.61 838.36,220.83 856.91,219.14 875.45,217.57 894.00,216.13" fill="none" stroke="#1d4ed8" stroke-width="2.2"/>
+<polyline points="78.00,235.44 96.55,243.16 115.09,250.86 133.64,258.54 152.18,266.18 170.73,273.78 189.27,281.31 207.82,288.77 226.36,296.15 244.91,303.44 263.45,310.62 282.00,317.68 300.55,324.60 319.09,331.37 337.64,337.96 356.18,344.35 374.73,350.51 393.27,356.41 411.82,362.01 430.36,367.27 448.91,372.15 467.45,376.59 486.00,380.56 504.55,384.01 523.09,386.91 541.64,389.25 560.18,391.01 578.73,392.21 597.27,392.87 615.82,393.03 634.36,392.74 652.91,392.06 671.45,391.03 690.00,389.72 708.55,388.18 727.09,386.47 745.64,384.65 764.18,382.76 782.73,380.85 801.27,378.94 819.82,377.09 838.36,375.30 856.91,373.61 875.45,372.04 894.00,370.60" fill="none" stroke="#dc2626" stroke-width="2.2"/>
+<rect x="724.00" y="66.00" width="160" height="70.00" rx="8" fill="#f9fafb" stroke="#d1d5db"/>
+<text x="734.00" y="82.00" font-size="12" font-weight="700" fill="#111827">Legend</text>
+<line x1="734.00" y1="98.00" x2="760.00" y2="98.00" stroke="#1d4ed8" stroke-width="3"/>
+<text x="768.00" y="102.00" font-size="12" fill="#111827">Vout</text>
+<line x1="734.00" y1="120.00" x2="760.00" y2="120.00" stroke="#dc2626" stroke-width="3"/>
+<text x="768.00" y="124.00" font-size="12" fill="#111827">Vout - Vtarget</text>
+</svg>

@@ -1,0 +1,20 @@
+* sky130A LELO_EX 1:4 NMOS current mirror
+.lib '/Users/macmini/.volare/volare/sky130/versions/c6d73a35f524070e85faff4a6a9eef49553ebc2b/sky130A/libs.tech/ngspice/sky130.lib.spice' tt
+.param mc_mm_switch=1 mc_pr_switch=1
+Vvbias vbias 0 DC 9.0000000000e-1
+Iref 0 gate DC 5.0000000000e-6
+XM1 gate gate 0 0 sky130_fd_pr__nfet_01v8 W=2 L=2
+XM2 mout gate 0 0 sky130_fd_pr__nfet_01v8 W=8 L=2
+Vmeas vbias mout DC 0
+.ic v(gate)=0 v(mout)=0
+.options temp=27
+.control
+set ngbehavior=hsa
+set rndseed=6
+tran 1.0000000000e-7 2.0000000000e-5 uic
+meas tran ibn find i(vmeas) at=20u
+print ibn
+meas tran vgs_m1 find v(gate) at=20u
+print vgs_m1
+.endc
+.end

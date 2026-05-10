@@ -1,0 +1,55 @@
+<!doctype html><meta charset=utf-8><title>lelo_ex – summary</title>
+<style>
+:root{--ok:#22863a;--bad:#b31d28;--warn:#9a6b00;--mute:#586069}
+body{font:14px/1.5 -apple-system,system-ui,sans-serif;max-width:1100px;margin:2em auto;padding:0 1.5em;color:#24292e}
+h1{font-size:1.6em;margin:.4em 0}
+h2{font-size:1.15em;margin:1.6em 0 .5em;border-bottom:1px solid #eee;padding-bottom:.2em}
+.corner-tag{display:inline-block;font-size:.55em;padding:.15em .55em;border-radius:1em;background:#f1f8ff;color:#0366d6;vertical-align:middle;margin-left:.5em}
+table{border-collapse:collapse;margin:1em 0;width:100%}
+th,td{border:1px solid #e1e4e8;padding:.4em .7em;text-align:left;vertical-align:middle}
+th{background:#f6f8fa;font-weight:600;font-size:90%}
+.pass{background:#e6ffed;color:var(--ok)}
+.fail{background:#ffeef0;color:var(--bad);font-weight:600}
+.skip{background:#f6f8fa;color:var(--mute)}
+.meta{color:var(--mute);font-size:90%;margin:.4em 0 1em}
+.banner{display:inline-block;padding:.45em 1em;border-radius:.4em;font-weight:700;letter-spacing:.05em;font-size:.95em;margin:.5em 0}
+.banner-ok{background:#dcffe4;color:var(--ok)}
+.banner-bad{background:#ffd6d8;color:var(--bad)}
+.card{background:#fafbfc;border:1px solid #e1e4e8;border-radius:.4em;padding:.7em 1em;margin:.5em 0 1.5em}
+.meta-tbl{width:auto}
+.meta-tbl th{background:none;color:var(--mute);font-weight:500;border:0;padding:.15em .6em;text-align:right}
+.meta-tbl td{border:0;padding:.15em .6em}
+table.summary td>div+div.delta{margin-top:.15em;font-size:80%}
+.delta-ok{color:var(--ok)}
+.delta-warn{color:var(--warn)}
+.delta-bad{color:var(--bad);font-weight:600}
+svg.range,svg.hist{display:block}
+.range circle.mark-ok{fill:#22863a;stroke:#fff;stroke-width:1.5}
+.range circle.mark-bad{fill:#b31d28;stroke:#fff;stroke-width:1.5}
+.tag-typical{display:inline-block;font-size:.7em;padding:.05em .5em;border-radius:.8em;background:#e7f3ff;color:#0366d6;margin-left:.4em}
+.tag-etc{display:inline-block;font-size:.7em;padding:.05em .5em;border-radius:.8em;background:#fff5d6;color:#735c00;margin-left:.4em}
+.tag-mc{display:inline-block;font-size:.7em;padding:.05em .5em;border-radius:.8em;background:#f4d7ff;color:#6e2c91;margin-left:.4em}
+.pf-pass{float:right;color:var(--ok);font-weight:600}
+.pf-fail{float:right;color:var(--bad);font-weight:700}
+.corner-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:.7em}
+.corner-card{border:1px solid #e1e4e8;border-radius:.35em;padding:.55em .7em;background:#fff}
+.corner-head{margin-bottom:.4em}
+.corner-head a{text-decoration:none;color:#0366d6}
+img.thumb{width:100%;height:auto;border:1px solid #eee;border-radius:.25em}
+img.wave{max-width:100%;border:1px solid #e1e4e8;border-radius:.3em}
+.meta-mini{color:var(--mute);font-size:78%;margin-top:.4em}
+details{margin:1em 0;border:1px solid #e1e4e8;border-radius:.3em;padding:.5em .8em;background:#fafbfc}
+details summary{cursor:pointer;font-weight:600;color:#0366d6}
+pre.src{font:11px/1.4 ui-monospace,Menlo,Consolas,monospace;background:#f6f8fa;padding:.6em .8em;border-radius:.25em;overflow-x:auto;max-height:480px}
+code{font:.92em ui-monospace,Menlo,Consolas,monospace;background:#f6f8fa;padding:.1em .35em;border-radius:.25em}
+.hist text{font-family:-apple-system,sans-serif}
+</style><h1>lelo_ex – simulation summary</h1>
+<div class="banner banner-ok">ALL CORNERS PASS</div>
+<p class=meta>3 corners (3 typical/etc, 0 Monte Carlo) · 2 specs</p>
+<h2>Per-corner specs</h2><table class=summary><thead><tr><th>spec<th>unit<th>min<th>typ<th>max<th>typical<th>ff<th>ss</thead>
+<tr><td><strong>ibn</strong><td>A<td>17.500 µA<td>23.500 µA<td>27.500 µA<td class=pass><div>23.704 µA</div><div class=delta><span class=delta-ok>+0.9%</span></div><td class=pass><div>22.771 µA</div><div class=delta><span class=delta-ok>-3.1%</span></div><td class=pass><div>25.023 µA</div><div class=delta><span class=delta-warn>+6.5%</span></div>
+<tr><td><strong>vgs_m1</strong><td>V<td>500.000 mV<td>760.000 mV<td>950.000 mV<td class=pass><div>763.184 mV</div><div class=delta><span class=delta-ok>+0.4%</span></div><td class=pass><div>714.750 mV</div><div class=delta><span class=delta-warn>-6.0%</span></div><td class=pass><div>814.901 mV</div><div class=delta><span class=delta-warn>+7.2%</span></div>
+</table><h2>Per-corner detail</h2><div class=corner-grid><div class=corner-card><div class=corner-head><a href="lelo_ex_typical.html"><strong>typical</strong></a> <span class=tag-typical>typical</span><span class=pf-pass>2/2</span></div><a href="lelo_ex_typical.html"><img class=thumb src="lelo_ex_typical.png" alt="typical"></a><div class=meta-mini>vdd=1.800 V · 27 °C · sha=b4474f3f</div></div>
+<div class=corner-card><div class=corner-head><a href="lelo_ex_ff.html"><strong>ff</strong></a> <span class=tag-etc>etc</span><span class=pf-pass>2/2</span></div><a href="lelo_ex_ff.html"><img class=thumb src="lelo_ex_ff.png" alt="ff"></a><div class=meta-mini>vdd=1.980 V · 85 °C · sha=74f1c469</div></div>
+<div class=corner-card><div class=corner-head><a href="lelo_ex_ss.html"><strong>ss</strong></a> <span class=tag-etc>etc</span><span class=pf-pass>2/2</span></div><a href="lelo_ex_ss.html"><img class=thumb src="lelo_ex_ss.png" alt="ss"></a><div class=meta-mini>vdd=1.620 V · -40 °C · sha=b3958696</div></div>
+</div>

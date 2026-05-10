@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="920" height="480" viewBox="0 0 920 480">
+<rect width="100%" height="100%" fill="#ffffff"/>
+<line x1="86.00" y1="418.00" x2="894.00" y2="418.00" stroke="#e5e7eb" stroke-width="1"/>
+<text x="78.00" y="422.00" text-anchor="end" font-size="12" fill="#374151">1e-6.7</text>
+<line x1="86.00" y1="357.67" x2="894.00" y2="357.67" stroke="#e5e7eb" stroke-width="1"/>
+<text x="78.00" y="361.67" text-anchor="end" font-size="12" fill="#374151">1e-5.6</text>
+<line x1="86.00" y1="297.33" x2="894.00" y2="297.33" stroke="#e5e7eb" stroke-width="1"/>
+<text x="78.00" y="301.33" text-anchor="end" font-size="12" fill="#374151">1e-4.5</text>
+<line x1="86.00" y1="237.00" x2="894.00" y2="237.00" stroke="#e5e7eb" stroke-width="1"/>
+<text x="78.00" y="241.00" text-anchor="end" font-size="12" fill="#374151">1e-3.3</text>
+<line x1="86.00" y1="176.67" x2="894.00" y2="176.67" stroke="#e5e7eb" stroke-width="1"/>
+<text x="78.00" y="180.67" text-anchor="end" font-size="12" fill="#374151">1e-2.2</text>
+<line x1="86.00" y1="116.33" x2="894.00" y2="116.33" stroke="#e5e7eb" stroke-width="1"/>
+<text x="78.00" y="120.33" text-anchor="end" font-size="12" fill="#374151">1e-1.1</text>
+<line x1="86.00" y1="56.00" x2="894.00" y2="56.00" stroke="#e5e7eb" stroke-width="1"/>
+<text x="78.00" y="60.00" text-anchor="end" font-size="12" fill="#374151">1e+0.0</text>
+<line x1="86.00" y1="56.00" x2="86.00" y2="418.00" stroke="#e5e7eb" stroke-width="1"/>
+<text x="86.00" y="438.00" text-anchor="middle" font-size="12" fill="#374151">0</text>
+<line x1="220.67" y1="56.00" x2="220.67" y2="418.00" stroke="#e5e7eb" stroke-width="1"/>
+<text x="220.67" y="438.00" text-anchor="middle" font-size="12" fill="#374151">7</text>
+<line x1="355.33" y1="56.00" x2="355.33" y2="418.00" stroke="#e5e7eb" stroke-width="1"/>
+<text x="355.33" y="438.00" text-anchor="middle" font-size="12" fill="#374151">13</text>
+<line x1="490.00" y1="56.00" x2="490.00" y2="418.00" stroke="#e5e7eb" stroke-width="1"/>
+<text x="490.00" y="438.00" text-anchor="middle" font-size="12" fill="#374151">20</text>
+<line x1="624.67" y1="56.00" x2="624.67" y2="418.00" stroke="#e5e7eb" stroke-width="1"/>
+<text x="624.67" y="438.00" text-anchor="middle" font-size="12" fill="#374151">27</text>
+<line x1="759.33" y1="56.00" x2="759.33" y2="418.00" stroke="#e5e7eb" stroke-width="1"/>
+<text x="759.33" y="438.00" text-anchor="middle" font-size="12" fill="#374151">33</text>
+<line x1="894.00" y1="56.00" x2="894.00" y2="418.00" stroke="#e5e7eb" stroke-width="1"/>
+<text x="894.00" y="438.00" text-anchor="middle" font-size="12" fill="#374151">40</text>
+<line x1="86.00" y1="418.00" x2="894.00" y2="418.00" stroke="#111827" stroke-width="1.5"/>
+<line x1="86.00" y1="56.00" x2="86.00" y2="418.00" stroke="#111827" stroke-width="1.5"/>
+<text x="460.00" y="24" text-anchor="middle" font-size="18" font-weight="700" fill="#111827">MZI optimization loss trajectory</text>
+<text x="490.00" y="464.00" text-anchor="middle" font-size="13" fill="#111827">step</text>
+<text x="22" y="237.00" transform="rotate(-90 22 237.00)" text-anchor="middle" font-size="13" fill="#111827">|T_through(λ_target)|²</text>
+<polyline points="86.00,80.97 106.20,96.29 126.40,122.14 146.60,186.18 166.80,163.80 187.00,127.62 207.20,115.58 227.40,112.83 247.60,115.89 267.80,124.21 288.00,139.16 308.20,166.29 328.40,245.79 348.60,191.89 368.80,157.91 389.00,143.68 409.20,137.93 429.40,137.82 449.60,142.66 469.80,153.03 490.00,171.52 510.20,208.52 530.40,280.72 550.60,196.61 570.80,173.24 591.00,162.88 611.20,159.61 631.40,161.90 651.60,169.74 671.80,184.90 692.00,213.88 712.20,321.81 732.40,228.27 752.60,198.05 772.80,185.25 793.00,180.82 813.20,182.57 833.40,190.55 853.60,206.62 873.80,238.90 894.00,393.03" fill="none" stroke="#2563eb" stroke-width="2.2"/>
+<rect x="724.00" y="66.00" width="160" height="48.00" rx="8" fill="#f9fafb" stroke="#d1d5db"/>
+<text x="734.00" y="82.00" font-size="12" font-weight="700" fill="#111827">Legend</text>
+<line x1="734.00" y1="98.00" x2="760.00" y2="98.00" stroke="#2563eb" stroke-width="3"/>
+<text x="768.00" y="102.00" font-size="12" fill="#111827">loss</text>
+</svg>

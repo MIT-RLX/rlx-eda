@@ -1,0 +1,58 @@
+[package]
+name         = "spike-tinyconv-tile"
+version      = "0.0.1"
+edition.workspace      = true
+license.workspace      = true
+rust-version.workspace = true
+
+# The custom analog MAC tile that the TinyConv-MNIST silicon flow
+# tiles into an array. Carries all four `eda-hir` traits
+# (Block + Layout<Sky130> + Schematic<Sky130> + DcBehavioral) plus
+# the validation pyramid (analytic + FD + ngspice tt/mc) and a
+# closed-form noise model the bench harness consumes so the inner
+# ML loop never invokes SPICE per image.
+#
+# **First ML target** for the TinyConv-MNIST initiative — the inner
+# Adam loop optimizes (w_l_n, w_l_p, vdd, bias points) under an
+# accuracy gate sourced from the noise model.
+#
+# See `eda-bench-tinyconv/PLAN.md` build-order step 3.
+
+[dependencies]
+eda-hir              = { workspace = true }
+toml                 = { workspace = true }
+# `eda-mna` will be needed when analog topologies (CR / CM) wire
+# their I-V residuals; not used by the Digital body. Re-add when
+# the analog work lands.
+# eda-mna              = { workspace = true }
+eda-pdks             = { workspace = true, features = ["sky130"] }
+eda-spice-emit       = { workspace = true }
+eda-tile             = { workspace = true }
+eda-validate         = { workspace = true }
+klayout-core         = { workspace = true }
+rlx-ir               = { workspace = true }
+serde                = { workspace = true }
+thiserror            = { workspace = true }
+
+# `MosfetPdk` lives in spike-divider-block today (with sky130 +
+# gf180mcu impls). Importing the trait here is what gives us
+# "pick PDK later" for free — the `Layout<P: MosfetPdk>` impl works
+# under any current or future foundry without touching this crate.
+# Candidate refactor: lift `MosfetPdk` into `eda-pdks` so the
+# spike → spike dep goes away.
+spike-divider-block  = { workspace = true }
+
+eda-extern-ngspice   = { workspace = true, optional = true }
+
+[dev-dependencies]
+# Mock sc_hd cells let the layout body run end-to-end without the
+# foundry GDS checkout. Real foundry library replaces the mocks by
+# loading via `eda-stdcells::ScHdLibrary::load(...)` instead.
+eda-stdcells = { workspace = true, features = ["mock-stdcells"] }
+# Numerical tests of the area-baseline override evaluate the loss
+# graph end-to-end, so the rlx-runtime CPU evaluator is needed.
+rlx-runtime  = { workspace = true }
+
+[features]
+default = ["ngspice"]
+ngspice = ["dep:eda-extern-ngspice"]

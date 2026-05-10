@@ -1,0 +1,42 @@
+[package]
+name         = "eda-trace"
+version      = "0.0.1"
+edition.workspace      = true
+license.workspace      = true
+rust-version.workspace = true
+
+# Domain-agnostic optimization-trace + report harness. Used by every
+# spike crate (electrical, photonics, RF, quantum, …) to record how
+# a design was iterated, render charts of how the metrics evolved,
+# and emit a markdown report that explains the run.
+#
+# The harness knows nothing about klayout, ngspice, autodiff, or any
+# specific optimizer — circuits supply a step closure that returns a
+# bag of named scalars per step, declare which charts they want, and
+# hand the harness their floorplan SVG (rendered however that domain
+# wants — `eda-viz` for klayout layouts, hand-built SVG for quantum
+# circuit diagrams, etc.). The harness writes everything to disk.
+
+[features]
+# PNG rasterization of every chart + floorplan. Off by default so
+# the crate stays minimal-deps; turn on when a downstream consumer
+# wants embeddable PNGs alongside the SVGs.
+default = []
+png     = ["eda-viz/png"]
+
+[dependencies]
+eda-viz = { workspace = true }
+# Used by the `run-all-traces` orchestrator binary to parse each
+# crate's Cargo.toml and discover [[bin]] entries.
+toml    = { workspace = true }
+# `optim::default_device()` queries the rlx runtime registry for
+# whether a GPU backend is available, so we can hand callers
+# `Device::Mlx` on macOS without forcing them to write
+# target-cfg-d code.
+rlx-runtime = { workspace = true }
+
+# Apple-GPU backend pulled in only on macOS; its mere presence
+# in the link causes `Device::Mlx` to surface as available, which
+# is exactly what `optim::default_device()` checks for.
+[target.'cfg(target_os = "macos")'.dependencies]
+rlx-mlx = { workspace = true }

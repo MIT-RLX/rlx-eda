@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="920" height="480" viewBox="0 0 920 480">
+<rect width="100%" height="100%" fill="#ffffff"/>
+<line x1="78.00" y1="418.00" x2="894.00" y2="418.00" stroke="#e5e7eb" stroke-width="1"/>
+<text x="70.00" y="422.00" text-anchor="end" font-size="12" fill="#374151">-2.912e-2</text>
+<line x1="78.00" y1="357.67" x2="894.00" y2="357.67" stroke="#e5e7eb" stroke-width="1"/>
+<text x="70.00" y="361.67" text-anchor="end" font-size="12" fill="#374151">1.378e-1</text>
+<line x1="78.00" y1="297.33" x2="894.00" y2="297.33" stroke="#e5e7eb" stroke-width="1"/>
+<text x="70.00" y="301.33" text-anchor="end" font-size="12" fill="#374151">3.048e-1</text>
+<line x1="78.00" y1="237.00" x2="894.00" y2="237.00" stroke="#e5e7eb" stroke-width="1"/>
+<text x="70.00" y="241.00" text-anchor="end" font-size="12" fill="#374151">4.718e-1</text>
+<line x1="78.00" y1="176.67" x2="894.00" y2="176.67" stroke="#e5e7eb" stroke-width="1"/>
+<text x="70.00" y="180.67" text-anchor="end" font-size="12" fill="#374151">6.387e-1</text>
+<line x1="78.00" y1="116.33" x2="894.00" y2="116.33" stroke="#e5e7eb" stroke-width="1"/>
+<text x="70.00" y="120.33" text-anchor="end" font-size="12" fill="#374151">8.057e-1</text>
+<line x1="78.00" y1="56.00" x2="894.00" y2="56.00" stroke="#e5e7eb" stroke-width="1"/>
+<text x="70.00" y="60.00" text-anchor="end" font-size="12" fill="#374151">9.727e-1</text>
+<line x1="78.00" y1="56.00" x2="78.00" y2="418.00" stroke="#e5e7eb" stroke-width="1"/>
+<text x="78.00" y="438.00" text-anchor="middle" font-size="12" fill="#374151">0</text>
+<line x1="214.00" y1="56.00" x2="214.00" y2="418.00" stroke="#e5e7eb" stroke-width="1"/>
+<text x="214.00" y="438.00" text-anchor="middle" font-size="12" fill="#374151">10</text>
+<line x1="350.00" y1="56.00" x2="350.00" y2="418.00" stroke="#e5e7eb" stroke-width="1"/>
+<text x="350.00" y="438.00" text-anchor="middle" font-size="12" fill="#374151">20</text>
+<line x1="486.00" y1="56.00" x2="486.00" y2="418.00" stroke="#e5e7eb" stroke-width="1"/>
+<text x="486.00" y="438.00" text-anchor="middle" font-size="12" fill="#374151">30</text>
+<line x1="622.00" y1="56.00" x2="622.00" y2="418.00" stroke="#e5e7eb" stroke-width="1"/>
+<text x="622.00" y="438.00" text-anchor="middle" font-size="12" fill="#374151">40</text>
+<line x1="758.00" y1="56.00" x2="758.00" y2="418.00" stroke="#e5e7eb" stroke-width="1"/>
+<text x="758.00" y="438.00" text-anchor="middle" font-size="12" fill="#374151">50</text>
+<line x1="894.00" y1="56.00" x2="894.00" y2="418.00" stroke="#e5e7eb" stroke-width="1"/>
+<text x="894.00" y="438.00" text-anchor="middle" font-size="12" fill="#374151">60</text>
+<line x1="78.00" y1="418.00" x2="894.00" y2="418.00" stroke="#111827" stroke-width="1.5"/>
+<line x1="78.00" y1="56.00" x2="78.00" y2="418.00" stroke="#111827" stroke-width="1.5"/>
+<text x="460.00" y="24" text-anchor="middle" font-size="18" font-weight="700" fill="#111827">vout(t_target) tracking</text>
+<text x="486.00" y="464.00" text-anchor="middle" font-size="13" fill="#111827">step</text>
+<text x="22" y="237.00" transform="rotate(-90 22 237.00)" text-anchor="middle" font-size="13" fill="#111827">voltage (V)</text>
+<polyline points="78.00,80.97 91.60,99.39 105.20,120.60 118.80,143.95 132.40,169.72 146.00,196.90 159.60,224.61 173.20,250.84 186.80,274.35 200.40,294.79 214.00,311.97 227.60,326.14 241.20,337.73 254.80,347.24 268.40,354.95 282.00,361.30 295.60,366.48 309.20,370.74 322.80,374.29 336.40,377.27 350.00,379.78 363.60,381.91 377.20,383.72 390.80,385.29 404.40,386.70 418.00,387.88 431.60,388.89 445.20,389.78 458.80,390.55 472.40,391.23 486.00,391.59 499.60,391.75 513.20,391.89 526.80,392.02 540.40,392.13 554.00,392.24 567.60,392.33 581.20,392.42 594.80,392.50 608.40,392.57 622.00,392.64 635.60,392.70 649.20,392.76 662.80,392.81 676.40,392.86 690.00,392.91 703.60,392.95 717.20,392.99 730.80,393.02 744.40,393.03 758.00,393.03 771.60,393.03 785.20,393.03 798.80,393.03 812.40,393.03 826.00,393.03 839.60,393.03 853.20,393.03 866.80,393.03 880.40,393.03 894.00,393.03" fill="none" stroke="#1d4ed8" stroke-width="2.2"/>
+<rect x="724.00" y="66.00" width="160" height="48.00" rx="8" fill="#f9fafb" stroke="#d1d5db"/>
+<text x="734.00" y="82.00" font-size="12" font-weight="700" fill="#111827">Legend</text>
+<line x1="734.00" y1="98.00" x2="760.00" y2="98.00" stroke="#1d4ed8" stroke-width="3"/>
+<text x="768.00" y="102.00" font-size="12" fill="#111827">vout(t*)</text>
+</svg>

@@ -1,0 +1,16 @@
+* T-line series-termination spike (rlx-eda)
+.options method=gear maxord=1
+Vsrc vsrc 0 PULSE(0.0000000000e0 3.3000000000e0 5.0000000000e-10 1.0000000000e-12 1.0000000000e-12 2.4000000000e-8 1.0000000000e30)
+Rdrv vsrc vmid 1.0000000000e1
+Rterm vmid vline_in 4.0000000000e1
+T1 vline_in 0 vrx 0 Z0=50.000000 TD=1.0000000000e-9
+Rload vrx 0 1.0000000000e9
+.ic v(vmid)=0 v(vrx)=0
+
+.control
+set filetype=binary
+tran 2.000000e-11 1.200000e-8 uic
+write /Users/Shared/rlx-eda/crates/spike-tline-termination/docs/matched.raw v(vrx) v(vmid)
+quit
+.endc
+.end

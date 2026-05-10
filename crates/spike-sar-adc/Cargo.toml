@@ -1,0 +1,93 @@
+[package]
+name         = "spike-sar-adc"
+version      = "0.0.1"
+edition.workspace      = true
+license.workspace      = true
+rust-version.workspace = true
+
+# Top-level closed-loop SAR ADC: composes Sample-and-Hold +
+# SarRegister + R-2R DAC + Comparator. Drives external PWL phases
+# (the clock-generation network — ripple counter + decoder — is
+# validated independently in those crates).
+
+[features]
+ngspice  = ["dep:eda-extern-ngspice"]
+ltspice  = ["dep:eda-extern-ltspice"]
+diagnose = []
+
+[dependencies]
+spike-sample-hold   = { workspace = true }
+spike-sar-register  = { workspace = true }
+spike-dac-r2r       = { workspace = true }
+spike-comparator    = { workspace = true }
+spike-cmos-gates    = { workspace = true }
+spike-divider-block = { workspace = true }
+eda-spice-emit      = { workspace = true }
+eda-validate        = { workspace = true }
+eda-mna             = { workspace = true }
+eda-hir             = { workspace = true }
+plotters            = { workspace = true }
+
+[dependencies.eda-extern-ngspice]
+workspace = true
+optional  = true
+
+[dependencies.eda-extern-ltspice]
+workspace = true
+optional  = true
+
+[dev-dependencies]
+eda-waveform = { workspace = true }
+
+# Conversion-trace binary (mirror of `spike-divider-block`'s `ml_trace`):
+# runs a 4-bit ngspice conversion, samples per-cycle state, writes a
+# Markdown report with rendered SVG charts + mermaid xychart-beta
+# blocks. Gated on the `ngspice` feature because the trace needs a
+# real simulator run.
+[[bin]]
+name = "conversion_trace"
+path = "src/bin/conversion_trace.rs"
+required-features = ["ngspice"]
+
+# Tier A-D characterization: INL/DNL, ENOB/SFDR/SNDR, conversion rate,
+# power-per-conversion, Monte Carlo mismatch, kT/C noise, comparator
+# metastability, DAC settling, gradient-optimized sizing, PVT corners,
+# NBTI aging, PSRR. Drives the behavioral SAR model — fast, no
+# external simulator needed.
+[[bin]]
+name = "sar_adc_characterization"
+path = "src/bin/sar_adc_characterization.rs"
+
+# T.8.C — analog front-end of the SAR ADC under eda-mna: SampleHold +
+# R-2R DAC + Comparator composed from MOSFET primitives in a single
+# Circuit. The SAR digital state machine is driven externally as PWL
+# boundaries (the full DffSR chain MNA-port lands in T.8.D).
+[[bin]]
+name = "sar_adc_mna"
+path = "src/bin/sar_adc_mna.rs"
+
+# T.9 — full transistor-level SarAdc<N> under eda-mna. Composes the
+# T.8.C analog front-end (SH + R-2R DAC + Comparator) with the
+# transistor-level SarRegister<N> (N × DffSR + glue inverters) into
+# a single Circuit and runs a complete N-bit conversion in one
+# transient_pwl. Slow but full-stack and gradient-tunable end-to-end.
+[[bin]]
+name = "sar_adc_full_mna"
+path = "src/bin/sar_adc_full_mna.rs"
+
+# T.11.B + T.11.D — hybrid 2-axis batch on the full transistor-level
+# SAR ADC: B = N_VIN × N_DRAWS chips run through ONE
+# transient_pwl_batched call. Per-chip vin (via boundary closure) gives
+# the INL transfer curve; per-chip M1/M2 Vth on the comparator (via
+# mc_params) gives the yield spread. Output is the 2-D mean ± σ INL
+# table — characterization + yield in one MLX-batched run.
+[[bin]]
+name = "sar_adc_mc_sweep"
+path = "src/bin/sar_adc_mc_sweep.rs"
+
+# T.11.F — chart generator: emits 4 SVG plots that go with the
+# T.11.D sweep report. Pure Rust + plotters; embeds CSV-style
+# series inline so the bin needs no input files.
+[[bin]]
+name = "sar_charts"
+path = "src/bin/sar_charts.rs"

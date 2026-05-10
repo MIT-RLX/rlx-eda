@@ -1,0 +1,26 @@
+[package]
+name         = "spike-triangulate"
+version      = "0.0.1"
+edition.workspace      = true
+license.workspace      = true
+rust-version.workspace = true
+
+# Phase-1 validation-pipe demo: build the same SPICE deck once via
+# `eda-spice-emit`, run it through both ngspice and LTspice, compare
+# results with `eda-validate`. Soft-skips backends that aren't installed.
+
+[dependencies]
+eda-spice-emit     = { workspace = true }
+eda-validate       = { workspace = true }
+eda-extern-ngspice = { workspace = true }
+eda-extern-ltspice = { workspace = true }
+eda-waveform       = { workspace = true }
+
+[features]
+# Always-on: building the deck does not require a simulator.
+default = []
+# Gate the actual simulator runs so CI without ngspice/LTspice still
+# builds. Tests that need them call `*::LocalBinary::from_env_optional`
+# and silently skip if the binary is absent.
+ngspice = []
+ltspice = []

@@ -1,0 +1,27 @@
+[package]
+name         = "eda-drc"
+version      = "0.0.1"
+edition.workspace      = true
+license.workspace      = true
+rust-version.workspace = true
+
+# Tier-1 DRC: drive klayout-drc's width/space/enclosing primitives
+# with a foundry-rule table. Ships sky130A defaults; downstream
+# crates pass their own ruleset for other PDKs.
+#
+# What this is NOT: a sign-off-grade DRC. Foundry sign-off decks
+# are hundreds of rules with edge-pair/density/LFD logic that needs
+# the full klayout-drc surface plus deck-language parsing. This
+# crate covers the most-common rules (min-width, min-space,
+# enclosing) and exposes the `klayout_drc::Violation` type directly
+# so callers can compose more rules from the underlying primitives.
+
+[dependencies]
+klayout-core = { workspace = true }
+klayout-geom = { workspace = true }
+klayout-drc  = { workspace = true }
+serde        = { version = "1", features = ["derive"] }
+thiserror    = { workspace = true }
+
+[dev-dependencies]
+klayout-pdk = { workspace = true }

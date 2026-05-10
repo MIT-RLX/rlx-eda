@@ -1,0 +1,31 @@
+[package]
+name         = "spike-sar-logic"
+version      = "0.0.1"
+edition.workspace      = true
+license.workspace      = true
+rust-version.workspace = true
+
+# SAR conversion state machine: trial pointer (one-hot shift register)
+# + result register with per-bit gated clock + d-mux. Composes
+# DffSR + And2 + Or2 from spike-cmos-gates. Mirrors LTspice paper
+# Fig 7.1 functionally though not topologically.
+
+[dependencies]
+spike-cmos-gates = { workspace = true }
+eda-spice-emit   = { workspace = true }
+eda-validate     = { workspace = true }
+
+[features]
+ngspice = ["dep:eda-extern-ngspice"]
+ltspice = ["dep:eda-extern-ltspice"]
+
+[dependencies.eda-extern-ngspice]
+workspace = true
+optional  = true
+
+[dependencies.eda-extern-ltspice]
+workspace = true
+optional  = true
+
+[dev-dependencies]
+eda-waveform = { workspace = true }

@@ -1,0 +1,29 @@
+[package]
+name         = "spike-mosfet-dc"
+version      = "0.0.1"
+edition.workspace      = true
+license.workspace      = true
+rust-version.workspace = true
+
+[features]
+ngspice = ["dep:eda-extern-ngspice"]
+ltspice = ["dep:eda-extern-ltspice"]
+
+[dependencies]
+rlx-ir             = { workspace = true }
+rlx-opt            = { workspace = true }
+rlx-runtime        = { workspace = true }
+eda-validate       = { workspace = true }
+eda-spice-emit     = { workspace = true }
+eda-extern-ngspice = { workspace = true, optional = true }
+eda-extern-ltspice = { workspace = true, optional = true }
+rayon              = { workspace = true }
+
+# Apple GPU MC path (mc_gpu.rs). Compiles in only on macOS; everywhere
+# else mc_gpu.rs falls back to the CPU+rayon path automatically.
+[target.'cfg(target_os = "macos")'.dependencies]
+rlx-mlx            = { workspace = true }
+
+[[bin]]
+name = "spike-mosfet-dc"
+path = "src/main.rs"

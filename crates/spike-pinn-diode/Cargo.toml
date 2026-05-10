@@ -1,0 +1,46 @@
+[package]
+name         = "spike-pinn-diode"
+version      = "0.0.1"
+edition.workspace      = true
+license.workspace      = true
+rust-version.workspace = true
+
+# This crate is the methodologically-rigorous redesign of the
+# spike-pinn-rc demo. Pre-registration is locked in
+# `preregistration.md` and mirrored as `pub const` items in
+# `src/config.rs`; the `pre_registration_check` test enforces
+# parity. Implementation lands in follow-on PRs against the locked
+# protocol — config edits invalidate any in-flight result.
+
+[dependencies]
+eda-nn      = { workspace = true }
+rlx-ir      = { workspace = true }
+rlx-opt     = { workspace = true }
+rlx-runtime = { workspace = true }
+
+# Diode physics + MNA baseline. spike-diode is the canonical reference
+# implementation; its `run_transient_forward` and `ref_transient` are
+# the M-coarse / M-default / M-fine baselines from §10 of the
+# pre-registration.
+spike-diode = { workspace = true }
+
+# ngspice ground truth — the data-anchor source for hybrid training
+# and the gold reference for accuracy reporting. Optional so CI hosts
+# without ngspice can still build the crate; tests that need it gate
+# on the feature.
+eda-extern-ngspice = { workspace = true, optional = true }
+
+[features]
+default = []
+ngspice = ["dep:eda-extern-ngspice"]
+
+[[bin]]
+name = "smoke"
+path = "src/bin/smoke.rs"
+
+[[bin]]
+name = "protocol"
+path = "src/bin/protocol.rs"
+
+[target.'cfg(target_os = "macos")'.dependencies]
+rlx-mlx     = { workspace = true }

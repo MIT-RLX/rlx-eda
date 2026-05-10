@@ -1,0 +1,34 @@
+[package]
+name         = "spike-mosfet"
+version      = "0.0.1"
+edition.workspace      = true
+license.workspace      = true
+rust-version.workspace = true
+
+# Phase-2 deliverable: validate the LEVEL=1 MOSFET primitives
+# (eda-spice-emit::Nmos / Pmos) by building a CMOS inverter (Fig 1.1
+# from the LTspice SAR ADC paper), sweeping its input, and asserting
+# ngspice and LTspice produce matching VTC curves.
+#
+# Mirrors the LTspice paper's Part 1 inverter — the *first* circuit in
+# their bottom-up SAR ADC build. Once this validates, every gate /
+# flip-flop / latch they describe is buildable on top.
+
+[dependencies]
+eda-spice-emit = { workspace = true }
+eda-validate   = { workspace = true }
+
+[features]
+ngspice = ["dep:eda-extern-ngspice"]
+ltspice = ["dep:eda-extern-ltspice"]
+
+[dependencies.eda-extern-ngspice]
+workspace = true
+optional  = true
+
+[dependencies.eda-extern-ltspice]
+workspace = true
+optional  = true
+
+[dev-dependencies]
+eda-waveform = { workspace = true }

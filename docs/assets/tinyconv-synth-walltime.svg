@@ -1,0 +1,128 @@
+<svg width="1280" height="720" viewBox="0 0 1280 720" xmlns="http://www.w3.org/2000/svg" font-family="system-ui, -apple-system, sans-serif">
+  <rect width="1280" height="720" fill="#FFFFFF"/>
+
+  <!-- ─────── Title ─────── -->
+  <text x="640" y="50" text-anchor="middle" font-size="20" font-weight="700" fill="#111">
+    Wall-clock cost of getting sky130 silicon area for one Dense layer
+  </text>
+  <text x="640" y="76" text-anchor="middle" font-size="13" fill="#666">
+    openroad/orfs:latest under linux/amd64 Rosetta on Apple M-series · 32 in × 4 out scope unless noted
+  </text>
+
+  <!-- ─────── Column geometry ───────
+       label    : 30..480
+       bar plot : 500..1140
+       result   : 1160..1260
+  -->
+
+  <!-- Plot frame -->
+  <line x1="500" y1="610" x2="1140" y2="610" stroke="#333" stroke-width="1"/>
+  <line x1="500" y1="160" x2="500" y2="610" stroke="#333" stroke-width="1"/>
+
+  <!-- Log gridlines at 1s, 10s, 100s, 1000s, 10000s.
+       Span: 500..1140 = 640px = 4 decades → 160 px/decade.
+       1s     → x=500
+       10s    → x=660
+       60s    → x=500 + 160*log10(60) = 500 + 160*1.778 = 784
+       100s   → x=820
+       600s   → x=500 + 160*log10(600) = 500 + 160*2.778 = 944
+       1000s  → x=980
+       3600s  → x=500 + 160*log10(3600) = 500 + 160*3.556 = 1069
+  -->
+  <g font-size="11" fill="#888">
+    <line x1="660" y1="160" x2="660" y2="610" stroke="#eee" stroke-width="1"/>
+    <text x="660" y="630" text-anchor="middle" fill="#555">10 s</text>
+    <line x1="784" y1="160" x2="784" y2="610" stroke="#eee" stroke-width="1"/>
+    <text x="784" y="630" text-anchor="middle" fill="#555">1 min</text>
+    <line x1="820" y1="160" x2="820" y2="610" stroke="#eee" stroke-width="1" opacity="0.4"/>
+    <line x1="944" y1="160" x2="944" y2="610" stroke="#eee" stroke-width="1"/>
+    <text x="944" y="630" text-anchor="middle" fill="#555">10 min</text>
+    <line x1="1069" y1="160" x2="1069" y2="610" stroke="#eee" stroke-width="1"/>
+    <text x="1069" y="630" text-anchor="middle" fill="#555">1 hr</text>
+  </g>
+  <text x="820" y="660" text-anchor="middle" font-size="12" fill="#444">wall-clock (log scale)</text>
+
+  <!-- Column header for the result-text column -->
+  <text x="1200" y="146" text-anchor="middle" font-size="12" font-weight="700" fill="#222">outcome</text>
+
+  <!-- Helper: bar X positions
+       26 s  → x=500 + 160*log10(26)  = 500 + 226 = 726     bar w = 226
+       16 s  → x=500 + 160*log10(16)  = 500 + 192 = 692     bar w = 192
+       8 min = 480 s → x=500 + 160*log10(480) = 500 + 429 = 929   bar w = 429
+       9 min = 540 s → 500 + 160*log10(540) = 500 + 437 = 937    bar w = 437
+       10 min = 600 s → 500 + 160*log10(600) = 944               bar w = 444
+  -->
+
+  <!-- ─────── Bars (60 px row pitch, 30 px bar height) ─────── -->
+
+  <!-- Row 1: BRAM, abc -fast — 26 s -->
+  <g transform="translate(0, 200)">
+    <text x="470" y="20" text-anchor="end" font-size="13" font-weight="700" fill="#1f4e79">BRAM, abc -fast</text>
+    <text x="470" y="38" text-anchor="end" font-size="11" fill="#888">rlx-fpga emit · 32×4</text>
+    <rect x="500" y="6" width="226" height="30" rx="3" fill="#1f4e79"/>
+    <text x="1160" y="20" font-size="13" font-weight="700" fill="#1f4e79">26 s</text>
+    <text x="1160" y="38" font-size="11" fill="#1f4e79">52 082 µm² post-ABC</text>
+  </g>
+
+  <!-- Row 2: BakedConst no-ABC — 16 s -->
+  <g transform="translate(0, 260)">
+    <text x="470" y="20" text-anchor="end" font-size="13" font-weight="700" fill="#3b7a3a">BakedConst, no-ABC hand-rolled</text>
+    <text x="470" y="38" text-anchor="end" font-size="11" fill="#888">rlx-eda emit · skips ABC</text>
+    <rect x="500" y="6" width="192" height="30" rx="3" fill="#3b7a3a"/>
+    <text x="1160" y="20" font-size="13" font-weight="700" fill="#3b7a3a">16 s</text>
+    <text x="1160" y="38" font-size="11" fill="#3b7a3a">77 109 generic cells</text>
+  </g>
+
+  <!-- Row 3: 4-way parallel abc-fast — ≥ 8 min -->
+  <g transform="translate(0, 320)">
+    <text x="470" y="20" text-anchor="end" font-size="13" font-weight="700" fill="#a8531f">BakedConst, 4-way parallel abc -fast</text>
+    <text x="470" y="38" text-anchor="end" font-size="11" fill="#888">per-channel split · 4 dockers</text>
+    <rect x="500" y="6" width="429" height="30" rx="3" fill="#a8531f" fill-opacity="0.7"/>
+    <text x="1160" y="20" font-size="13" font-weight="700" fill="#a8531f">≥ 8 min</text>
+    <text x="1160" y="38" font-size="11" fill="#a8531f">killed mid-ABC</text>
+  </g>
+
+  <!-- Row 4: monolithic abc -fast — ≥ 9 min -->
+  <g transform="translate(0, 380)">
+    <text x="470" y="20" text-anchor="end" font-size="13" font-weight="700" fill="#a8531f">BakedConst, monolithic abc -fast</text>
+    <text x="470" y="38" text-anchor="end" font-size="11" fill="#888">single docker</text>
+    <rect x="500" y="6" width="437" height="30" rx="3" fill="#a8531f" fill-opacity="0.7"/>
+    <text x="1160" y="20" font-size="13" font-weight="700" fill="#a8531f">≥ 9 min</text>
+    <text x="1160" y="38" font-size="11" fill="#a8531f">killed mid-ABC</text>
+  </g>
+
+  <!-- Row 5: monolithic abc9 -fast — ≥ 9 min -->
+  <g transform="translate(0, 440)">
+    <text x="470" y="20" text-anchor="end" font-size="13" font-weight="700" fill="#a8531f">BakedConst, monolithic abc9 -fast</text>
+    <text x="470" y="38" text-anchor="end" font-size="11" fill="#888">newer abc backend</text>
+    <rect x="500" y="6" width="437" height="30" rx="3" fill="#a8531f" fill-opacity="0.5"/>
+    <text x="1160" y="20" font-size="13" font-weight="700" fill="#a8531f">≥ 9 min</text>
+    <text x="1160" y="38" font-size="11" fill="#a8531f">killed mid-ABC</text>
+  </g>
+
+  <!-- Row 6: full Dense (400×10), abc -fast — OOM -->
+  <g transform="translate(0, 500)">
+    <text x="470" y="20" text-anchor="end" font-size="13" font-weight="700" fill="#aa1f1f">BakedConst (full 400×10), abc -fast</text>
+    <text x="470" y="38" text-anchor="end" font-size="11" fill="#888">4 000 multipliers</text>
+    <rect x="500" y="6" width="444" height="30" rx="3" fill="#aa1f1f" fill-opacity="0.6"/>
+    <text x="1160" y="20" font-size="13" font-weight="700" fill="#aa1f1f">~10 min</text>
+    <text x="1160" y="38" font-size="11" fill="#aa1f1f">SIGKILL @ 7.75 GB OOM</text>
+  </g>
+
+  <!-- ─────── Legend (top-left, well above first bar) ─────── -->
+  <g transform="translate(40, 130)">
+    <text x="0" y="0" font-size="13" font-weight="700" fill="#222">Legend</text>
+    <rect x="0" y="14" width="18" height="18" rx="2" fill="#1f4e79"/>
+    <text x="28" y="28" font-size="12" fill="#333">completed run</text>
+    <rect x="0" y="40" width="18" height="18" rx="2" fill="#a8531f" fill-opacity="0.7"/>
+    <text x="28" y="54" font-size="12" fill="#333">killed (timeout)</text>
+    <rect x="0" y="66" width="18" height="18" rx="2" fill="#aa1f1f" fill-opacity="0.6"/>
+    <text x="28" y="80" font-size="12" fill="#333">SIGKILL (OOM)</text>
+  </g>
+
+  <!-- ─────── Footer ─────── -->
+  <line x1="40" y1="685" x2="1240" y2="685" stroke="#ddd" stroke-width="1"/>
+  <text x="640" y="708" text-anchor="middle" font-size="12" fill="#777">
+    Same designs would synth in seconds on a native x86 host — Rosetta-emulated single-thread ABC dominates everything else.
+  </text>
+</svg>

@@ -1,0 +1,32 @@
+[package]
+name         = "spike-dac-r2r"
+version      = "0.0.1"
+edition.workspace      = true
+license.workspace      = true
+rust-version.workspace = true
+
+# 8-bit R-2R DAC from LTspice SAR ADC paper Fig 8.1. Pure-passive
+# block — 16 resistors, no transistors — so it validates the SpiceEmit
+# composition pattern at the analog level. Vout = code / 2^N · Vref.
+
+[dependencies]
+eda-spice-emit      = { workspace = true }
+eda-validate        = { workspace = true }
+eda-mna             = { workspace = true }
+eda-hir             = { workspace = true }
+spike-divider-block = { workspace = true }
+
+[features]
+ngspice = ["dep:eda-extern-ngspice"]
+ltspice = ["dep:eda-extern-ltspice"]
+
+[dependencies.eda-extern-ngspice]
+workspace = true
+optional  = true
+
+[dependencies.eda-extern-ltspice]
+workspace = true
+optional  = true
+
+[dev-dependencies]
+eda-waveform = { workspace = true }

@@ -1,0 +1,22 @@
+[package]
+name         = "spike-divider"
+version      = "0.0.1"
+edition.workspace      = true
+license.workspace      = true
+rust-version.workspace = true
+
+[features]
+# External validation against ngspice — opt-in so the build doesn't require
+# ngspice on the developer's machine.
+ngspice = ["dep:eda-extern-ngspice"]
+
+[dependencies]
+rlx-ir              = { workspace = true }
+rlx-opt             = { workspace = true }
+rlx-runtime         = { workspace = true }
+eda-validate        = { workspace = true }
+eda-extern-ngspice  = { workspace = true, optional = true }
+
+[[bin]]
+name = "spike-divider"
+path = "src/main.rs"

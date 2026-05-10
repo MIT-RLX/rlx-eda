@@ -1,0 +1,38 @@
+[package]
+name         = "eda-stdcells"
+version      = "0.0.1"
+edition.workspace      = true
+license.workspace      = true
+rust-version.workspace = true
+
+# Thin foundry standard-cell ingest. Reads `sky130_fd_sc_hd` GDS + Liberty
+# and exposes each cell as a `StdCell` that implements
+# `eda_hir::Block + Layout<Sky130> + Schematic<Sky130>` over the imported
+# `klayout_core::Library` cells.
+#
+# Not a from-scratch parametric library. Matches what ORFS will use anyway,
+# so any in-house ↔ ORFS divergence is in floorplan, not in cell library.
+#
+# See `eda-bench-tinyconv/PLAN.md` build-order step 1.
+
+[dependencies]
+eda-hir             = { workspace = true }
+eda-pdks            = { workspace = true, features = ["sky130"] }
+klayout-core        = { workspace = true }
+klayout-io          = { workspace = true }
+serde               = { workspace = true }
+thiserror           = { workspace = true }
+spike-divider-block = { workspace = true }
+
+[features]
+default = []
+# Enable when sky130_fd_sc_hd is checked out at the path resolved by
+# `library::default_sc_hd_path()`. Test gating mirrors `eda-pdks`'s
+# soft-skip pattern.
+sc-hd   = []
+# Build mock stand-in cells for the v1 sc_hd subset. Lets the
+# downstream layout pipeline run end-to-end without the ~200 MB
+# foundry GDS checkout. Mock cells carry the foundry-canonical names
+# and reasonable bboxes so placement passes geometry checks; they
+# are NOT routable, NOT timing-correct, and NOT shippable.
+mock-stdcells = []

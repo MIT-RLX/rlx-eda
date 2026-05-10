@@ -1,0 +1,21 @@
+[package]
+name         = "spike-pinn-rc"
+version      = "0.0.1"
+edition.workspace      = true
+license.workspace      = true
+rust-version.workspace = true
+
+[dependencies]
+eda-nn      = { workspace = true }
+rlx-ir      = { workspace = true }
+rlx-opt     = { workspace = true }
+rlx-runtime = { workspace = true }
+
+# macOS Apple-GPU backend. Pulled in only on macOS so Device::Mlx is
+# selectable without forcing the dep on Linux/CI hosts. Mirrors the
+# pattern in eda-mna and spike-mosfet-dc.
+[target.'cfg(target_os = "macos")'.dependencies]
+rlx-mlx     = { workspace = true }
+
+[dev-dependencies]
+spike-rc-transient = { workspace = true }

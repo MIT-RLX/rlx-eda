@@ -1,0 +1,15 @@
+# Shared .dockerignore for every image under docker/.
+# Build contexts here are intentionally tiny (a Dockerfile + maybe a
+# helper script), so we exclude everything that could leak in if
+# someone passes the workspace root as the context.
+target/
+.git/
+.github/
+.idea/
+.vscode/
+*.log
+*.tmp
+node_modules/
+external/
+docs/
+crates/*/target/

@@ -1,0 +1,12 @@
+[package]
+name         = "eda-extern-ngspice"
+version      = "0.0.1"
+edition.workspace      = true
+license.workspace      = true
+rust-version.workspace = true
+
+[dependencies]
+thiserror     = { workspace = true }
+tempfile      = { workspace = true }
+eda-waveform  = { workspace = true }
+eda-container = { workspace = true }

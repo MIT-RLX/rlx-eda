@@ -1,0 +1,38 @@
+[package]
+name         = "spike-tinyconv-array"
+version      = "0.0.1"
+edition.workspace      = true
+license.workspace      = true
+rust-version.workspace = true
+
+# Full TinyConv silicon block. Lowers `rlx_fpga::model::Model` (the
+# graph that `rlx-fpga::reference` already validates and that
+# `rlx-fpga::tune` already sweeps) into a tiled instantiation of
+# `spike-tinyconv-tile` plus a controller FSM built from
+# `eda-stdcells`. Two lowerings now share the IR: `rlx-fpga` →
+# SystemVerilog, `spike-tinyconv-array` → `Block` composition.
+#
+# See `eda-bench-tinyconv/PLAN.md` build-order step 5.
+
+[dependencies]
+eda-hir              = { workspace = true }
+eda-stdcells         = { workspace = true }
+eda-tile             = { workspace = true }
+klayout-core         = { workspace = true }
+spike-divider-block  = { workspace = true }
+spike-tinyconv-tile  = { workspace = true }
+serde                = { workspace = true }
+thiserror            = { workspace = true }
+
+# Reuse the FPGA model definition + reference oracle. Cross-workspace
+# path-dep, same pattern as rlx-ir / rlx-opt / rlx-runtime.
+# Required by `src/lower.rs` (library code), so [dependencies], not
+# [dev-dependencies].
+rlx-fpga             = { path = "../../../rlx/rlx-fpga" }
+
+[dev-dependencies]
+# Mock sc_hd cells so layout tests don't need the foundry checkout —
+# `tile_grid` invokes `Mac8x8Tile::layout` which expects the cells
+# present in the target library.
+eda-stdcells = { workspace = true, features = ["mock-stdcells"] }
+eda-pdks     = { workspace = true, features = ["sky130"] }

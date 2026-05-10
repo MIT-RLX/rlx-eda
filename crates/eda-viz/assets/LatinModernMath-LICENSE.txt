@@ -1,0 +1,19 @@
+Latin Modern Math
+=================
+
+Latin Modern Math is part of the GUST e-foundry's Latin Modern family,
+which extends Computer Modern (Donald E. Knuth, 1986) with full
+Unicode + OpenType math coverage.
+
+Distributed under the GUST Font License (GFL), version 1.0:
+
+  https://www.gust.org.pl/projects/e-foundry/licenses/GUST-FONT-LICENSE.txt
+
+The GFL is a free-software licence and is compatible with the LaTeX
+Project Public License. Permission is granted to use, copy, modify,
+and redistribute the font without restriction, provided that the GFL
+notice is retained and modified versions are renamed.
+
+Source: GUST e-foundry — http://www.gust.org.pl/projects/e-foundry/lm-math
+File:   latinmodern-math.otf (renamed to LatinModernMath.otf for
+        consistency with the DejaVu sibling).

@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="920" height="480" viewBox="0 0 920 480">
+<rect width="100%" height="100%" fill="#ffffff"/>
+<line x1="78.00" y1="418.00" x2="894.00" y2="418.00" stroke="#e5e7eb" stroke-width="1"/>
+<text x="70.00" y="422.00" text-anchor="end" font-size="12" fill="#374151">2.223e-1</text>
+<line x1="78.00" y1="357.67" x2="894.00" y2="357.67" stroke="#e5e7eb" stroke-width="1"/>
+<text x="70.00" y="361.67" text-anchor="end" font-size="12" fill="#374151">3.898e-1</text>
+<line x1="78.00" y1="297.33" x2="894.00" y2="297.33" stroke="#e5e7eb" stroke-width="1"/>
+<text x="70.00" y="301.33" text-anchor="end" font-size="12" fill="#374151">5.573e-1</text>
+<line x1="78.00" y1="237.00" x2="894.00" y2="237.00" stroke="#e5e7eb" stroke-width="1"/>
+<text x="70.00" y="241.00" text-anchor="end" font-size="12" fill="#374151">7.248e-1</text>
+<line x1="78.00" y1="176.67" x2="894.00" y2="176.67" stroke="#e5e7eb" stroke-width="1"/>
+<text x="70.00" y="180.67" text-anchor="end" font-size="12" fill="#374151">8.923e-1</text>
+<line x1="78.00" y1="116.33" x2="894.00" y2="116.33" stroke="#e5e7eb" stroke-width="1"/>
+<text x="70.00" y="120.33" text-anchor="end" font-size="12" fill="#374151">1.060e0</text>
+<line x1="78.00" y1="56.00" x2="894.00" y2="56.00" stroke="#e5e7eb" stroke-width="1"/>
+<text x="70.00" y="60.00" text-anchor="end" font-size="12" fill="#374151">1.227e0</text>
+<line x1="78.00" y1="56.00" x2="78.00" y2="418.00" stroke="#e5e7eb" stroke-width="1"/>
+<text x="78.00" y="438.00" text-anchor="middle" font-size="12" fill="#374151">0</text>
+<line x1="214.00" y1="56.00" x2="214.00" y2="418.00" stroke="#e5e7eb" stroke-width="1"/>
+<text x="214.00" y="438.00" text-anchor="middle" font-size="12" fill="#374151">6</text>
+<line x1="350.00" y1="56.00" x2="350.00" y2="418.00" stroke="#e5e7eb" stroke-width="1"/>
+<text x="350.00" y="438.00" text-anchor="middle" font-size="12" fill="#374151">13</text>
+<line x1="486.00" y1="56.00" x2="486.00" y2="418.00" stroke="#e5e7eb" stroke-width="1"/>
+<text x="486.00" y="438.00" text-anchor="middle" font-size="12" fill="#374151">20</text>
+<line x1="622.00" y1="56.00" x2="622.00" y2="418.00" stroke="#e5e7eb" stroke-width="1"/>
+<text x="622.00" y="438.00" text-anchor="middle" font-size="12" fill="#374151">26</text>
+<line x1="758.00" y1="56.00" x2="758.00" y2="418.00" stroke="#e5e7eb" stroke-width="1"/>
+<text x="758.00" y="438.00" text-anchor="middle" font-size="12" fill="#374151">32</text>
+<line x1="894.00" y1="56.00" x2="894.00" y2="418.00" stroke="#e5e7eb" stroke-width="1"/>
+<text x="894.00" y="438.00" text-anchor="middle" font-size="12" fill="#374151">39</text>
+<line x1="78.00" y1="418.00" x2="894.00" y2="418.00" stroke="#111827" stroke-width="1.5"/>
+<line x1="78.00" y1="56.00" x2="78.00" y2="418.00" stroke="#111827" stroke-width="1.5"/>
+<text x="460.00" y="24" text-anchor="middle" font-size="18" font-weight="700" fill="#111827">Stage-1 analog output d2 at t = 80 ns (target = Vdd/2 = 0.9 V)</text>
+<text x="486.00" y="464.00" text-anchor="middle" font-size="13" fill="#111827">iter</text>
+<text x="22" y="237.00" transform="rotate(-90 22 237.00)" text-anchor="middle" font-size="13" fill="#111827">d2 [V]</text>
+<polyline points="78.00,393.03 98.92,391.88 119.85,390.97 140.77,390.03 161.69,388.89 182.62,387.74 203.54,386.78 224.46,385.62 245.38,384.45 266.31,383.28 287.23,382.09 308.15,380.87 329.08,379.56 350.00,378.21 370.92,376.76 391.85,375.28 412.77,373.58 433.69,371.98 454.62,369.99 475.54,367.74 496.46,365.46 517.38,324.36 538.31,279.81 559.23,225.47 580.15,167.80 601.08,85.59 622.00,81.98 642.92,80.97 663.85,82.28 684.77,85.15 705.69,89.27 726.62,183.02 747.54,217.08 768.46,241.68 789.38,254.10 810.31,254.12 831.23,243.45 852.15,224.80 873.08,201.32 894.00,176.38" fill="none" stroke="#0f766e" stroke-width="2.2"/>
+</svg>

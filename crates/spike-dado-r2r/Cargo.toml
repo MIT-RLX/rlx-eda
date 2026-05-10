@@ -1,0 +1,36 @@
+[package]
+name         = "spike-dado-r2r"
+version      = "0.0.1"
+edition.workspace      = true
+license.workspace      = true
+rust-version.workspace = true
+
+# Decomposition-Aware Distributional Optimization (DADO, ICLR 2026,
+# arXiv 2511.03032) applied to discrete sizing of the 8-bit R-2R DAC
+# from `spike-dac-r2r`. Compares DADO against a decomposition-unaware
+# EDA baseline on a chain junction tree built from the netlist topology.
+#
+# Runs the optimization, emits per-snapshot artifacts (parameter plots,
+# schematic SVG, GDS layout, analytical staircase + INL) and final
+# ngspice cross-validation of the best design.
+
+[dependencies]
+spike-dac-r2r       = { workspace = true }
+eda-spice-emit      = { workspace = true }
+eda-waveform        = { workspace = true }
+eda-viz             = { workspace = true }
+klayout-core        = { workspace = true }
+klayout-io          = { workspace = true }
+klayout-pdk         = { workspace = true }
+klayout-route       = { workspace = true }
+indicatif           = { workspace = true }
+
+eda-extern-ngspice  = { workspace = true, optional = true }
+
+[features]
+default = ["ngspice"]
+ngspice = ["dep:eda-extern-ngspice"]
+
+[[bin]]
+name = "spike-dado-r2r"
+path = "src/main.rs"

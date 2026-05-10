@@ -1,0 +1,69 @@
+[package]
+name         = "eda-floorplan"
+version      = "0.0.1"
+edition.workspace      = true
+license.workspace      = true
+rust-version.workspace = true
+
+# Floor plan generator. Walks every layout-bearing component in the
+# workspace, runs PNR (place + route via eda-pnr) where applicable,
+# and dumps SVG + GDS per component into target/floorplans/<name>/.
+#
+# CMOS / digital components share one PDK (sky130 via Sky130Lite —
+# the realistic-layer-numbers adapter from spike-divider-block that
+# satisfies both RcLikePdk and MosfetPdk). RF and photonic components
+# use their native demo PDKs (RfDemo, GdsfactoryGeneric) since their
+# layer stacks (top-metal inductors, SOI strip / slab, …) don't fit a
+# pure-digital sky130 layer set.
+
+[dependencies]
+eda-hir               = { workspace = true }
+eda-pdks              = { workspace = true, features = ["gdsfactory-generic"] }
+eda-pnr               = { workspace = true }
+eda-stdcells          = { workspace = true, features = ["mock-stdcells"] }
+eda-viz               = { workspace = true, features = ["gds"] }
+klayout-core          = { workspace = true }
+klayout-io            = { workspace = true }
+spike-divider-block   = { workspace = true }
+spike-tinyconv-tile   = { workspace = true, default-features = false }
+spike-tinyconv-array  = { workspace = true }
+spike-lna             = { workspace = true }
+spike-waveguide-block = { workspace = true }
+# SAR ADC composition uses the actual `SarAdc<N>` type from
+# `spike-sar-adc` plus its four sub-block crates so the floor plan
+# reflects the real circuit hierarchy (S/H + SAR register + R-2R DAC
+# + comparator) and its struct fields drive cell sizing — not invented
+# placeholders.
+spike-sar-adc         = { workspace = true }
+spike-sample-hold     = { workspace = true }
+spike-sar-register    = { workspace = true }
+spike-dac-r2r         = { workspace = true }
+spike-comparator      = { workspace = true }
+# SVG import: flatten arbitrary SVG paths into polygons on a PDK
+# layer so external vector art (foundry-supplied seal stamps,
+# alignment marks, project logos, …) can drop straight into a
+# floor plan. usvg parses + tessellates; tiny-skia-path gives the
+# segment iterator we need to walk flattened paths.
+usvg                  = { version = "0.42", default-features = false }
+tiny-skia-path        = "0.11"
+# Polygon hull/hole storage type (`klayout-core::Polygon::hull` is a
+# `SmallVec`); needed to construct holes from `Vec<Point>` without
+# extra allocations.
+smallvec              = "1"
+
+# AD-driven raster fit (png_to_floorplan binary). rlx provides the
+# differentiable forward graph + reverse-mode autodiff; Adam is
+# pulled from spike-divider-block (already in the dep tree above).
+# `image` decodes the input PNG and writes the convergence triptych.
+rlx-ir                = { workspace = true }
+rlx-opt               = { workspace = true }
+rlx-runtime           = { workspace = true }
+image                 = { version = "0.24", default-features = false, features = ["png"] }
+
+[[bin]]
+name = "floorplan-all"
+path = "src/main.rs"
+
+[[bin]]
+name = "png-to-floorplan"
+path = "src/bin/png_to_floorplan.rs"

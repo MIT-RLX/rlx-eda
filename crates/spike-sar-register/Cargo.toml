@@ -1,0 +1,35 @@
+[package]
+name         = "spike-sar-register"
+version      = "0.0.1"
+edition.workspace      = true
+license.workspace      = true
+rust-version.workspace = true
+
+# N-bit successive-approximation register for the SAR ADC. One DffSR
+# per bit, set-priority: during phase[i], bit[i] is forced HIGH (the
+# DAC trial value); on the rising edge of the next phase, the bit
+# latches the comparator's verdict. Combined with the R-2R DAC, the
+# behavioral comparator, and the clock-decoder, this completes the
+# digital control loop of an N-bit SAR ADC.
+
+[features]
+ngspice = ["dep:eda-extern-ngspice"]
+ltspice = ["dep:eda-extern-ltspice"]
+
+[dependencies]
+spike-cmos-gates    = { workspace = true }
+spike-divider-block = { workspace = true }
+eda-spice-emit      = { workspace = true }
+eda-validate        = { workspace = true }
+eda-mna             = { workspace = true }
+
+[dependencies.eda-extern-ngspice]
+workspace = true
+optional  = true
+
+[dependencies.eda-extern-ltspice]
+workspace = true
+optional  = true
+
+[dev-dependencies]
+eda-waveform = { workspace = true }

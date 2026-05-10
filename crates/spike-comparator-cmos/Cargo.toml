@@ -1,0 +1,32 @@
+[package]
+name         = "spike-comparator-cmos"
+version      = "0.0.1"
+edition.workspace      = true
+license.workspace      = true
+rust-version.workspace = true
+
+# Transistor-level comparator (LTspice paper Fig 10.1, simplified):
+# NMOS differential pair + PMOS current-mirror load + 2-inverter
+# output buffer. Sibling to spike-comparator (which is the behavioral
+# / differentiable smoothed-tanh version) — same SAR top-level
+# interface, different abstraction level.
+
+[dependencies]
+spike-cmos-gates = { workspace = true }
+eda-spice-emit   = { workspace = true }
+eda-validate     = { workspace = true }
+
+[features]
+ngspice = ["dep:eda-extern-ngspice"]
+ltspice = ["dep:eda-extern-ltspice"]
+
+[dependencies.eda-extern-ngspice]
+workspace = true
+optional  = true
+
+[dependencies.eda-extern-ltspice]
+workspace = true
+optional  = true
+
+[dev-dependencies]
+eda-waveform = { workspace = true }

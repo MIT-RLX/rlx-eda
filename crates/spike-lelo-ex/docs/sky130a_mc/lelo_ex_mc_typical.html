@@ -1,0 +1,94 @@
+<!doctype html><meta charset=utf-8><title>lelo_ex_mc – typical</title>
+<style>
+:root{--ok:#22863a;--bad:#b31d28;--warn:#9a6b00;--mute:#586069}
+body{font:14px/1.5 -apple-system,system-ui,sans-serif;max-width:1100px;margin:2em auto;padding:0 1.5em;color:#24292e}
+h1{font-size:1.6em;margin:.4em 0}
+h2{font-size:1.15em;margin:1.6em 0 .5em;border-bottom:1px solid #eee;padding-bottom:.2em}
+.corner-tag{display:inline-block;font-size:.55em;padding:.15em .55em;border-radius:1em;background:#f1f8ff;color:#0366d6;vertical-align:middle;margin-left:.5em}
+table{border-collapse:collapse;margin:1em 0;width:100%}
+th,td{border:1px solid #e1e4e8;padding:.4em .7em;text-align:left;vertical-align:middle}
+th{background:#f6f8fa;font-weight:600;font-size:90%}
+.pass{background:#e6ffed;color:var(--ok)}
+.fail{background:#ffeef0;color:var(--bad);font-weight:600}
+.skip{background:#f6f8fa;color:var(--mute)}
+.meta{color:var(--mute);font-size:90%;margin:.4em 0 1em}
+.banner{display:inline-block;padding:.45em 1em;border-radius:.4em;font-weight:700;letter-spacing:.05em;font-size:.95em;margin:.5em 0}
+.banner-ok{background:#dcffe4;color:var(--ok)}
+.banner-bad{background:#ffd6d8;color:var(--bad)}
+.card{background:#fafbfc;border:1px solid #e1e4e8;border-radius:.4em;padding:.7em 1em;margin:.5em 0 1.5em}
+.meta-tbl{width:auto}
+.meta-tbl th{background:none;color:var(--mute);font-weight:500;border:0;padding:.15em .6em;text-align:right}
+.meta-tbl td{border:0;padding:.15em .6em}
+table.summary td>div+div.delta{margin-top:.15em;font-size:80%}
+.delta-ok{color:var(--ok)}
+.delta-warn{color:var(--warn)}
+.delta-bad{color:var(--bad);font-weight:600}
+svg.range,svg.hist{display:block}
+.range circle.mark-ok{fill:#22863a;stroke:#fff;stroke-width:1.5}
+.range circle.mark-bad{fill:#b31d28;stroke:#fff;stroke-width:1.5}
+.tag-typical{display:inline-block;font-size:.7em;padding:.05em .5em;border-radius:.8em;background:#e7f3ff;color:#0366d6;margin-left:.4em}
+.tag-etc{display:inline-block;font-size:.7em;padding:.05em .5em;border-radius:.8em;background:#fff5d6;color:#735c00;margin-left:.4em}
+.tag-mc{display:inline-block;font-size:.7em;padding:.05em .5em;border-radius:.8em;background:#f4d7ff;color:#6e2c91;margin-left:.4em}
+.pf-pass{float:right;color:var(--ok);font-weight:600}
+.pf-fail{float:right;color:var(--bad);font-weight:700}
+.corner-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:.7em}
+.corner-card{border:1px solid #e1e4e8;border-radius:.35em;padding:.55em .7em;background:#fff}
+.corner-head{margin-bottom:.4em}
+.corner-head a{text-decoration:none;color:#0366d6}
+img.thumb{width:100%;height:auto;border:1px solid #eee;border-radius:.25em}
+img.wave{max-width:100%;border:1px solid #e1e4e8;border-radius:.3em}
+.meta-mini{color:var(--mute);font-size:78%;margin-top:.4em}
+details{margin:1em 0;border:1px solid #e1e4e8;border-radius:.3em;padding:.5em .8em;background:#fafbfc}
+details summary{cursor:pointer;font-weight:600;color:#0366d6}
+pre.src{font:11px/1.4 ui-monospace,Menlo,Consolas,monospace;background:#f6f8fa;padding:.6em .8em;border-radius:.25em;overflow-x:auto;max-height:480px}
+code{font:.92em ui-monospace,Menlo,Consolas,monospace;background:#f6f8fa;padding:.1em .35em;border-radius:.25em}
+.hist text{font-family:-apple-system,sans-serif}
+</style><h1>lelo_ex_mc <span class=corner-tag>typical</span></h1>
+<div class=card><table class=meta-tbl><tr><th>kind<td>Typical<th>lib section<td>tt
+<tr><th>vdd<td>1.800 V<th>temp<td>27.0 °C
+<tr><th>sha<td colspan=3><code>0c193e15a787</code>
+<tr><th>cached<td>no<th>artifacts<td><a href="lelo_ex_mc_typical.deck.spice">deck</a> · <a href="lelo_ex_mc_typical.log">log</a> · <a href="lelo_ex_mc_typical.png">png</a>
+</table></div><h2>Measurements</h2><table class=meas><tr><th>name<th>measured<th>min<th>typ<th>max<th>Δ vs typ<th>position<tr><td>ibn<td>23.704 µA<td>15.000 µA<td>23.500 µA<td>30.000 µA<td><span class=delta-ok>+0.9%</span><td><svg width=200 height=24 viewBox="0 0 200 24" class=range><rect x=10 y=10 width=180 height=4 fill=#e1e4e8 rx=2/><rect x=10 y=10 width=180 height=4 fill=#c2f0c2 rx=2/><circle cx=114.4 cy=12 r=5 class=mark-ok/><line x1=112.0 y1=6 x2=112.0 y2=18 stroke=#586069 stroke-width=1 stroke-dasharray="2,2"/></svg>
+<tr><td>vgs_m1<td>763.184 mV<td>400.000 mV<td>760.000 mV<td>1.100 V<td><span class=delta-ok>+0.4%</span><td><svg width=200 height=24 viewBox="0 0 200 24" class=range><rect x=10 y=10 width=180 height=4 fill=#e1e4e8 rx=2/><rect x=10 y=10 width=180 height=4 fill=#c2f0c2 rx=2/><circle cx=103.4 cy=12 r=5 class=mark-ok/><line x1=102.6 y1=6 x2=102.6 y2=18 stroke=#586069 stroke-width=1 stroke-dasharray="2,2"/></svg>
+</table><h2>Spec checks</h2><table class=checks><tr><th>name<th>result<tr><td>ibn<td class=pass>23.704 µA
+<tr><td>vgs_m1<td class=pass>763.184 mV
+</table><h2>Waveform</h2><img class=wave src="lelo_ex_mc_typical.png" alt="waveform for typical">
+<details><summary>SPICE deck (18 lines)</summary><pre class=src>* sky130A LELO_EX 1:4 NMOS current mirror
+.lib &#39;/Users/macmini/.volare/volare/sky130/versions/c6d73a35f524070e85faff4a6a9eef49553ebc2b/sky130A/libs.tech/ngspice/sky130.lib.spice&#39; tt
+Vvbias vbias 0 DC 9.0000000000e-1
+Iref 0 gate DC 5.0000000000e-6
+XM1 gate gate 0 0 sky130_fd_pr__nfet_01v8 W=2 L=2
+XM2 mout gate 0 0 sky130_fd_pr__nfet_01v8 W=8 L=2
+Vmeas vbias mout DC 0
+.ic v(gate)=0 v(mout)=0
+.options temp=27
+.control
+set ngbehavior=hsa
+tran 1.0000000000e-7 2.0000000000e-5 uic
+meas tran ibn find i(vmeas) at=20u
+print ibn
+meas tran vgs_m1 find v(gate) at=20u
+print vgs_m1
+.endc
+.end
+</pre></details>
+<details><summary>ngspice log (20 lines)</summary><pre class=src>
+Note: Compatibility modes selected: hs a
+
+
+Circuit: * sky130a lelo_ex 1:4 nmos current mirror
+
+option SCALE: Scale is set to 1e-06 for instance and model parameters
+Doing analysis at TEMP = 27.000000 and TNOM = 27.000000
+
+Using SPARSE 1.3 as Direct Linear Solver
+Operating point simulation skipped by &#39;uic&#39;,
+  now using transient initial conditions.
+ Reference value :  1.00000e-09
+No. of Data Rows : 218
+ibn                 =  2.37041e-05
+ibn = 2.370407e-05
+vgs_m1              =  7.63184e-01
+vgs_m1 = 7.631839e-01
+binary raw file &quot;/Users/Shared/rlx-eda/crates/spike-lelo-ex/docs/sky130a_mc/lelo_ex_typical.raw&quot;
+Note: Simulation executed from .control section </pre></details>

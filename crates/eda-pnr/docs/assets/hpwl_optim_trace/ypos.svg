@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="920" height="480" viewBox="0 0 920 480" font-family="-apple-system, system-ui, sans-serif" font-size="13">
+<rect width="100%" height="100%" fill="white"/>
+<text text-anchor="middle" x="460" y="20" font-size="15" font-weight="600">Per-instance y trajectory</text>
+<rect x="80" y="30" width="810" height="390" fill="#fafafa" stroke="#888" stroke-width="0.5"/>
+<line x1="80.00" y1="30" x2="80.00" y2="420" stroke="#e0e0e0" stroke-width="0.5"/>
+<text x="80.00" y="436" text-anchor="middle" fill="#444">0</text>
+<line x1="215.00" y1="30" x2="215.00" y2="420" stroke="#e0e0e0" stroke-width="0.5"/>
+<text x="215.00" y="436" text-anchor="middle" fill="#444">100</text>
+<line x1="350.00" y1="30" x2="350.00" y2="420" stroke="#e0e0e0" stroke-width="0.5"/>
+<text x="350.00" y="436" text-anchor="middle" fill="#444">200</text>
+<line x1="485.00" y1="30" x2="485.00" y2="420" stroke="#e0e0e0" stroke-width="0.5"/>
+<text x="485.00" y="436" text-anchor="middle" fill="#444">300</text>
+<line x1="620.00" y1="30" x2="620.00" y2="420" stroke="#e0e0e0" stroke-width="0.5"/>
+<text x="620.00" y="436" text-anchor="middle" fill="#444">400</text>
+<line x1="755.00" y1="30" x2="755.00" y2="420" stroke="#e0e0e0" stroke-width="0.5"/>
+<text x="755.00" y="436" text-anchor="middle" fill="#444">500</text>
+<line x1="890.00" y1="30" x2="890.00" y2="420" stroke="#e0e0e0" stroke-width="0.5"/>
+<text x="890.00" y="436" text-anchor="middle" fill="#444">600</text>
+<line x1="80" y1="393.64" x2="890" y2="393.64" stroke="#e0e0e0" stroke-width="0.5"/>
+<text x="74" y="393.64" text-anchor="end" alignment-baseline="middle" fill="#444">-1.50e4</text>
+<line x1="80" y1="344.11" x2="890" y2="344.11" stroke="#e0e0e0" stroke-width="0.5"/>
+<text x="74" y="344.11" text-anchor="end" alignment-baseline="middle" fill="#444">-1.00e4</text>
+<line x1="80" y1="294.59" x2="890" y2="294.59" stroke="#e0e0e0" stroke-width="0.5"/>
+<text x="74" y="294.59" text-anchor="end" alignment-baseline="middle" fill="#444">-5000</text>
+<line x1="80" y1="245.06" x2="890" y2="245.06" stroke="#e0e0e0" stroke-width="0.5"/>
+<text x="74" y="245.06" text-anchor="end" alignment-baseline="middle" fill="#444">0</text>
+<line x1="80" y1="195.54" x2="890" y2="195.54" stroke="#e0e0e0" stroke-width="0.5"/>
+<text x="74" y="195.54" text-anchor="end" alignment-baseline="middle" fill="#444">5000</text>
+<line x1="80" y1="146.02" x2="890" y2="146.02" stroke="#e0e0e0" stroke-width="0.5"/>
+<text x="74" y="146.02" text-anchor="end" alignment-baseline="middle" fill="#444">1.00e4</text>
+<line x1="80" y1="96.49" x2="890" y2="96.49" stroke="#e0e0e0" stroke-width="0.5"/>
+<text x="74" y="96.49" text-anchor="end" alignment-baseline="middle" fill="#444">1.50e4</text>
+<line x1="80" y1="46.97" x2="890" y2="46.97" stroke="#e0e0e0" stroke-width="0.5"/>
+<text x="74" y="46.97" text-anchor="end" alignment-baseline="middle" fill="#444">2.00e4</text>
+<text x="485" y="460" text-anchor="middle" fill="#222">step</text>
+<text x="20" y="225" text-anchor="middle" fill="#222" transform="rotate(-90 20 225)">y [DBU]</text>
+<path d="M80.00,245.06 L81.35,235.16 L82.70,226.32 L85.40,211.07 L90.80,226.49 L101.60,233.13 L123.20,223.02 L166.40,222.91 L252.80,232.85 L425.60,259.57 L771.20,257.97 L890.00,257.87" fill="none" stroke="#1f77b4" stroke-width="2"/>
+<path d="M80.00,378.88 L81.35,368.97 L82.70,359.08 L85.40,339.50 L90.80,322.34 L101.60,303.81 L123.20,296.43 L166.40,294.89 L252.80,288.74 L425.60,257.21 L771.20,257.58 L890.00,258.03" fill="none" stroke="#d62728" stroke-width="2"/>
+<path d="M80.00,47.73 L81.35,57.63 L82.70,67.52 L85.40,87.16 L90.80,125.47 L101.60,150.37 L123.20,158.08 L166.40,174.47 L252.80,181.10 L425.60,204.49 L771.20,205.48 L890.00,205.70" fill="none" stroke="#2ca02c" stroke-width="2"/>
+<path d="M80.00,402.27 L81.35,392.37 L82.70,382.49 L85.40,362.88 L90.80,324.82 L101.60,266.76 L123.20,247.37 L166.40,239.26 L252.80,232.03 L425.60,206.99 L771.20,205.92 L890.00,205.81" fill="none" stroke="#9467bd" stroke-width="2"/>
+<path d="M80.00,210.56 L81.35,220.46 L82.70,230.28 L85.40,248.61 L90.80,240.22 L101.60,247.40 L123.20,248.59 L166.40,242.06 L252.80,232.82 L425.60,204.70 L771.20,205.91 L890.00,205.73" fill="none" stroke="#ff7f0e" stroke-width="2"/>
+<path d="M80.00,138.74 L81.35,148.65 L82.70,157.73 L85.40,173.18 L90.80,157.96 L101.60,155.92 L123.20,169.53 L166.40,173.39 L252.80,179.70 L425.60,206.16 L771.20,205.85 L890.00,205.78" fill="none" stroke="#8c564b" stroke-width="2"/>
+<rect x="710" y="30" width="170" height="108" fill="white" stroke="#bbb" stroke-width="0.5" opacity="0.92"/>
+<line x1="718" y1="42" x2="738" y2="42" stroke="#1f77b4" stroke-width="3"/>
+<text x="746" y="46" fill="#222">U0</text>
+<line x1="718" y1="58" x2="738" y2="58" stroke="#d62728" stroke-width="3"/>
+<text x="746" y="62" fill="#222">U1</text>
+<line x1="718" y1="74" x2="738" y2="74" stroke="#2ca02c" stroke-width="3"/>
+<text x="746" y="78" fill="#222">U2</text>
+<line x1="718" y1="90" x2="738" y2="90" stroke="#9467bd" stroke-width="3"/>
+<text x="746" y="94" fill="#222">U3</text>
+<line x1="718" y1="106" x2="738" y2="106" stroke="#ff7f0e" stroke-width="3"/>
+<text x="746" y="110" fill="#222">U4</text>
+<line x1="718" y1="122" x2="738" y2="122" stroke="#8c564b" stroke-width="3"/>
+<text x="746" y="126" fill="#222">U5</text>
+</svg>

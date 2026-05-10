@@ -1,0 +1,34 @@
+[package]
+name         = "spike-comparator"
+version      = "0.0.1"
+edition.workspace      = true
+license.workspace      = true
+rust-version.workspace = true
+
+# SAR ADC heart-block: a differentiable, behavioral comparator built
+# from a smoothed `tanh`. Validates rlx AD on the `Tanh` activation
+# end-to-end and gives the SAR ADC top level a swap-in analog block
+# while the regenerative-latch transistor-level version is built later.
+
+[features]
+ngspice = ["dep:eda-extern-ngspice"]
+ltspice = ["dep:eda-extern-ltspice"]
+
+[dependencies]
+rlx-ir         = { workspace = true }
+rlx-opt        = { workspace = true }
+rlx-runtime    = { workspace = true }
+eda-validate   = { workspace = true }
+eda-spice-emit = { workspace = true }
+
+[dependencies.eda-extern-ngspice]
+workspace = true
+optional  = true
+
+[dependencies.eda-extern-ltspice]
+workspace = true
+optional  = true
+
+[[bin]]
+name = "spike-comparator"
+path = "src/main.rs"

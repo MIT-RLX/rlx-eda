@@ -1,0 +1,28 @@
+[package]
+name         = "spike-pinn-sar-mc"
+version      = "0.0.1"
+edition.workspace      = true
+license.workspace      = true
+rust-version.workspace = true
+
+# High-dimensional SAR-with-mismatch experiment. The ideal-SAR
+# experiment in `spike-pinn-sar` was won at half-LSB precision by
+# Poly-d4 because the 1-D problem is well within polynomial capacity.
+# This crate steps the input dimension up to 10 (vin + 8 bit-weight
+# mismatches + comparator offset) — the principled test of PINN's
+# claimed advantage when polynomial-monomial count starts to grow
+# combinatorially.
+
+[dependencies]
+eda-nn        = { workspace = true }
+rlx-ir        = { workspace = true }
+rlx-opt       = { workspace = true }
+rlx-runtime   = { workspace = true }
+spike-sar-adc = { workspace = true }
+
+[target.'cfg(target_os = "macos")'.dependencies]
+rlx-mlx       = { workspace = true }
+
+[[bin]]
+name = "protocol"
+path = "src/bin/protocol.rs"

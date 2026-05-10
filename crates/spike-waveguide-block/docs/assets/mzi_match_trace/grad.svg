@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="920" height="480" viewBox="0 0 920 480" font-family="-apple-system, system-ui, sans-serif" font-size="13">
+<rect width="100%" height="100%" fill="white"/>
+<text text-anchor="middle" x="460" y="20" font-size="15" font-weight="600">∂L / ∂n_eff_A over steps</text>
+<rect x="80" y="30" width="810" height="390" fill="#fafafa" stroke="#888" stroke-width="0.5"/>
+<line x1="80.00" y1="30" x2="80.00" y2="420" stroke="#e0e0e0" stroke-width="0.5"/>
+<text x="80.00" y="436" text-anchor="middle" fill="#444">0</text>
+<line x1="181.25" y1="30" x2="181.25" y2="420" stroke="#e0e0e0" stroke-width="0.5"/>
+<text x="181.25" y="436" text-anchor="middle" fill="#444">500</text>
+<line x1="282.50" y1="30" x2="282.50" y2="420" stroke="#e0e0e0" stroke-width="0.5"/>
+<text x="282.50" y="436" text-anchor="middle" fill="#444">1000</text>
+<line x1="383.75" y1="30" x2="383.75" y2="420" stroke="#e0e0e0" stroke-width="0.5"/>
+<text x="383.75" y="436" text-anchor="middle" fill="#444">1500</text>
+<line x1="485.00" y1="30" x2="485.00" y2="420" stroke="#e0e0e0" stroke-width="0.5"/>
+<text x="485.00" y="436" text-anchor="middle" fill="#444">2000</text>
+<line x1="586.25" y1="30" x2="586.25" y2="420" stroke="#e0e0e0" stroke-width="0.5"/>
+<text x="586.25" y="436" text-anchor="middle" fill="#444">2500</text>
+<line x1="687.50" y1="30" x2="687.50" y2="420" stroke="#e0e0e0" stroke-width="0.5"/>
+<text x="687.50" y="436" text-anchor="middle" fill="#444">3000</text>
+<line x1="788.75" y1="30" x2="788.75" y2="420" stroke="#e0e0e0" stroke-width="0.5"/>
+<text x="788.75" y="436" text-anchor="middle" fill="#444">3500</text>
+<line x1="890.00" y1="30" x2="890.00" y2="420" stroke="#e0e0e0" stroke-width="0.5"/>
+<text x="890.00" y="436" text-anchor="middle" fill="#444">4000</text>
+<line x1="80" y1="406.62" x2="890" y2="406.62" stroke="#e0e0e0" stroke-width="0.5"/>
+<text x="74" y="406.62" text-anchor="end" alignment-baseline="middle" fill="#444">-200</text>
+<line x1="80" y1="349.14" x2="890" y2="349.14" stroke="#e0e0e0" stroke-width="0.5"/>
+<text x="74" y="349.14" text-anchor="end" alignment-baseline="middle" fill="#444">-150</text>
+<line x1="80" y1="291.65" x2="890" y2="291.65" stroke="#e0e0e0" stroke-width="0.5"/>
+<text x="74" y="291.65" text-anchor="end" alignment-baseline="middle" fill="#444">-100</text>
+<line x1="80" y1="234.17" x2="890" y2="234.17" stroke="#e0e0e0" stroke-width="0.5"/>
+<text x="74" y="234.17" text-anchor="end" alignment-baseline="middle" fill="#444">-50.000</text>
+<line x1="80" y1="176.69" x2="890" y2="176.69" stroke="#e0e0e0" stroke-width="0.5"/>
+<text x="74" y="176.69" text-anchor="end" alignment-baseline="middle" fill="#444">0</text>
+<line x1="80" y1="119.21" x2="890" y2="119.21" stroke="#e0e0e0" stroke-width="0.5"/>
+<text x="74" y="119.21" text-anchor="end" alignment-baseline="middle" fill="#444">50.000</text>
+<line x1="80" y1="61.73" x2="890" y2="61.73" stroke="#e0e0e0" stroke-width="0.5"/>
+<text x="74" y="61.73" text-anchor="end" alignment-baseline="middle" fill="#444">100</text>
+<text x="485" y="460" text-anchor="middle" fill="#222">step</text>
+<text x="20" y="225" text-anchor="middle" fill="#222" transform="rotate(-90 20 225)">gradient</text>
+<path d="M80.00,402.27 L80.20,360.98 L80.41,290.66 L80.81,128.81 L81.62,47.73 L83.24,259.23 L86.48,188.71 L92.96,175.43 L105.92,176.58 L131.84,176.70 L183.68,176.70 L287.36,176.71 L494.72,176.71 L890.00,176.71" fill="none" stroke="#1f77b4" stroke-width="2"/>
+</svg>

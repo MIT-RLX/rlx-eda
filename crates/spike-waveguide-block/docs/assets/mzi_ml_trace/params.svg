@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="920" height="480" viewBox="0 0 920 480">
+<rect width="100%" height="100%" fill="#ffffff"/>
+<line x1="86.00" y1="418.00" x2="894.00" y2="418.00" stroke="#e5e7eb" stroke-width="1"/>
+<text x="78.00" y="422.00" text-anchor="end" font-size="12" fill="#374151">2.3496</text>
+<line x1="86.00" y1="357.67" x2="894.00" y2="357.67" stroke="#e5e7eb" stroke-width="1"/>
+<text x="78.00" y="361.67" text-anchor="end" font-size="12" fill="#374151">2.3505</text>
+<line x1="86.00" y1="297.33" x2="894.00" y2="297.33" stroke="#e5e7eb" stroke-width="1"/>
+<text x="78.00" y="301.33" text-anchor="end" font-size="12" fill="#374151">2.3515</text>
+<line x1="86.00" y1="237.00" x2="894.00" y2="237.00" stroke="#e5e7eb" stroke-width="1"/>
+<text x="78.00" y="241.00" text-anchor="end" font-size="12" fill="#374151">2.3524</text>
+<line x1="86.00" y1="176.67" x2="894.00" y2="176.67" stroke="#e5e7eb" stroke-width="1"/>
+<text x="78.00" y="180.67" text-anchor="end" font-size="12" fill="#374151">2.3533</text>
+<line x1="86.00" y1="116.33" x2="894.00" y2="116.33" stroke="#e5e7eb" stroke-width="1"/>
+<text x="78.00" y="120.33" text-anchor="end" font-size="12" fill="#374151">2.3543</text>
+<line x1="86.00" y1="56.00" x2="894.00" y2="56.00" stroke="#e5e7eb" stroke-width="1"/>
+<text x="78.00" y="60.00" text-anchor="end" font-size="12" fill="#374151">2.3552</text>
+<line x1="86.00" y1="56.00" x2="86.00" y2="418.00" stroke="#e5e7eb" stroke-width="1"/>
+<text x="86.00" y="438.00" text-anchor="middle" font-size="12" fill="#374151">0</text>
+<line x1="220.67" y1="56.00" x2="220.67" y2="418.00" stroke="#e5e7eb" stroke-width="1"/>
+<text x="220.67" y="438.00" text-anchor="middle" font-size="12" fill="#374151">7</text>
+<line x1="355.33" y1="56.00" x2="355.33" y2="418.00" stroke="#e5e7eb" stroke-width="1"/>
+<text x="355.33" y="438.00" text-anchor="middle" font-size="12" fill="#374151">13</text>
+<line x1="490.00" y1="56.00" x2="490.00" y2="418.00" stroke="#e5e7eb" stroke-width="1"/>
+<text x="490.00" y="438.00" text-anchor="middle" font-size="12" fill="#374151">20</text>
+<line x1="624.67" y1="56.00" x2="624.67" y2="418.00" stroke="#e5e7eb" stroke-width="1"/>
+<text x="624.67" y="438.00" text-anchor="middle" font-size="12" fill="#374151">27</text>
+<line x1="759.33" y1="56.00" x2="759.33" y2="418.00" stroke="#e5e7eb" stroke-width="1"/>
+<text x="759.33" y="438.00" text-anchor="middle" font-size="12" fill="#374151">33</text>
+<line x1="894.00" y1="56.00" x2="894.00" y2="418.00" stroke="#e5e7eb" stroke-width="1"/>
+<text x="894.00" y="438.00" text-anchor="middle" font-size="12" fill="#374151">40</text>
+<line x1="86.00" y1="418.00" x2="894.00" y2="418.00" stroke="#111827" stroke-width="1.5"/>
+<line x1="86.00" y1="56.00" x2="86.00" y2="418.00" stroke="#111827" stroke-width="1.5"/>
+<text x="460.00" y="24" text-anchor="middle" font-size="18" font-weight="700" fill="#111827">Tuned arm refractive index</text>
+<text x="490.00" y="464.00" text-anchor="middle" font-size="13" fill="#111827">step</text>
+<text x="22" y="237.00" transform="rotate(-90 22 237.00)" text-anchor="middle" font-size="13" fill="#111827">n_eff_A</text>
+<polyline points="86.00,393.04 106.20,328.02 126.40,263.66 146.60,202.19 166.80,148.48 187.00,108.96 207.20,86.93 227.40,80.96 247.60,87.58 267.80,103.32 288.00,125.12 308.20,150.22 328.40,175.98 348.60,199.81 368.80,219.38 389.00,232.96 409.20,239.77 429.40,239.89 449.60,234.09 469.80,223.57 490.00,209.78 510.20,194.36 530.40,178.99 550.60,165.29 570.80,154.59 591.00,147.81 611.20,145.35 631.40,147.09 651.60,152.47 671.80,160.60 692.00,170.37 712.20,180.56 732.40,189.97 752.60,197.57 772.80,202.60 793.00,204.70 813.20,203.83 833.40,200.34 853.60,194.88 873.80,188.28 894.00,181.44" fill="none" stroke="#0f766e" stroke-width="2.2"/>
+<rect x="724.00" y="66.00" width="160" height="48.00" rx="8" fill="#f9fafb" stroke="#d1d5db"/>
+<text x="734.00" y="82.00" font-size="12" font-weight="700" fill="#111827">Legend</text>
+<line x1="734.00" y1="98.00" x2="760.00" y2="98.00" stroke="#0f766e" stroke-width="3"/>
+<text x="768.00" y="102.00" font-size="12" fill="#111827">n_eff_A</text>
+</svg>

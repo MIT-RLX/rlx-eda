@@ -1,0 +1,98 @@
+[workspace]
+members = ["crates/*"]
+resolver = "2"
+
+[workspace.package]
+edition      = "2021"
+license      = "GPL-3.0-only"
+rust-version = "1.85"
+
+[workspace.dependencies]
+# rlx — built locally, path-deps so we can iterate on either side.
+rlx-ir      = { path = "../rlx/rlx-ir" }
+rlx-opt     = { path = "../rlx/rlx-opt" }
+rlx-runtime = { path = "../rlx/rlx-runtime", features = ["cpu", "mlx"] }   # CPU default + Apple GPU (MLX)
+rlx-mlx     = { path = "../rlx/rlx-mlx" }       # macOS GPU backend; gate at crate level via cfg(target_os = "macos")
+
+# klayout-rs — sibling workspace at /Users/Shared/mtl/klayout-rs.
+# Pull in the LIR + verification half: typed PDK, geometry, GDS I/O, routing.
+klayout-core   = { path = "../mtl/klayout-rs/klayout-core" }
+klayout-io     = { path = "../mtl/klayout-rs/klayout-io" }
+klayout-geom   = { path = "../mtl/klayout-rs/klayout-geom" }
+klayout-pdk    = { path = "../mtl/klayout-rs/klayout-pdk" }
+klayout-route  = { path = "../mtl/klayout-rs/klayout-route" }
+klayout-drc    = { path = "../mtl/klayout-rs/klayout-drc" }
+klayout-connect = { path = "../mtl/klayout-rs/klayout-connect" }
+klayout-validate = { path = "../mtl/klayout-rs/validation/klayout-validate" }
+tempfile       = "3"
+serde          = { version = "1", features = ["derive"] }
+serde_json     = "1"
+serde_yaml     = "0.9"
+sha2           = "0.10"
+clap           = { version = "4", features = ["derive"] }
+indicatif      = { version = "0.17", default-features = false }
+toml           = "0.8"
+printpdf       = "0.7"
+plotters       = { version = "0.3", default-features = false, features = ["bitmap_backend", "bitmap_encoder", "svg_backend", "line_series", "ttf"] }
+
+# Internal crates
+eda-hir             = { path = "crates/eda-hir" }
+eda-validate        = { path = "crates/eda-validate" }
+eda-waveform        = { path = "crates/eda-waveform" }
+eda-spice-emit      = { path = "crates/eda-spice-emit" }
+eda-container       = { path = "crates/eda-container" }
+eda-extern-ngspice  = { path = "crates/eda-extern-ngspice" }
+eda-extern-ltspice  = { path = "crates/eda-extern-ltspice" }
+eda-sim-harness     = { path = "crates/eda-sim-harness" }
+rlx-eda-cli         = { path = "crates/rlx-eda-cli" }
+spike-lelo-ex       = { path = "crates/spike-lelo-ex" }
+eda-pdk-ingest      = { path = "crates/eda-pdk-ingest" }
+eda-pdks            = { path = "crates/eda-pdks" }
+eda-config          = { path = "crates/eda-config" }
+eda-mna             = { path = "crates/eda-mna" }
+eda-viz             = { path = "crates/eda-viz" }
+eda-em              = { path = "crates/eda-em" }
+eda-drc             = { path = "crates/eda-drc" }
+eda-pex             = { path = "crates/eda-pex" }
+eda-trace           = { path = "crates/eda-trace" }
+eda-pnr             = { path = "crates/eda-pnr" }
+eda-extract         = { path = "crates/eda-extract" }
+spike-surrogate     = { path = "crates/spike-surrogate" }
+spike-diode         = { path = "crates/spike-diode" }
+spike-divider-block = { path = "crates/spike-divider-block" }
+spike-rc-transient  = { path = "crates/spike-rc-transient" }
+spike-pulse-rc      = { path = "crates/spike-pulse-rc" }
+spike-ac            = { path = "crates/spike-ac" }
+spike-mosfet-dc     = { path = "crates/spike-mosfet-dc" }
+spike-mosfet        = { path = "crates/spike-mosfet" }
+spike-cmos-gates    = { path = "crates/spike-cmos-gates" }
+spike-dac-r2r       = { path = "crates/spike-dac-r2r" }
+spike-output-door   = { path = "crates/spike-output-door" }
+spike-ripple-counter = { path = "crates/spike-ripple-counter" }
+spike-clocks         = { path = "crates/spike-clocks" }
+spike-clock-decoder  = { path = "crates/spike-clock-decoder" }
+spike-sar-register   = { path = "crates/spike-sar-register" }
+spike-comparator     = { path = "crates/spike-comparator" }
+spike-comparator-cmos = { path = "crates/spike-comparator-cmos" }
+spike-sample-hold    = { path = "crates/spike-sample-hold" }
+spike-sar-adc        = { path = "crates/spike-sar-adc" }
+spike-waveguide-block = { path = "crates/spike-waveguide-block" }
+eda-vfit             = { path = "crates/eda-vfit" }
+eda-bench-tinyconv   = { path = "crates/eda-bench-tinyconv" }
+eda-stdcells         = { path = "crates/eda-stdcells" }
+eda-tile             = { path = "crates/eda-tile" }
+spike-tinyconv-tile  = { path = "crates/spike-tinyconv-tile", default-features = false }
+spike-tinyconv-array = { path = "crates/spike-tinyconv-array" }
+spike-tline-termination = { path = "crates/spike-tline-termination" }
+spike-lna            = { path = "crates/spike-lna" }
+eda-nn               = { path = "crates/eda-nn" }
+eda-pinn             = { path = "crates/eda-pinn" }
+spike-pinn-rc        = { path = "crates/spike-pinn-rc" }
+spike-pinn-diode     = { path = "crates/spike-pinn-diode" }
+
+thiserror = "1"
+rayon     = "1"
+
+[profile.release]
+lto              = "thin"
+codegen-units    = 1

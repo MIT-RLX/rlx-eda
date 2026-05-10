@@ -1,0 +1,33 @@
+[package]
+name         = "eda-mna"
+version      = "0.0.1"
+edition.workspace      = true
+license.workspace      = true
+rust-version.workspace = true
+
+[dependencies]
+eda-hir        = { workspace = true }
+rlx-ir         = { workspace = true }
+rlx-opt        = { workspace = true }
+rlx-runtime    = { workspace = true }
+faer           = { version = "0.24", default-features = false, features = ["linalg", "std"] }
+
+# Apple-GPU inner-solve for batched_solve_dc. Per-iter Newton step
+# dispatches one Op::BatchedDenseSolve through MlxExecutable, which
+# lowers to the Metal LU+solve kernel. Falls back to per-batch Rust
+# Gauss-Jordan on non-macOS targets.
+[target.'cfg(target_os = "macos")'.dependencies]
+rlx-mlx        = { workspace = true }
+
+[dev-dependencies]
+spike-divider-block = { workspace = true }
+spike-diode         = { workspace = true }
+eda-extern-ngspice  = { workspace = true }
+rlx-ir              = { workspace = true }
+rlx-opt             = { workspace = true }
+
+# Examples-only macOS dep so `scan_rc_transient.rs` can dispatch
+# via MlxExecutable. Lib code accesses MLX through the optional
+# target-macos dep in [target.…dependencies] above.
+[target.'cfg(target_os = "macos")'.dev-dependencies]
+rlx-mlx             = { workspace = true }

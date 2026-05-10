@@ -1,0 +1,28 @@
+[package]
+name         = "eda-config"
+version      = "0.0.1"
+edition.workspace      = true
+license.workspace      = true
+rust-version.workspace = true
+
+# Shared TOML config loading machinery.
+#
+# Each consumer crate defines its own config struct (`BenchConfig`,
+# `CalibrationConfig`, `TrainingConfig`, …) and implements the
+# `Configurable` trait by declaring a conventional filename. Loading,
+# writing, soft-fallback, and per-section override semantics come for
+# free via blanket impls on `T: Serialize + DeserializeOwned + Default`.
+#
+# Why a separate crate, not in-line per consumer:
+# - Consistent naming convention across configs (`<workspace>/configs/<name>.toml`)
+# - Shared env-var override (`EDA_CONFIG_<NAME>`) for CI / per-run flips
+# - Single place to add cross-cutting concerns (versioning, schema
+#   validation, secrets handling) when they show up.
+
+[dependencies]
+serde      = { workspace = true }
+toml       = { workspace = true }
+thiserror  = { workspace = true }
+
+[dev-dependencies]
+serde      = { workspace = true, features = ["derive"] }

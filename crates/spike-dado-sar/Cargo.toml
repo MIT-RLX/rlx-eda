@@ -1,0 +1,32 @@
+[package]
+name         = "spike-dado-sar"
+version      = "0.0.1"
+edition.workspace      = true
+license.workspace      = true
+rust-version.workspace = true
+
+# DADO at the SAR ADC system level — discrete catalog choices for each
+# sub-block (sample-hold, comparator, DAC, SAR logic). Two evaluators:
+# (A) closed-form analytical noise budget; (B) ngspice transient on the
+# composed `SarAdc<4>` from spike-sar-adc. Compares DADO vs naive EDA
+# under both, then cross-evaluates the four winning designs head-to-head.
+
+[dependencies]
+spike-sar-adc       = { workspace = true }
+spike-comparator    = { workspace = true }
+spike-sample-hold   = { workspace = true }
+spike-dac-r2r       = { workspace = true }
+spike-sar-register  = { workspace = true }
+eda-spice-emit      = { workspace = true }
+eda-waveform        = { workspace = true }
+indicatif           = { workspace = true }
+
+eda-extern-ngspice  = { workspace = true, optional = true }
+
+[features]
+default = ["ngspice"]
+ngspice = ["dep:eda-extern-ngspice"]
+
+[[bin]]
+name = "spike-dado-sar"
+path = "src/main.rs"

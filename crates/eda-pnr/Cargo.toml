@@ -1,0 +1,47 @@
+[package]
+name         = "eda-pnr"
+version      = "0.0.1"
+edition.workspace      = true
+license.workspace      = true
+rust-version.workspace = true
+
+# Place-and-Route as a first-class layer in rlx-eda.
+#
+# Three traits + one flow:
+#
+# * `Netlist`       — declarative connectivity: instances of already-laid-out
+#                     cells, plus nets (named pin-tuples) and external pins.
+# * `Placer`        — assigns a `Trans` to each instance.
+# * `Router`        — materializes wires for each net.
+# * `PnrFlow::run`  — places, routes, stamps everything into a top `CellId`.
+#
+# Built-in placers: `ManualPlacer`, `GridPlacer`.
+# Built-in router:  `ManhattanRouter` wrapping `klayout-route::ManhattanPlanner`,
+# with a polygon stylizer (lifted from `spike-divider-block`) that emits
+# axis-aligned rectangles instead of `Shape::Path` so DRC / LVS extractors
+# see real geometry.
+#
+# Phase 2 will extend this with simulated-annealing placement,
+# congestion-aware routing, and per-spike opt-in via a `Block` impl that
+# returns a `Netlist + PnrFlow` instead of hand-coded `Layout::layout`.
+
+[dependencies]
+klayout-core  = { workspace = true }
+klayout-route = { workspace = true }
+klayout-pdk   = { workspace = true }
+eda-hir       = { workspace = true }
+# Steiner-tree edges are built as `klayout_core::Path` whose
+# `points` is a `SmallVec`. Pulled directly so the route module
+# can construct the right type without re-exporting it.
+smallvec      = "1"
+# AD-enabled placement: per-instance (x, y) live as rlx Params so
+# half-perimeter wirelength (and any other downstream metric) is a
+# differentiable loss that any rlx optimizer (Adam, SGD, DADO) can
+# drive. Keeps PNR composable with the rest of the rlx-eda ML stack.
+rlx-ir        = { workspace = true }
+rlx-opt       = { workspace = true }
+rlx-runtime   = { workspace = true }
+# `hpwl_optim_trace` bin renders before/after floorplan SVGs and
+# emits a markdown report through the shared trace harness.
+eda-viz       = { workspace = true, features = ["png"] }
+eda-trace     = { workspace = true, features = ["png"] }

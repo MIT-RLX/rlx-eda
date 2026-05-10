@@ -1,0 +1,22 @@
+
+Note: Compatibility modes selected: hs a
+
+
+Circuit: * sky130a lelo_ex 1:4 nmos current mirror
+
+option SCALE: Scale is set to 1e-06 for instance and model parameters
+Doing analysis at TEMP = 27.000000 and TNOM = 27.000000
+
+Using SPARSE 1.3 as Direct Linear Solver
+Operating point simulation skipped by 'uic',
+  now using transient initial conditions.
+ Reference value :  1.00000e-09
+No. of Data Rows : 218
+ibn                 =  2.37041e-05
+ibn = 2.370407e-05
+vgs_m1              =  7.63184e-01
+vgs_m1 = 7.631839e-01
+i_vbias             =  -2.36921e-05 from=  0.00000e+00 to=  2.00000e-05
+i_vbias = -2.36921e-05
+binary raw file "/Users/Shared/rlx-eda/crates/spike-lelo-ex/docs/sky130a_sch_vs_lay/lelo_ex_typical.raw"
+Note: Simulation executed from .control section 

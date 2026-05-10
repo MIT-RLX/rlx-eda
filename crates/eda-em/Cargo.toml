@@ -1,0 +1,16 @@
+[package]
+name         = "eda-em"
+version      = "0.0.1"
+edition.workspace      = true
+license.workspace      = true
+rust-version.workspace = true
+
+# Electromigration current-density check.
+#
+# Tier-1 EM: post-process per-segment `(layer, width_um, current_a)`
+# triples against a foundry `Jmax` table. Tier-2 (auto-extract
+# segments from a routed layout) lives in eda-extract once it lands.
+
+[dependencies]
+serde     = { version = "1", features = ["derive"] }
+thiserror = { workspace = true }

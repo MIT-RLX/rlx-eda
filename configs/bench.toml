@@ -1,0 +1,13 @@
+[run]
+seed = 7
+output_path = "target/bench/demo/report-stress.md"
+
+[inference]
+n_images = 200
+warmup = 20
+repetitions = 5
+
+[bundle]
+merge_weights = true
+output_path = "target/bench/demo/bundle.tar"
+format = "tarball"

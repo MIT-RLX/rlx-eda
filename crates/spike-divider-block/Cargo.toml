@@ -1,0 +1,65 @@
+[package]
+name         = "spike-divider-block"
+version      = "0.0.1"
+edition.workspace      = true
+license.workspace      = true
+rust-version.workspace = true
+
+[dependencies]
+eda-hir        = { workspace = true }
+eda-mna        = { workspace = true }
+eda-pdks       = { workspace = true, features = ["sky130", "gf180mcu"] }
+eda-viz        = { workspace = true, features = ["png"] }
+klayout-connect = { workspace = true }
+klayout-core   = { workspace = true }
+klayout-drc    = { workspace = true }
+klayout-io     = { workspace = true }
+klayout-geom   = { workspace = true }
+klayout-pdk    = { workspace = true }
+klayout-route  = { workspace = true }
+eda-pnr        = { workspace = true }
+rlx-ir         = { workspace = true }
+rlx-opt        = { workspace = true }
+rlx-runtime    = { workspace = true }
+plotters       = { workspace = true }
+
+[dev-dependencies]
+klayout-validate   = { workspace = true }
+tempfile           = { workspace = true }
+serde_json         = { workspace = true }
+eda-extract        = { workspace = true }
+eda-spice-emit     = { workspace = true }
+eda-validate       = { workspace = true }
+eda-extern-ngspice = { workspace = true }
+
+[[bin]]
+name = "spike-divider-block"
+path = "src/main.rs"
+
+# T.11.B — batched-MLX Monte Carlo over the comparator's matched-pair
+# Vth mismatch. Runs N_DRAWS independent transients in one call,
+# inner Newton solve dispatches through the existing batched-DC MLX
+# path on macOS (Apple Metal). Per-draw INL-equivalent (offset →
+# vout settling) distribution histogrammed at the end.
+[[bin]]
+name = "comparator_mc_batched"
+path = "src/bin/comparator_mc_batched.rs"
+
+# T.11.E — hybrid 2-axis batch on the standalone comparator: B = N_VIN
+# × N_DRAWS chips swept across input offset and Vth mismatch in one
+# transient_pwl_batched call. Smaller graph than the full SAR ADC, so
+# RLX_BATCHED_DEVICE=mlx fully lowers + GPU dispatch dominates — clean
+# correctness + perf demo for the T.11.D hybrid-batch architecture.
+[[bin]]
+name = "comparator_vin_sweep_mc"
+path = "src/bin/comparator_vin_sweep_mc.rs"
+
+# T.11.G — gradient-driven comparator sizing. Outer loop minimizes a
+# loss = (σ_offset - target)² wrt the matched-pair M1/M2 width via
+# finite-diff on the existing batched-MC inner loop, then optionally
+# verifies the optimum at higher N_DRAWS (DADO-style surrogate-then-
+# verify two-stage flow). Demonstrates the AD-ready hybrid-batch
+# infrastructure powering a real circuit-design objective.
+[[bin]]
+name = "comparator_sizing_opt_ad"
+path = "src/bin/comparator_sizing_opt_ad.rs"

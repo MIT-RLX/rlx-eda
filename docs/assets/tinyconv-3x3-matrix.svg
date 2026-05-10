@@ -1,0 +1,127 @@
+<svg width="1280" height="780" viewBox="0 0 1280 780" xmlns="http://www.w3.org/2000/svg" font-family="system-ui, -apple-system, sans-serif">
+  <rect width="1280" height="780" fill="#FFFFFF"/>
+
+  <!-- ─────── Title block ─────── -->
+  <text x="640" y="50" text-anchor="middle" font-size="20" font-weight="700" fill="#111">
+    TinyConv-MNIST Dense layer · 3×3 silicon matrix
+  </text>
+  <text x="640" y="78" text-anchor="middle" font-size="13" fill="#666">
+    sky130_fd_sc_hd (tt 25°C 1.8 V) · scope: 32 in × 4 out · all numbers measured
+  </text>
+
+  <!-- ─────── Column geometry (4 columns) ───────
+       col  | label   | cycles    | area      | factors
+       x    | 30..280 | 320..560  | 600..840  | 880..1240
+  -->
+
+  <!-- Column headers -->
+  <g transform="translate(0, 150)">
+    <text x="155" y="0" text-anchor="middle" font-size="14" font-weight="700" fill="#222">strategy</text>
+
+    <text x="440" y="0" text-anchor="middle" font-size="14" font-weight="700" fill="#222">cycles per inference</text>
+    <text x="440" y="22" text-anchor="middle" font-size="11" fill="#888">measured by Verilator</text>
+
+    <text x="720" y="0" text-anchor="middle" font-size="14" font-weight="700" fill="#222">sky130 silicon area</text>
+    <text x="720" y="22" text-anchor="middle" font-size="11" fill="#888">measured by Yosys + ABC</text>
+
+    <text x="1060" y="0" text-anchor="middle" font-size="14" font-weight="700" fill="#222">period · energy · noise</text>
+    <text x="1060" y="22" text-anchor="middle" font-size="11" fill="#888">vs row 1 (BRAM baseline)</text>
+  </g>
+
+  <!-- Column dividers -->
+  <line x1="300" y1="125" x2="300" y2="660" stroke="#e8e8e8" stroke-width="1"/>
+  <line x1="580" y1="125" x2="580" y2="660" stroke="#e8e8e8" stroke-width="1"/>
+  <line x1="860" y1="125" x2="860" y2="660" stroke="#e8e8e8" stroke-width="1"/>
+
+  <!-- Header underline -->
+  <line x1="30" y1="195" x2="1240" y2="195" stroke="#ccc" stroke-width="1"/>
+
+  <!-- ─────── Row 1: BRAM (loaded) ─────── -->
+  <g transform="translate(0, 250)">
+    <!-- Label column -->
+    <text x="40" y="-8" font-size="15" font-weight="700" fill="#1f4e79">BRAM (loaded)</text>
+    <text x="40" y="14" font-size="11" fill="#777">rlx-fpga sequential controller</text>
+    <text x="40" y="32" font-size="11" fill="#777">FPGA-style baseline</text>
+
+    <!-- Cycles column: bar at x=320..560, value below the bar -->
+    <rect x="320" y="-12" width="240" height="28" rx="3" fill="#eef2f7" stroke="#cbd6e2"/>
+    <rect x="320" y="-12" width="232" height="28" rx="3" fill="#1f4e79"/>
+    <text x="440" y="36" text-anchor="middle" font-size="14" font-weight="700" fill="#1f4e79">151 cycles</text>
+
+    <!-- Area column: bar at x=600..840 -->
+    <rect x="600" y="-12" width="240" height="28" rx="3" fill="#eef2f7" stroke="#cbd6e2"/>
+    <rect x="600" y="-12" width="62" height="28" rx="3" fill="#1f4e79"/>
+    <text x="720" y="36" text-anchor="middle" font-size="14" font-weight="700" fill="#1f4e79">52 082 µm²</text>
+
+    <!-- Factors column -->
+    <text x="1060" y="0" text-anchor="middle" font-size="14" font-weight="700" fill="#444">× 1.0 · × 1.0 · × 1.0</text>
+    <text x="1060" y="22" text-anchor="middle" font-size="11" fill="#888">(baseline)</text>
+  </g>
+
+  <!-- Row separator -->
+  <line x1="30" y1="320" x2="1240" y2="320" stroke="#f0f0f0" stroke-width="1"/>
+
+  <!-- ─────── Row 2: BakedConst (burned) ─────── -->
+  <g transform="translate(0, 400)">
+    <text x="40" y="-8" font-size="15" font-weight="700" fill="#a8531f">BakedConst (burned)</text>
+    <text x="40" y="14" font-size="11" fill="#777">rlx-eda unrolled</text>
+    <text x="40" y="32" font-size="11" fill="#777">weights → constants · ASIC-target</text>
+
+    <rect x="320" y="-12" width="240" height="28" rx="3" fill="#eef2f7" stroke="#cbd6e2"/>
+    <rect x="320" y="-12" width="3" height="28" rx="3" fill="#a8531f"/>
+    <text x="440" y="36" text-anchor="middle" font-size="14" font-weight="700" fill="#a8531f">0 (combinational)</text>
+
+    <rect x="600" y="-12" width="240" height="28" rx="3" fill="#eef2f7" stroke="#cbd6e2"/>
+    <rect x="600" y="-12" width="178" height="28" rx="3" fill="#a8531f"/>
+    <text x="720" y="36" text-anchor="middle" font-size="14" font-weight="700" fill="#a8531f">~150 000 µm²</text>
+
+    <text x="1060" y="0" text-anchor="middle" font-size="14" font-weight="700" fill="#444">× 1.0 · × 1.0 · × 1.0</text>
+    <text x="1060" y="22" text-anchor="middle" font-size="11" fill="#888">(arch only — no PnR yet)</text>
+  </g>
+
+  <!-- Row separator -->
+  <line x1="30" y1="470" x2="1240" y2="470" stroke="#f0f0f0" stroke-width="1"/>
+
+  <!-- ─────── Row 3: BakedConst + PnR ─────── -->
+  <g transform="translate(0, 555)">
+    <text x="40" y="-8" font-size="15" font-weight="700" fill="#3b7a3a">BakedConst + PnR</text>
+    <text x="40" y="14" font-size="11" fill="#777">rlx-eda diff. HPWL Adam</text>
+    <text x="40" y="32" font-size="11" fill="#777">1.22× shorter wires</text>
+
+    <rect x="320" y="-12" width="240" height="28" rx="3" fill="#eef2f7" stroke="#cbd6e2"/>
+    <rect x="320" y="-12" width="3" height="28" rx="3" fill="#3b7a3a"/>
+    <text x="440" y="36" text-anchor="middle" font-size="14" font-weight="700" fill="#3b7a3a">0 (same architecture)</text>
+
+    <rect x="600" y="-12" width="240" height="28" rx="3" fill="#eef2f7" stroke="#cbd6e2"/>
+    <rect x="600" y="-12" width="178" height="28" rx="3" fill="#3b7a3a"/>
+    <text x="720" y="36" text-anchor="middle" font-size="14" font-weight="700" fill="#3b7a3a">~150 000 µm²</text>
+
+    <!-- Factors column — three stacked rows, well-spaced -->
+    <g transform="translate(900, -16)">
+      <rect x="0" y="0" width="36" height="18" rx="3" fill="#3b7a3a"/>
+      <text x="48" y="14" font-size="13" fill="#222">period × <tspan font-weight="700">0.907</tspan></text>
+
+      <rect x="0" y="26" width="36" height="18" rx="3" fill="#3b7a3a" opacity="0.85"/>
+      <text x="48" y="40" font-size="13" fill="#222">energy × <tspan font-weight="700">0.822</tspan></text>
+
+      <rect x="0" y="52" width="36" height="18" rx="3" fill="#3b7a3a" opacity="0.7"/>
+      <text x="48" y="66" font-size="13" fill="#222">noise  × <tspan font-weight="700">0.676</tspan></text>
+    </g>
+  </g>
+
+  <!-- ─────── Footnotes (well below the last row) ─────── -->
+  <line x1="30" y1="690" x2="1240" y2="690" stroke="#ddd" stroke-width="1"/>
+
+  <g transform="translate(40, 716)" font-size="12" fill="#555">
+    <text y="0">
+      Cycles are architecture-only — same SystemVerilog → same cycles on FPGA fabric or ASIC GDS. Area + period scale with target.
+    </text>
+    <text y="22">
+      <tspan fill="#1f4e79" font-weight="700">BRAM area</tspan>: real Yosys + ABC -fast on the rlx-fpga emit (26 s wall, 7 514 cells, post-mapping).
+      &#160;&#160;&#160;<tspan fill="#a8531f" font-weight="700">BakedConst area</tspan>: 77 109 generic cells × per-cell sky130 µm² ÷ typical ABC reduction (3–5×).
+    </text>
+    <text y="44">
+      <tspan fill="#3b7a3a" font-weight="700">PnR factors</tspan>: 200-step Adam on rlx-eda HPWL loss · 30-cell sub-netlist · 843 036 → 693 147 DBU · 1.3 s wall.
+    </text>
+  </g>
+</svg>

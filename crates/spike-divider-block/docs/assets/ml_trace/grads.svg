@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="920" height="480" viewBox="0 0 920 480">
+<rect width="100%" height="100%" fill="#ffffff"/>
+<line x1="78.00" y1="418.00" x2="894.00" y2="418.00" stroke="#e5e7eb" stroke-width="1"/>
+<text x="70.00" y="422.00" text-anchor="end" font-size="12" fill="#374151">-1.453e-4</text>
+<line x1="78.00" y1="357.67" x2="894.00" y2="357.67" stroke="#e5e7eb" stroke-width="1"/>
+<text x="70.00" y="361.67" text-anchor="end" font-size="12" fill="#374151">-1.113e-4</text>
+<line x1="78.00" y1="297.33" x2="894.00" y2="297.33" stroke="#e5e7eb" stroke-width="1"/>
+<text x="70.00" y="301.33" text-anchor="end" font-size="12" fill="#374151">-7.721e-5</text>
+<line x1="78.00" y1="237.00" x2="894.00" y2="237.00" stroke="#e5e7eb" stroke-width="1"/>
+<text x="70.00" y="241.00" text-anchor="end" font-size="12" fill="#374151">-4.314e-5</text>
+<line x1="78.00" y1="176.67" x2="894.00" y2="176.67" stroke="#e5e7eb" stroke-width="1"/>
+<text x="70.00" y="180.67" text-anchor="end" font-size="12" fill="#374151">-9.076e-6</text>
+<line x1="78.00" y1="116.33" x2="894.00" y2="116.33" stroke="#e5e7eb" stroke-width="1"/>
+<text x="70.00" y="120.33" text-anchor="end" font-size="12" fill="#374151">2.499e-5</text>
+<line x1="78.00" y1="56.00" x2="894.00" y2="56.00" stroke="#e5e7eb" stroke-width="1"/>
+<text x="70.00" y="60.00" text-anchor="end" font-size="12" fill="#374151">5.906e-5</text>
+<line x1="78.00" y1="56.00" x2="78.00" y2="418.00" stroke="#e5e7eb" stroke-width="1"/>
+<text x="78.00" y="438.00" text-anchor="middle" font-size="12" fill="#374151">0</text>
+<line x1="214.00" y1="56.00" x2="214.00" y2="418.00" stroke="#e5e7eb" stroke-width="1"/>
+<text x="214.00" y="438.00" text-anchor="middle" font-size="12" fill="#374151">7</text>
+<line x1="350.00" y1="56.00" x2="350.00" y2="418.00" stroke="#e5e7eb" stroke-width="1"/>
+<text x="350.00" y="438.00" text-anchor="middle" font-size="12" fill="#374151">15</text>
+<line x1="486.00" y1="56.00" x2="486.00" y2="418.00" stroke="#e5e7eb" stroke-width="1"/>
+<text x="486.00" y="438.00" text-anchor="middle" font-size="12" fill="#374151">22</text>
+<line x1="622.00" y1="56.00" x2="622.00" y2="418.00" stroke="#e5e7eb" stroke-width="1"/>
+<text x="622.00" y="438.00" text-anchor="middle" font-size="12" fill="#374151">29</text>
+<line x1="758.00" y1="56.00" x2="758.00" y2="418.00" stroke="#e5e7eb" stroke-width="1"/>
+<text x="758.00" y="438.00" text-anchor="middle" font-size="12" fill="#374151">37</text>
+<line x1="894.00" y1="56.00" x2="894.00" y2="418.00" stroke="#e5e7eb" stroke-width="1"/>
+<text x="894.00" y="438.00" text-anchor="middle" font-size="12" fill="#374151">44</text>
+<line x1="78.00" y1="418.00" x2="894.00" y2="418.00" stroke="#111827" stroke-width="1.5"/>
+<line x1="78.00" y1="56.00" x2="78.00" y2="418.00" stroke="#111827" stroke-width="1.5"/>
+<text x="460.00" y="24" text-anchor="middle" font-size="18" font-weight="700" fill="#111827">Gradient evolution</text>
+<text x="486.00" y="464.00" text-anchor="middle" font-size="13" fill="#111827">step</text>
+<text x="22" y="237.00" transform="rotate(-90 22 237.00)" text-anchor="middle" font-size="13" fill="#111827">gradient</text>
+<polyline points="78.00,393.03 96.55,373.91 115.09,355.55 133.64,337.97 152.18,321.19 170.73,305.22 189.27,290.08 207.82,275.75 226.36,262.23 244.91,249.52 263.45,237.61 282.00,226.47 300.55,216.11 319.09,206.49 337.64,197.61 356.18,189.46 374.73,182.02 393.27,175.28 411.82,169.22 430.36,163.84 448.91,159.12 467.45,155.04 486.00,151.59 504.55,148.74 523.09,146.45 541.64,144.69 560.18,143.42 578.73,142.59 597.27,142.18 615.82,142.13 634.36,142.40 652.91,142.96 671.45,143.76 690.00,144.78 708.55,145.97 727.09,147.31 745.64,148.75 764.18,150.27 782.73,151.83 801.27,153.41 819.82,154.97 838.36,156.49 856.91,157.95 875.45,159.32 894.00,160.59" fill="none" stroke="#7c3aed" stroke-width="2.2"/>
+<polyline points="78.00,83.11 96.55,81.70 115.09,80.98 133.64,80.97 152.18,81.63 170.73,82.96 189.27,84.94 207.82,87.55 226.36,90.77 244.91,94.57 263.45,98.92 282.00,103.80 300.55,109.17 319.09,114.99 337.64,121.21 356.18,127.77 374.73,134.62 393.27,141.65 411.82,148.79 430.36,155.89 448.91,162.84 467.45,169.48 486.00,175.65 504.55,181.20 523.09,185.99 541.64,189.92 560.18,192.90 578.73,194.91 597.27,195.97 615.82,196.14 634.36,195.50 652.91,194.17 671.45,192.26 690.00,189.90 708.55,187.22 727.09,184.33 745.64,181.32 764.18,178.28 782.73,175.29 801.27,172.39 819.82,169.64 838.36,167.07 856.91,164.69 875.45,162.53 894.00,160.59" fill="none" stroke="#db2777" stroke-width="2.2"/>
+<rect x="724.00" y="66.00" width="160" height="70.00" rx="8" fill="#f9fafb" stroke="#d1d5db"/>
+<text x="734.00" y="82.00" font-size="12" font-weight="700" fill="#111827">Legend</text>
+<line x1="734.00" y1="98.00" x2="760.00" y2="98.00" stroke="#7c3aed" stroke-width="3"/>
+<text x="768.00" y="102.00" font-size="12" fill="#111827">dL/dR1</text>
+<line x1="734.00" y1="120.00" x2="760.00" y2="120.00" stroke="#db2777" stroke-width="3"/>
+<text x="768.00" y="124.00" font-size="12" fill="#111827">dL/dR2</text>
+</svg>

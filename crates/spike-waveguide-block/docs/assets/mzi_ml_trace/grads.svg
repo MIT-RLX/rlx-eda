@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="920" height="480" viewBox="0 0 920 480">
+<rect width="100%" height="100%" fill="#ffffff"/>
+<line x1="86.00" y1="418.00" x2="894.00" y2="418.00" stroke="#e5e7eb" stroke-width="1"/>
+<text x="78.00" y="422.00" text-anchor="end" font-size="12" fill="#374151">-221.4420</text>
+<line x1="86.00" y1="357.67" x2="894.00" y2="357.67" stroke="#e5e7eb" stroke-width="1"/>
+<text x="78.00" y="361.67" text-anchor="end" font-size="12" fill="#374151">-160.4904</text>
+<line x1="86.00" y1="297.33" x2="894.00" y2="297.33" stroke="#e5e7eb" stroke-width="1"/>
+<text x="78.00" y="301.33" text-anchor="end" font-size="12" fill="#374151">-99.5387</text>
+<line x1="86.00" y1="237.00" x2="894.00" y2="237.00" stroke="#e5e7eb" stroke-width="1"/>
+<text x="78.00" y="241.00" text-anchor="end" font-size="12" fill="#374151">-38.5871</text>
+<line x1="86.00" y1="176.67" x2="894.00" y2="176.67" stroke="#e5e7eb" stroke-width="1"/>
+<text x="78.00" y="180.67" text-anchor="end" font-size="12" fill="#374151">22.3646</text>
+<line x1="86.00" y1="116.33" x2="894.00" y2="116.33" stroke="#e5e7eb" stroke-width="1"/>
+<text x="78.00" y="120.33" text-anchor="end" font-size="12" fill="#374151">83.3162</text>
+<line x1="86.00" y1="56.00" x2="894.00" y2="56.00" stroke="#e5e7eb" stroke-width="1"/>
+<text x="78.00" y="60.00" text-anchor="end" font-size="12" fill="#374151">144.2679</text>
+<line x1="86.00" y1="56.00" x2="86.00" y2="418.00" stroke="#e5e7eb" stroke-width="1"/>
+<text x="86.00" y="438.00" text-anchor="middle" font-size="12" fill="#374151">0</text>
+<line x1="220.67" y1="56.00" x2="220.67" y2="418.00" stroke="#e5e7eb" stroke-width="1"/>
+<text x="220.67" y="438.00" text-anchor="middle" font-size="12" fill="#374151">7</text>
+<line x1="355.33" y1="56.00" x2="355.33" y2="418.00" stroke="#e5e7eb" stroke-width="1"/>
+<text x="355.33" y="438.00" text-anchor="middle" font-size="12" fill="#374151">13</text>
+<line x1="490.00" y1="56.00" x2="490.00" y2="418.00" stroke="#e5e7eb" stroke-width="1"/>
+<text x="490.00" y="438.00" text-anchor="middle" font-size="12" fill="#374151">20</text>
+<line x1="624.67" y1="56.00" x2="624.67" y2="418.00" stroke="#e5e7eb" stroke-width="1"/>
+<text x="624.67" y="438.00" text-anchor="middle" font-size="12" fill="#374151">27</text>
+<line x1="759.33" y1="56.00" x2="759.33" y2="418.00" stroke="#e5e7eb" stroke-width="1"/>
+<text x="759.33" y="438.00" text-anchor="middle" font-size="12" fill="#374151">33</text>
+<line x1="894.00" y1="56.00" x2="894.00" y2="418.00" stroke="#e5e7eb" stroke-width="1"/>
+<text x="894.00" y="438.00" text-anchor="middle" font-size="12" fill="#374151">40</text>
+<line x1="86.00" y1="418.00" x2="894.00" y2="418.00" stroke="#111827" stroke-width="1.5"/>
+<line x1="86.00" y1="56.00" x2="86.00" y2="418.00" stroke="#111827" stroke-width="1.5"/>
+<text x="460.00" y="24" text-anchor="middle" font-size="18" font-weight="700" fill="#111827">Gradient driving n_eff_A updates</text>
+<text x="490.00" y="464.00" text-anchor="middle" font-size="13" fill="#111827">step</text>
+<text x="22" y="237.00" transform="rotate(-90 22 237.00)" text-anchor="middle" font-size="13" fill="#111827">∂L / ∂n_eff_A</text>
+<polyline points="86.00,393.03 106.20,357.48 126.40,296.93 146.60,224.38 166.80,157.58 187.00,110.95 207.20,87.08 227.40,80.97 247.60,87.76 267.80,104.66 288.00,129.52 308.20,159.70 328.40,191.68 348.60,221.44 368.80,245.52 389.00,261.85 409.20,269.87 429.40,270.03 449.60,263.21 469.80,250.60 490.00,233.79 510.20,214.65 530.40,195.44 550.60,178.35 570.80,165.09 591.00,156.77 611.20,153.74 631.40,155.88 651.60,162.47 671.80,172.52 692.00,184.68 712.20,197.41 732.40,209.18 752.60,218.64 772.80,224.89 793.00,227.49 813.20,226.43 833.40,222.10 853.60,215.31 873.80,207.06 894.00,198.50" fill="none" stroke="#7c3aed" stroke-width="2.2"/>
+<rect x="724.00" y="66.00" width="160" height="48.00" rx="8" fill="#f9fafb" stroke="#d1d5db"/>
+<text x="734.00" y="82.00" font-size="12" font-weight="700" fill="#111827">Legend</text>
+<line x1="734.00" y1="98.00" x2="760.00" y2="98.00" stroke="#7c3aed" stroke-width="3"/>
+<text x="768.00" y="102.00" font-size="12" fill="#111827">dL/dneff_A</text>
+</svg>

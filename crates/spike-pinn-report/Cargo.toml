@@ -1,0 +1,19 @@
+[package]
+name         = "spike-pinn-report"
+version      = "0.0.1"
+edition.workspace      = true
+license.workspace      = true
+rust-version.workspace = true
+
+# Static report-rendering binary for the four pre-registered PINN
+# experiments. Reads NOTHING at runtime — measurements are hardcoded
+# from the K=10 protocol runs frozen 2026-05-10. Produces SVG charts
+# under `docs/assets/` and verifies they match the consolidated
+# report at `docs/pinn-experiments.md`.
+
+[dependencies]
+plotters = { workspace = true }
+
+[[bin]]
+name = "render"
+path = "src/bin/render.rs"

@@ -1,0 +1,35 @@
+<!doctype html><meta charset=utf-8><title>rlx-eda dashboard</title><style>
+:root{--ok:#22863a;--bad:#b31d28;--mute:#586069}
+body{font:14px/1.5 -apple-system,system-ui,sans-serif;max-width:1200px;margin:2em auto;padding:0 1.5em;color:#24292e}
+h1{font-size:1.7em;margin:.2em 0}
+h2{margin:1.6em 0 .5em;font-size:1.05em;color:var(--mute);font-weight:500;letter-spacing:.04em;text-transform:uppercase;border-bottom:1px solid #eee;padding-bottom:.3em}
+.meta{color:var(--mute);font-size:90%}
+.meta-mini{color:var(--mute);font-size:78%;margin-top:.3em}
+.banner{display:inline-block;padding:.4em 1em;border-radius:.4em;font-weight:700;letter-spacing:.05em;font-size:.95em;margin:.5em 0}
+.banner-ok{background:#dcffe4;color:var(--ok)}
+.banner-bad{background:#ffd6d8;color:var(--bad)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:.7em;margin-bottom:1.5em}
+.card{display:block;border:1px solid #e1e4e8;border-radius:.4em;padding:.7em .9em;background:#fff;text-decoration:none;color:inherit;transition:box-shadow .1s}
+.card:hover{box-shadow:0 1px 4px rgba(0,0,0,.1)}
+.card-pass{border-left:4px solid var(--ok)}
+.card-fail{border-left:4px solid var(--bad);background:#fff7f8}
+.card-head{margin-bottom:.5em}
+.buckets{display:flex;flex-wrap:wrap;gap:.3em}
+.bucket{font-size:79%;padding:.15em .55em;border-radius:1em;font-family:ui-monospace,Menlo,Consolas,monospace}
+.bucket-pass{background:#e6ffed;color:var(--ok)}
+.bucket-fail{background:#ffeef0;color:var(--bad);font-weight:600}
+</style><h1>rlx-eda — testbench dashboard</h1><div class="banner banner-ok">ALL 3 CORNERS PASS</div>
+<p class=meta>3 testbench run(s) · 3/3 passing</p>
+<div class=grid></div><h2>spike-lelo-ex</h2><div class=grid>
+<a class="card card-pass" href="../crates/spike-lelo-ex/docs/sky130a_mc/lelo_ex_mc_summary.html">
+<div class=card-head><strong>sky130a_mc</strong></div>
+<div class=meta-mini>(no CSVs found)</div><div class=meta-mini>updated 48m ago</div>
+</a><a class="card card-pass" href="../crates/spike-lelo-ex/docs/sky130a_sch_vs_lay/lelo_ex_summary.html">
+<div class=card-head><strong>sky130a_sch_vs_lay</strong></div>
+<div class=meta-mini>(no CSVs found)</div><div class=meta-mini>updated 13m ago</div>
+</a><a class="card card-pass" href="../crates/spike-lelo-ex/docs/sky130a_tt_ff_ss/lelo_ex_summary.html">
+<div class=card-head><strong>sky130a_tt_ff_ss</strong></div>
+<div class=buckets><span class="bucket bucket-pass">Sch_etc 2/2</span>
+<span class="bucket bucket-pass">Sch_typical 1/1</span>
+</div><div class=meta-mini>updated 2m ago</div>
+</a></div>

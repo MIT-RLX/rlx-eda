@@ -1,0 +1,30 @@
+* sky130A LELO_EX 1:4 NMOS current mirror
+.lib '/Users/macmini/.volare/volare/sky130/versions/c6d73a35f524070e85faff4a6a9eef49553ebc2b/sky130A/libs.tech/ngspice/sky130.lib.spice' tt
+Vvbias vbias 0 DC 9.0000000000e-1
+Iref 0 gate DC 5.0000000000e-6
+XM1 gate gate 0 0 sky130_fd_pr__nfet_01v8 W=2 L=2
+Rdrain m2_drain mout 4.000000e3
+XM2 m2_drain gate 0 0 sky130_fd_pr__nfet_01v8 W=8 L=2
+Cdrain m2_drain 0 1.000000e-13
+Vmeas vbias mout DC 0
+.ic v(gate)=0 v(mout)=0
+* PEX (eda-pex tier-1, sky130a defaults): 3 caps
+Cpex0 net_0 0 1.417747e-15
+Cpex1 net_1 0 4.880767e-16
+Cpex2 net_2 0 2.440384e-16
+* PEX R (informational; not topology-rewritten): 3 per-net Rs
+* Rpex0 net_0 net_0_pex 1.906250e0
+* Rpex1 net_1 net_1_pex 1.050000e-1
+* Rpex2 net_2 net_2_pex 1.312500e0
+.options temp=27
+.control
+set ngbehavior=hsa
+tran 1.0000000000e-7 2.0000000000e-5 uic
+meas tran ibn find i(vmeas) at=20u
+print ibn
+meas tran vgs_m1 find v(gate) at=20u
+print vgs_m1
+meas tran i_vbias avg i(vvbias)
+print i_vbias
+.endc
+.end

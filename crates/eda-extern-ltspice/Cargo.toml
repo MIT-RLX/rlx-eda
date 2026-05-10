@@ -1,0 +1,16 @@
+[package]
+name         = "eda-extern-ltspice"
+version      = "0.0.1"
+edition.workspace      = true
+license.workspace      = true
+rust-version.workspace = true
+
+[dependencies]
+thiserror     = { workspace = true }
+tempfile      = { workspace = true }
+eda-waveform  = { workspace = true }
+# Shared `which` helper. LTspice itself has no usable docker image
+# (closed-source AD Windows app; community wine builds are heavy and
+# fragile), so we only borrow the PATH lookup — the rest of
+# `eda-container` is unused on this side.
+eda-container = { workspace = true }

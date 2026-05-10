@@ -1,0 +1,42 @@
+[package]
+name         = "spike-cmos-gates"
+version      = "0.0.1"
+edition.workspace      = true
+license.workspace      = true
+rust-version.workspace = true
+
+# Phase-3 first deliverable: standard-cell library at the gate level.
+# Inverter / Nand2 / Nand3 / And2 as SpiceEmit blocks composing the
+# Nmos/Pmos primitives from eda-spice-emit. Mirrors Part 1 of the
+# LTspice SAR ADC paper. Gates here unblock the DFF (NAND-based) and
+# every higher-level digital block in the SAR ADC.
+
+[dependencies]
+eda-spice-emit      = { workspace = true }
+eda-validate        = { workspace = true }
+eda-hir             = { workspace = true }
+eda-mna             = { workspace = true }
+spike-divider-block = { workspace = true }
+
+[features]
+ngspice = ["dep:eda-extern-ngspice"]
+ltspice = ["dep:eda-extern-ltspice"]
+
+[dependencies.eda-extern-ngspice]
+workspace = true
+optional  = true
+
+[dependencies.eda-extern-ltspice]
+workspace = true
+optional  = true
+
+[dev-dependencies]
+eda-waveform = { workspace = true }
+eda-hir      = { workspace = true }
+
+# Digital primitives functional simulation under eda-mna — verifies
+# Inverter/Nand2/Nand3/Dff/DffSR all behave correctly under our
+# differentiable BE solver.
+[[bin]]
+name = "digital_primitives_mna"
+path = "src/bin/digital_primitives_mna.rs"

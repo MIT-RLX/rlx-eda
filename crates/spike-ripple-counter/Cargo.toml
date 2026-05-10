@@ -1,0 +1,32 @@
+[package]
+name         = "spike-ripple-counter"
+version      = "0.0.1"
+edition.workspace      = true
+license.workspace      = true
+rust-version.workspace = true
+
+# Half of the LTspice paper's Clocks block (Fig 12.1): N DffSR cells
+# in toggle mode (d = qb), chained as a ripple counter. Each stage
+# divides the input frequency by 2. Async reset_b initializes all
+# stages to 0. Decode logic (clk_sh / clk_door / clk_reset detectors)
+# is a follow-up crate that consumes this counter's outputs.
+
+[dependencies]
+spike-cmos-gates = { workspace = true }
+eda-spice-emit   = { workspace = true }
+eda-validate     = { workspace = true }
+
+[features]
+ngspice = ["dep:eda-extern-ngspice"]
+ltspice = ["dep:eda-extern-ltspice"]
+
+[dependencies.eda-extern-ngspice]
+workspace = true
+optional  = true
+
+[dependencies.eda-extern-ltspice]
+workspace = true
+optional  = true
+
+[dev-dependencies]
+eda-waveform = { workspace = true }

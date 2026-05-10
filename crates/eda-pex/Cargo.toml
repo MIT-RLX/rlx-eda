@@ -1,0 +1,31 @@
+[package]
+name         = "eda-pex"
+version      = "0.0.1"
+edition.workspace      = true
+license.workspace      = true
+rust-version.workspace = true
+
+# Tier-1 capacitive parasitic extraction. Walks routed nets per
+# layer, computes overlap area between adjacent metals, applies a
+# foundry-supplied per-layer-pair specific capacitance to produce
+# coupling caps + per-net ground caps. Output: SPICE element lines.
+#
+# What this is NOT: a real PEX flow. Real PEX (Calibre xRC,
+# StarRC, magic ext2spice) does:
+#   - 3D field-solver-derived layer geometry (sidewall, fringe,
+#     conformal lateral coupling).
+#   - Distributed RC (the wire is segmented; each segment carries
+#     a piece of resistance + cap).
+#   - Hierarchical reduction.
+#
+# Tier-1 here is parallel-plate caps only, lumped per net pair.
+# Useful for first-order coupling estimates and for closing the
+# Sch-vs-Lay loop with *some* parasitic model. Foundry sign-off
+# needs the real flow.
+
+[dependencies]
+klayout-core    = { workspace = true }
+klayout-geom    = { workspace = true }
+klayout-connect = { workspace = true }
+serde           = { version = "1", features = ["derive"] }
+thiserror       = { workspace = true }

@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="920" height="480" viewBox="0 0 920 480" font-family="-apple-system, system-ui, sans-serif" font-size="13">
+<rect width="100%" height="100%" fill="white"/>
+<text text-anchor="middle" x="460" y="20" font-size="15" font-weight="600">|S₁₁(f)|² — before vs after Adam</text>
+<rect x="80" y="30" width="810" height="390" fill="#fafafa" stroke="#888" stroke-width="0.5"/>
+<line x1="80.00" y1="30" x2="80.00" y2="420" stroke="#e0e0e0" stroke-width="0.5"/>
+<text x="80.00" y="436" text-anchor="middle" fill="#444">1.000</text>
+<line x1="181.25" y1="30" x2="181.25" y2="420" stroke="#e0e0e0" stroke-width="0.5"/>
+<text x="181.25" y="436" text-anchor="middle" fill="#444">1.500</text>
+<line x1="282.50" y1="30" x2="282.50" y2="420" stroke="#e0e0e0" stroke-width="0.5"/>
+<text x="282.50" y="436" text-anchor="middle" fill="#444">2.000</text>
+<line x1="383.75" y1="30" x2="383.75" y2="420" stroke="#e0e0e0" stroke-width="0.5"/>
+<text x="383.75" y="436" text-anchor="middle" fill="#444">2.500</text>
+<line x1="485.00" y1="30" x2="485.00" y2="420" stroke="#e0e0e0" stroke-width="0.5"/>
+<text x="485.00" y="436" text-anchor="middle" fill="#444">3.000</text>
+<line x1="586.25" y1="30" x2="586.25" y2="420" stroke="#e0e0e0" stroke-width="0.5"/>
+<text x="586.25" y="436" text-anchor="middle" fill="#444">3.500</text>
+<line x1="687.50" y1="30" x2="687.50" y2="420" stroke="#e0e0e0" stroke-width="0.5"/>
+<text x="687.50" y="436" text-anchor="middle" fill="#444">4.000</text>
+<line x1="788.75" y1="30" x2="788.75" y2="420" stroke="#e0e0e0" stroke-width="0.5"/>
+<text x="788.75" y="436" text-anchor="middle" fill="#444">4.500</text>
+<line x1="890.00" y1="30" x2="890.00" y2="420" stroke="#e0e0e0" stroke-width="0.5"/>
+<text x="890.00" y="436" text-anchor="middle" fill="#444">5.000</text>
+<line x1="80" y1="402.27" x2="890" y2="402.27" stroke="#e0e0e0" stroke-width="0.5"/>
+<text x="74" y="402.27" text-anchor="end" alignment-baseline="middle" fill="#444">0</text>
+<line x1="80" y1="329.26" x2="890" y2="329.26" stroke="#e0e0e0" stroke-width="0.5"/>
+<text x="74" y="329.26" text-anchor="end" alignment-baseline="middle" fill="#444">0.200</text>
+<line x1="80" y1="256.25" x2="890" y2="256.25" stroke="#e0e0e0" stroke-width="0.5"/>
+<text x="74" y="256.25" text-anchor="end" alignment-baseline="middle" fill="#444">0.400</text>
+<line x1="80" y1="183.23" x2="890" y2="183.23" stroke="#e0e0e0" stroke-width="0.5"/>
+<text x="74" y="183.23" text-anchor="end" alignment-baseline="middle" fill="#444">0.600</text>
+<line x1="80" y1="110.22" x2="890" y2="110.22" stroke="#e0e0e0" stroke-width="0.5"/>
+<text x="74" y="110.22" text-anchor="end" alignment-baseline="middle" fill="#444">0.800</text>
+<line x1="80" y1="37.21" x2="890" y2="37.21" stroke="#e0e0e0" stroke-width="0.5"/>
+<text x="74" y="37.21" text-anchor="end" alignment-baseline="middle" fill="#444">1.000</text>
+<text x="485" y="460" text-anchor="middle" fill="#222">frequency [GHz]</text>
+<text x="20" y="225" text-anchor="middle" fill="#222" transform="rotate(-90 20 225)">|S₁₁|²</text>
+<path d="M80.00,47.73 L90.13,49.00 L100.25,50.37 L110.37,51.86 L120.50,53.46 L130.62,55.20 L140.75,57.07 L150.88,59.10 L161.00,61.29 L171.12,63.66 L181.25,66.22 L191.38,68.99 L201.50,71.98 L211.62,75.21 L221.75,78.72 L231.88,82.50 L242.00,86.61 L252.13,91.05 L262.25,95.86 L272.38,101.07 L282.50,106.71 L292.62,112.82 L302.75,119.44 L312.88,126.61 L323.00,134.36 L333.12,142.73 L343.25,151.76 L353.38,161.49 L363.50,171.95 L373.62,183.16 L383.75,195.13 L393.88,207.86 L404.00,221.34 L414.12,235.50 L424.25,250.29 L434.38,265.58 L444.50,281.23 L454.62,297.04 L464.75,312.78 L474.88,328.18 L485.00,342.92 L495.12,356.67 L505.25,369.10 L515.38,379.90 L525.50,388.78 L535.62,395.52 L545.75,399.98 L555.88,402.08 L566.00,401.87 L576.12,399.44 L586.25,394.98 L596.38,388.72 L606.50,380.91 L616.62,371.84 L626.75,361.79 L636.88,351.02 L647.00,339.77 L657.12,328.26 L667.25,316.66 L677.38,305.12 L687.50,293.76 L697.62,282.67 L707.75,271.92 L717.88,261.56 L728.00,251.62 L738.12,242.11 L748.25,233.06 L758.38,224.44 L768.50,216.26 L778.62,208.52 L788.75,201.18 L798.88,194.24 L809.00,187.68 L819.12,181.47 L829.25,175.61 L839.38,170.07 L849.50,164.83 L859.62,159.88 L869.75,155.20 L879.88,150.76 L890.00,146.57" fill="none" stroke="#d62728" stroke-width="2"/>
+<path d="M80.00,49.94 L90.13,51.79 L100.25,53.88 L110.37,56.23 L120.50,58.90 L130.62,61.92 L140.75,65.35 L150.88,69.25 L161.00,73.72 L171.12,78.82 L181.25,84.69 L191.38,91.44 L201.50,99.23 L211.62,108.24 L221.75,118.67 L231.88,130.76 L242.00,144.76 L252.13,160.95 L262.25,179.58 L272.38,200.84 L282.50,224.81 L292.62,251.31 L302.75,279.80 L312.88,309.25 L323.00,338.01 L333.12,363.92 L343.25,384.55 L353.38,397.77 L363.50,402.27 L373.62,397.96 L383.75,385.91 L393.88,368.01 L404.00,346.40 L414.12,323.03 L424.25,299.42 L434.38,276.62 L444.50,255.27 L454.62,235.68 L464.75,217.93 L474.88,202.00 L485.00,187.76 L495.12,175.08 L505.25,163.79 L515.38,153.73 L525.50,144.76 L535.62,136.75 L545.75,129.58 L555.88,123.15 L566.00,117.36 L576.12,112.14 L586.25,107.41 L596.38,103.13 L606.50,99.23 L616.62,95.68 L626.75,92.43 L636.88,89.45 L647.00,86.72 L657.12,84.20 L667.25,81.88 L677.38,79.73 L687.50,77.75 L697.62,75.90 L707.75,74.18 L717.88,72.59 L728.00,71.09 L738.12,69.70 L748.25,68.39 L758.38,67.17 L768.50,66.02 L778.62,64.94 L788.75,63.92 L798.88,62.96 L809.00,62.06 L819.12,61.20 L829.25,60.39 L839.38,59.63 L849.50,58.90 L859.62,58.21 L869.75,57.55 L879.88,56.93 L890.00,56.33" fill="none" stroke="#1f77b4" stroke-width="2"/>
+<rect x="710" y="30" width="170" height="44" fill="white" stroke="#bbb" stroke-width="0.5" opacity="0.92"/>
+<line x1="718" y1="42" x2="738" y2="42" stroke="#d62728" stroke-width="3"/>
+<text x="746" y="46" fill="#222">before (Lg = 8.67 nH)</text>
+<line x1="718" y1="58" x2="738" y2="58" stroke="#1f77b4" stroke-width="3"/>
+<text x="746" y="62" fill="#222">after (Lg = 17.34 nH)</text>
+</svg>

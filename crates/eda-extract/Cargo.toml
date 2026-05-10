@@ -1,0 +1,38 @@
+[package]
+name         = "eda-extract"
+version      = "0.0.1"
+edition.workspace      = true
+license.workspace      = true
+rust-version.workspace = true
+
+# Layout-extraction: GDS geometry → flat electrical netlist + recognized
+# devices → SPICE deck. Closes the missing leg of the validation pyramid:
+# until this crate landed, every spike's "simulation" path was driven by
+# its hand-coded behavioral / MNA model — the layout was rendered, but
+# never round-tripped through extraction. So a `Layout::layout` impl
+# that forgot to wire its routed pads (LNA, MZI) still passed every
+# tier of testing.
+#
+# Pipeline:
+#
+#   Layout::layout ─► CellId
+#                      │
+#         klayout-connect (geometry → connected components, this crate
+#                          wraps it and adds device recognition)
+#                      ▼
+#                ExtractedDesign  (nets + devices + top-port → net map)
+#                      │
+#         eda-spice-emit (this crate emits via Netlist)
+#                      ▼
+#                  SPICE deck
+#                      │
+#         eda-extern-ngspice / harness
+#                      ▼
+#                   waveforms ⇆ behavioral-model waveforms
+
+[dependencies]
+klayout-core    = { workspace = true }
+klayout-connect = { workspace = true }
+eda-spice-emit  = { workspace = true }
+eda-em          = { workspace = true }
+thiserror       = { workspace = true }

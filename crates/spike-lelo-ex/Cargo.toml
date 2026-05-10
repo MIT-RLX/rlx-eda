@@ -1,0 +1,28 @@
+[package]
+name         = "spike-lelo-ex"
+version      = "0.0.1"
+edition.workspace      = true
+license.workspace      = true
+rust-version.workspace = true
+
+[dependencies]
+eda-spice-emit  = { workspace = true }
+eda-sim-harness = { workspace = true }
+rlx-eda-cli     = { workspace = true }
+# Verification side: build a small synthetic met1 layout for the
+# routed bias rail, run DRC + EM in the testbench's `verify()`.
+# These are tier-1 — sanity-net rules + caller-supplied per-net
+# currents — not sign-off.
+eda-drc         = { workspace = true }
+eda-em          = { workspace = true }
+eda-extract     = { workspace = true }
+eda-pex         = { workspace = true }
+klayout-core    = { workspace = true }
+klayout-connect = { workspace = true }
+# Pnr config uses klayout-route::ManhattanPlanner to route net
+# pins. Once eda-pnr's trait surface lands, this dep moves there.
+klayout-route   = { workspace = true }
+
+[dev-dependencies]
+eda-waveform = { workspace = true }
+tempfile     = { workspace = true }

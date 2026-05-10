@@ -1,0 +1,25 @@
+[package]
+name         = "spike-pulse-rc"
+version      = "0.0.1"
+edition.workspace      = true
+license.workspace      = true
+rust-version.workspace = true
+
+[features]
+ngspice = ["dep:eda-extern-ngspice"]
+ltspice = ["dep:eda-extern-ltspice"]
+
+[dependencies]
+spike-rc-transient = { workspace = true }
+eda-hir            = { workspace = true }
+eda-spice-emit     = { workspace = true }
+eda-validate       = { workspace = true }
+eda-extern-ngspice = { workspace = true, optional = true }
+eda-extern-ltspice = { workspace = true, optional = true }
+
+[dev-dependencies]
+eda-waveform = { workspace = true }
+
+[[bin]]
+name = "spike-pulse-rc"
+path = "src/main.rs"

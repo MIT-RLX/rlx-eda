@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="920" height="480" viewBox="0 0 920 480">
+<rect width="100%" height="100%" fill="#ffffff"/>
+<line x1="86.00" y1="418.00" x2="894.00" y2="418.00" stroke="#e5e7eb" stroke-width="1"/>
+<text x="78.00" y="422.00" text-anchor="end" font-size="12" fill="#374151">1539.5514</text>
+<line x1="86.00" y1="357.67" x2="894.00" y2="357.67" stroke="#e5e7eb" stroke-width="1"/>
+<text x="78.00" y="361.67" text-anchor="end" font-size="12" fill="#374151">1544.5668</text>
+<line x1="86.00" y1="297.33" x2="894.00" y2="297.33" stroke="#e5e7eb" stroke-width="1"/>
+<text x="78.00" y="301.33" text-anchor="end" font-size="12" fill="#374151">1549.5822</text>
+<line x1="86.00" y1="237.00" x2="894.00" y2="237.00" stroke="#e5e7eb" stroke-width="1"/>
+<text x="78.00" y="241.00" text-anchor="end" font-size="12" fill="#374151">1554.5975</text>
+<line x1="86.00" y1="176.67" x2="894.00" y2="176.67" stroke="#e5e7eb" stroke-width="1"/>
+<text x="78.00" y="180.67" text-anchor="end" font-size="12" fill="#374151">1559.6129</text>
+<line x1="86.00" y1="116.33" x2="894.00" y2="116.33" stroke="#e5e7eb" stroke-width="1"/>
+<text x="78.00" y="120.33" text-anchor="end" font-size="12" fill="#374151">1564.6283</text>
+<line x1="86.00" y1="56.00" x2="894.00" y2="56.00" stroke="#e5e7eb" stroke-width="1"/>
+<text x="78.00" y="60.00" text-anchor="end" font-size="12" fill="#374151">1569.6437</text>
+<line x1="86.00" y1="56.00" x2="86.00" y2="418.00" stroke="#e5e7eb" stroke-width="1"/>
+<text x="86.00" y="438.00" text-anchor="middle" font-size="12" fill="#374151">0</text>
+<line x1="220.67" y1="56.00" x2="220.67" y2="418.00" stroke="#e5e7eb" stroke-width="1"/>
+<text x="220.67" y="438.00" text-anchor="middle" font-size="12" fill="#374151">7</text>
+<line x1="355.33" y1="56.00" x2="355.33" y2="418.00" stroke="#e5e7eb" stroke-width="1"/>
+<text x="355.33" y="438.00" text-anchor="middle" font-size="12" fill="#374151">13</text>
+<line x1="490.00" y1="56.00" x2="490.00" y2="418.00" stroke="#e5e7eb" stroke-width="1"/>
+<text x="490.00" y="438.00" text-anchor="middle" font-size="12" fill="#374151">20</text>
+<line x1="624.67" y1="56.00" x2="624.67" y2="418.00" stroke="#e5e7eb" stroke-width="1"/>
+<text x="624.67" y="438.00" text-anchor="middle" font-size="12" fill="#374151">27</text>
+<line x1="759.33" y1="56.00" x2="759.33" y2="418.00" stroke="#e5e7eb" stroke-width="1"/>
+<text x="759.33" y="438.00" text-anchor="middle" font-size="12" fill="#374151">33</text>
+<line x1="894.00" y1="56.00" x2="894.00" y2="418.00" stroke="#e5e7eb" stroke-width="1"/>
+<text x="894.00" y="438.00" text-anchor="middle" font-size="12" fill="#374151">40</text>
+<line x1="86.00" y1="418.00" x2="894.00" y2="418.00" stroke="#111827" stroke-width="1.5"/>
+<line x1="86.00" y1="56.00" x2="86.00" y2="418.00" stroke="#111827" stroke-width="1.5"/>
+<text x="460.00" y="24" text-anchor="middle" font-size="18" font-weight="700" fill="#111827">Notch wavelength tracking the target</text>
+<text x="490.00" y="464.00" text-anchor="middle" font-size="13" fill="#111827">step</text>
+<text x="22" y="237.00" transform="rotate(-90 22 237.00)" text-anchor="middle" font-size="13" fill="#111827">λ (nm)</text>
+<polyline points="86.00,80.97 106.20,145.99 126.40,210.34 146.60,271.81 166.80,325.52 187.00,365.03 207.20,387.06 227.40,393.03 247.60,386.41 267.80,370.67 288.00,348.88 308.20,323.78 328.40,298.02 348.60,274.18 368.80,254.62 389.00,241.04 409.20,234.23 429.40,234.11 449.60,239.91 469.80,250.44 490.00,264.21 510.20,279.65 530.40,295.01 550.60,308.72 570.80,319.40 591.00,326.18 611.20,328.65 631.40,326.91 651.60,321.53 671.80,313.39 692.00,303.63 712.20,293.44 732.40,284.03 752.60,276.44 772.80,271.40 793.00,269.30 813.20,270.17 833.40,273.66 853.60,279.12 873.80,285.72 894.00,292.56" fill="none" stroke="#1d4ed8" stroke-width="2.2"/>
+<polyline points="86.00,292.31 106.20,292.31 126.40,292.31 146.60,292.31 166.80,292.31 187.00,292.31 207.20,292.31 227.40,292.31 247.60,292.31 267.80,292.31 288.00,292.31 308.20,292.31 328.40,292.31 348.60,292.31 368.80,292.31 389.00,292.31 409.20,292.31 429.40,292.31 449.60,292.31 469.80,292.31 490.00,292.31 510.20,292.31 530.40,292.31 550.60,292.31 570.80,292.31 591.00,292.31 611.20,292.31 631.40,292.31 651.60,292.31 671.80,292.31 692.00,292.31 712.20,292.31 732.40,292.31 752.60,292.31 772.80,292.31 793.00,292.31 813.20,292.31 833.40,292.31 853.60,292.31 873.80,292.31 894.00,292.31" fill="none" stroke="#dc2626" stroke-width="2.2"/>
+<rect x="724.00" y="66.00" width="160" height="70.00" rx="8" fill="#f9fafb" stroke="#d1d5db"/>
+<text x="734.00" y="82.00" font-size="12" font-weight="700" fill="#111827">Legend</text>
+<line x1="734.00" y1="98.00" x2="760.00" y2="98.00" stroke="#1d4ed8" stroke-width="3"/>
+<text x="768.00" y="102.00" font-size="12" fill="#111827">λ_notch</text>
+<line x1="734.00" y1="120.00" x2="760.00" y2="120.00" stroke="#dc2626" stroke-width="3"/>
+<text x="768.00" y="124.00" font-size="12" fill="#111827">λ_target</text>
+</svg>

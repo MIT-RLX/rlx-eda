@@ -1,0 +1,14 @@
+[package]
+name         = "eda-container"
+version      = "0.0.1"
+edition.workspace      = true
+license.workspace      = true
+rust-version.workspace = true
+
+# Shared docker / container plumbing for rlx-eda. Owns the central
+# image registry (tag + Dockerfile path) and a `DockerRun` builder
+# wrapping `docker run …`. Consumers (eda-extern-ngspice,
+# eda-bench-tinyconv) build their toolchain-specific drivers on top.
+
+[dependencies]
+thiserror = { workspace = true }
